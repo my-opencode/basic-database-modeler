@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic DB Modeler</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/jointjs.css" />
+    <link rel="stylesheet" type="text/css" href="/css/_custom.css" />
+    <style>
+    #editor {
+        /** Setting height is also important, otherwise editor wont showup**/
+        height: 95vh;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col col-3">
+          <h3 class="panel-title">Editor</h3>
+          <div id="editor">
+
+          </div>
+        </div>
+        <div class="col col-9">
+          <main>
+            <h3>Visualization 
+              <button class="btn btn-sm btn-outline-primary"
+                id="btn-check-data">Show updated data</button>
+              <button class="btn btn-sm btn-outline-primary"
+                id="btn-update-data">Updated editor</button>
+              <!-- <button class="btn btn-sm btn-outline-primary"
+                id="btn-copy-data">Copy to clipboard</button> -->
+              </h3>
+            <div id="graph"></div>
+          </main></div>
+      </div>
+    </div>
+    <script src="/js/jquery.3.6.1.js"></script>
+    <script src="/js/lodash.4.17.21.js"></script>
+    <script src="/js/backbone.1.4.1.js"></script>
+    <script src="/js/ace.js"></script>
+    <script src="/js/theme-monokai.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jointjs.3.6.2.js"></script>
+    <script>
+      var editorEl = document.getElementById(`editor`);
+      var testJson = [
+        {"title":"1","children":[{"title":"1.a","type":"string","id":"c2a23212-6861-4de1-9db5-9c733bd20f21"}]},{"title":"2","type":"object","children":[{"title":"2.a","type":"number","id":"73de3583-251a-460f-b3eb-bd2fd736ccfc"},{"title":"2.b","type":"object","children":[{"title":"2.b.i","type":"boolean","id":"2b3b1148-8ef5-4103-a206-f6742ec58c52"},{"title":"2.b.ii","type":"object","children":[{"title":"2.b.ii.A","type":"boolean","id":"d472c712-a13d-482f-9ee1-cc3e78d95ff6"},{"title":"2.b.ii.B","type":"date","id":"d031b264-6ff1-4129-80f3-160f0d6d257d"}],"id":"19ea9ec3-ddde-478c-bac6-0ec33c3a9a31"},{"title":"2.b.iii","type":"string","id":"5db694ba-2e1b-4124-9da3-b4878fb19ad2"}],"id":"1c4ca111-1385-496a-b755-63f0b6a75b07"},{"title":"2.c","type":"number","id":"8da3e5da-d18d-4da6-ae9d-a1ce578e8372"}],"id":"007c3b52-aa1a-4de8-a9e0-daddc83190c8"},
+        {"source":{"id":"c2a23212-6861-4de1-9db5-9c733bd20f21"}, "target":{"id":"2b3b1148-8ef5-4103-a206-f6742ec58c52"}}
+      ];
+      editorEl.innerHTML = JSON.stringify(testJson, null, ` `);
+    </script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/json");
+    </script>
+    <script type="module">
+      import {initGraph} from "/js/_initGraph.js";
+      import {redrawGraph} from "/js/_drawGraph.js";
+      var graphEl = document.getElementById('graph');
+      var {graph,paper} = initGraph(graphEl);
+
+      // initial draw
+      testJson = redrawGraph(paper, graph,testJson);
+
+      // update graph on valid editor change
+      function isJsonValid(value, nested){
+        return value.every(e => {
+          let _r = false;
+          if (!e) {
+            console.log(e, `falsy`);
+          }
+          else if ( e.title) {
+            if(
+              typeof e.title === `string` && 
+              (!nested || (e.type && 
+              typeof e.type ==="string")) &&
+              (!e.children || isJsonValid(e.children, true))
+              ) _r = true;
+              else console.log(e, `invalid title`)
+          }
+          else if (
+          e.source && e.target && e.source.id && e.target.id
+          ) _r = true;
+              else console.log(e, `invalid link`)
+
+        return _r;
+        
+      });
+    }
+      editor.getSession().on("changeAnnotation", function(){
+        const annot = editor.getSession().getAnnotations();
+        if(!Object.values(annot)?.length) {
+          const newValue = JSON.parse(editor.session.getValue());
+          if(isJsonValid(newValue) && JSON.stringify(testJson)!==JSON.stringify(newValue)){
+          testJson = redrawGraph(paper, graph,newValue);
+          // testJson = newValue;
+        } else console.log(JSON.stringify(testJson)===JSON.stringify(newValue)?`identical`:`invalid 2`);
+       } else console.log(`invalid 1`);
+      });
+</script>
+    <script>
+  document.getElementById(`btn-check-data`).addEventListener(`click`, function(){
+    alert(JSON.stringify(testJson));
+  })
+  document.getElementById(`btn-update-data`).addEventListener(`click`, function(){
+    editor.setValue(JSON.stringify(testJson, null, ` `));
+  })
+  // document.getElementById(`btn-copy-data`).addEventListener(`click`, function(){
+  //   isClipboardWritingAllowed().then(function(allowed){
+  //       // 4. Write to clipboard if allowed
+  //       if(allowed){
+  //           navigator.clipboard.writeText(JSON.stringify(testJson, null, ` `)).then(function(){
+  //               alert("Updated JSON data has been copied to clipboard.");
+  //           });
+  //       }
+  //   }).catch(function(err){
+  //       console.log("Cannot copy to clipboard", err);
+  //   });
+  // })
+//   function isClipboardWritingAllowed(){
+//     return new Promise(function(resolve, reject){
+//         try{
+//             navigator.permissions.query({ name: "clipboard-write" }).then(function(status){
+//                 // PermissionStatus object
+//                 // {
+//                 //  onchange: null,
+//                 //  state: "granted" (it could be as well `denied` or `prompt`)
+//                 // }
+//                 console.log(status);
+
+//                 resolve((status.state == "granted"));
+//             });
+//         }catch(error){
+//             // This could be caused because of a Browser incompatibility or security error
+//             // Remember that this feature works only through HTTPS
+//             reject(error);
+//         }
+//     });
+// }
+</script>
+  </body>
+</html>
