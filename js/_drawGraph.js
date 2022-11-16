@@ -60,8 +60,8 @@
 // }
 export function redrawGraph(paper, graph, elems) {
   graph.clear();
-  let X = 0, Y = 0;
-  const Xoff = 100, Yoff = 100;
+  let X = 20, Y = 20;
+  const Xoff = 420, Yoff = 0;
 
   const C = {
     Container: joint.shapes.container.Parent,
@@ -76,7 +76,6 @@ export function redrawGraph(paper, graph, elems) {
       links.push(elem);
       continue;
     }
-    X += Xoff; Y += Yoff;
     const o = {
       z: 1,
       attrs: { label: { text: elem.title } }
@@ -91,13 +90,14 @@ export function redrawGraph(paper, graph, elems) {
 
 
     if (elem.children?.length) {
-      let children = [];
-      ({ children, Y } = addChildren(C, graph, elem, container, X, Y));
+      // ({ children, Y } = addChildren(C, graph, elem, container, X, Y));
+      addChildren(C, graph, elem, container, X, Y);
     }
 
     // graph.addCells(children);
     // graph.addCells([container, ...children]);
     // container.toggle(false);
+    X += Xoff; Y += Yoff;
   }
   for(const link of links) {
     const _link = new C.Link({
