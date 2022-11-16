@@ -4,6 +4,11 @@
     "title": "Company",
     "children": [
       {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "cp._id"
+      },
+      {
         "title": "active",
         "type": "boolean",
         "id": "cp.active"
@@ -15,8 +20,8 @@
       },
       {
         "title": "creator",
-        "type": "object",
         "id": "cp.creator",
+        "type": "object",
         "children": [
           {
             "title": "name",
@@ -41,9 +46,9 @@
         "id": "cp.owners",
         "children": [
           {
-            "title": "[owner]",
-            "type": "object",
+            "title": "{owner}",
             "id": "cp.owners.$0",
+            "type": "object",
             "children": [
               {
                 "title": "name",
@@ -80,9 +85,249 @@
         "id": "cp.profile",
         "children": [
           {
+            "title": "country",
+            "type": "string",
+            "id": "cp.profile.country"
+          },
+          {
+            "title": "legalEntity",
+            "type": "string",
+            "id": "cp.profile.legalEntity"
+          },
+          {
+            "title": "registrationId",
+            "type": "string",
+            "id": "cp.profile.registrationId"
+          },
+          {
+            "title": "chart_id",
+            "type": "ObjectId",
+            "id": "cp.profile.chart_id"
+          },
+          {
             "title": "name",
             "type": "string",
             "id": "cp.profile.name"
+          },
+          {
+            "title": "nameTranslations",
+            "id": "cp.profile.nameTranslations",
+            "type": "object",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "cp.profile.nameTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "registrations",
+            "type": "array",
+            "id": "cp.profile.registrations",
+            "children": [
+              {
+                "title": "{companyRegistration}",
+                "type": "object",
+                "id": "cp.profile.registrations.$0",
+                "children": [
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "cp.profile.registrations.$0.name"
+                  },
+                  {
+                    "title": "id",
+                    "type": "string",
+                    "id": "cp.profile.registrations.$0.id"
+                  },
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.profile.registrations.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.profile.registrations.$0.date_to"
+                  },
+                  {
+                    "title": "current",
+                    "type": "boolean",
+                    "id": "cp.profile.registrations.$0.current"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "charts",
+            "type": "array",
+            "id": "cp.profile.charts",
+            "children": [
+              {
+                "title": "{dateReference}",
+                "id": "cp.profile.charts.$0",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "cp.profile.charts.$0.name"
+                  },
+                  {
+                    "title": "_id",
+                    "type": "string",
+                    "id": "cp.profile.charts.$0._id"
+                  },
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.profile.charts.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.profile.charts.$0.date_to"
+                  },
+                  {
+                    "title": "current",
+                    "type": "boolean",
+                    "id": "cp.profile.charts.$0.current"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "legalEntities",
+            "type": "array",
+            "id": "cp.profile.legalEntities",
+            "children": [
+              {
+                "title": "{datedParamReference}",
+                "id": "cp.profile.legalEntities.$0",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "categoryCode",
+                    "type": "string",
+                    "id": "cp.profile.legalEntities.$0.categoryCode"
+                  },
+                  {
+                    "title": "code",
+                    "type": "string",
+                    "id": "cp.profile.legalEntities.$0.code"
+                  },
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.profile.legalEntities.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.profile.legalEntities.$0.date_to"
+                  },
+                  {
+                    "title": "current",
+                    "type": "boolean",
+                    "id": "cp.profile.legalEntities.$0.current"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "fiscalYears",
+            "type": "array",
+            "id": "cp.profile.fiscalYears",
+            "children": [
+              {
+                "title": "{datedFiscalYear}",
+                "id": "cp.profile.fiscalYears.$0",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "fixed",
+                    "type": "array",
+                    "id": "cp.profile.fiscalYears.$0.$0.fixed",
+                    "children": [
+                      {
+                        "title": "{propName}",
+                        "type": "string",
+                        "id": "cp.profile.fiscalYears.$0.$0.fixed.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "calendar",
+                    "type": "string",
+                    "id": "cp.profile.fiscalYears.$0.$0.calendar"
+                  },
+                  {
+                    "title": "year_type",
+                    "type": "string",
+                    "id": "cp.profile.fiscalYears.$0.$0.year_type"
+                  },
+                  {
+                    "title": "max_first_year_end_length",
+                    "type": "number",
+                    "id": "cp.profile.fiscalYears.$0.$0.max_first_year_end_length"
+                  },
+                  {
+                    "title": "allow_custom_year_lengths",
+                    "type": "boolean",
+                    "id": "cp.profile.fiscalYears.$0.$0.allow_custom_year_lengths"
+                  },
+                  {
+                    "title": "allow_custom_first_year_end",
+                    "type": "boolean",
+                    "id": "cp.profile.fiscalYears.$0.$0.allow_custom_first_year_end"
+                  },
+                  {
+                    "title": "periods_in_year",
+                    "type": "number",
+                    "id": "cp.profile.fiscalYears.$0.$0.periods_in_year"
+                  },
+                  {
+                    "title": "year_start_type",
+                    "type": "string",
+                    "id": "cp.profile.fiscalYears.$0.$0.year_start_type"
+                  },
+                  {
+                    "title": "year_period",
+                    "id": "cp.profile.fiscalYears.$0.$0.year_period",
+                    "$ref": "./definitions.json#/fiscalYearUnitNumber"
+                  },
+                  {
+                    "title": "year_reporting_period",
+                    "id": "cp.profile.fiscalYears.$0.$0.year_reporting_period",
+                    "$ref": "./definitions.json#/fiscalYearUnitNumber"
+                  },
+                  {
+                    "title": "code",
+                    "type": "string",
+                    "id": "cp.profile.fiscalYears.$0.$0.code"
+                  },
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.profile.fiscalYears.$0.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.profile.fiscalYears.$0.$0.date_to"
+                  },
+                  {
+                    "title": "current",
+                    "type": "boolean",
+                    "id": "cp.profile.fiscalYears.$0.$0.current"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -118,13 +363,13 @@
           },
           {
             "title": "languages",
-            "type": "array",
             "id": "cp.settings.languages",
+            "type": "array",
             "children": [
               {
                 "type": "string",
                 "id": "cp.settings.languages.$0",
-                "title": "[language]"
+                "title": "{language}"
               }
             ]
           },
@@ -134,10 +379,21 @@
             "id": "cp.settings.periods",
             "children": [
               {
-                "type": "object",
                 "id": "cp.settings.periods.$0",
-                "title": "[period]",
-                "children": []
+                "title": "{period}",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.settings.periods.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.settings.periods.$0.date_to"
+                  }
+                ]
               }
             ]
           },
@@ -149,7 +405,7 @@
               {
                 "type": "object",
                 "id": "cp.settings.tax.$0",
-                "title": "[taxConfig]",
+                "title": "{taxConfig}",
                 "children": [
                   {
                     "title": "date_from",
@@ -174,7 +430,7 @@
                       {
                         "type": "object",
                         "id": "cp.settings.tax.$0.values.$0",
-                        "title": "[taxValue]",
+                        "title": "{taxValue}",
                         "children": [
                           {
                             "title": "name",
@@ -203,8 +459,8 @@
                           },
                           {
                             "title": "nameTranslations",
-                            "type": "object",
                             "id": "cp.settings.tax.$0.values.$0.nameTranslations",
+                            "type": "object",
                             "children": [
                               {
                                 "title": "[lang]",
@@ -215,8 +471,8 @@
                           },
                           {
                             "title": "descriptionTranslations",
-                            "type": "object",
                             "id": "cp.settings.tax.$0.values.$0.descriptionTranslations",
+                            "type": "object",
                             "children": [
                               {
                                 "title": "[lang]",
@@ -241,7 +497,7 @@
         "id": "cp.users",
         "children": [
           {
-            "title": "[user_sub]",
+            "title": "{userSub}",
             "type": "string",
             "id": "cp.users.$0"
           }
@@ -253,7 +509,7 @@
         "id": "cp.depreciatingAssets",
         "children": [
           {
-            "title": "[depreciatingAsset]",
+            "title": "{depreciatingAsset}",
             "type": "object",
             "id": "cp.depreciatingAssets.$0",
             "children": [
@@ -261,6 +517,21 @@
                 "title": "description",
                 "type": "string",
                 "id": "cp.depreciatingAssets.$0.description"
+              },
+              {
+                "title": "baseValue",
+                "type": "string",
+                "id": "cp.depreciatingAssets.$0.baseValue"
+              },
+              {
+                "title": "salvageValue",
+                "type": "string",
+                "id": "cp.depreciatingAssets.$0.salvageValue"
+              },
+              {
+                "title": "periodType",
+                "type": "string",
+                "id": "cp.depreciatingAssets.$0.periodType"
               },
               {
                 "title": "serial",
@@ -281,11 +552,3324 @@
                 "title": "inInventory",
                 "type": "boolean",
                 "id": "cp.depreciatingAssets.$0.inInventory"
+              },
+              {
+                "title": "method",
+                "type": "object",
+                "id": "cp.depreciatingAssets.$0.method",
+                "children": [
+                  {
+                    "title": "requireUserInput",
+                    "type": "boolean",
+                    "id": "cp.depreciatingAssets.$0.method.requireUserInput"
+                  },
+                  {
+                    "title": "default",
+                    "type": "boolean",
+                    "id": "cp.depreciatingAssets.$0.method.default"
+                  },
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "cp.depreciatingAssets.$0.method.name"
+                  },
+                  {
+                    "title": "patterns",
+                    "id": "cp.depreciatingAssets.$0.method.patterns",
+                    "stringTitle": "{pattern}",
+                    "type": "array",
+                    "children": [
+                      {
+                        "title": "{pattern}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.patterns.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "fieldsRequiringUserInputAtInit",
+                    "id": "cp.depreciatingAssets.$0.method.fieldsRequiringUserInputAtInit",
+                    "stringTitle": "{fieldName}",
+                    "type": "array",
+                    "children": [
+                      {
+                        "title": "{fieldName}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.fieldsRequiringUserInputAtInit.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "fieldsRequiringUserInputAtComputation",
+                    "id": "cp.depreciatingAssets.$0.method.fieldsRequiringUserInputAtComputation",
+                    "stringTitle": "{fieldName}",
+                    "type": "array",
+                    "children": [
+                      {
+                        "title": "{fieldName}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.fieldsRequiringUserInputAtComputation.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "initFields",
+                    "id": "cp.depreciatingAssets.$0.method.initFields",
+                    "stringTitle": "{fieldName}",
+                    "type": "array",
+                    "children": [
+                      {
+                        "title": "{fieldName}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.initFields.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "computationFields",
+                    "id": "cp.depreciatingAssets.$0.method.computationFields",
+                    "stringTitle": "{fieldName}",
+                    "type": "array",
+                    "children": [
+                      {
+                        "title": "{fieldName}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.computationFields.$0"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
         ]
       }
     ]
+  },
+  {
+    "type": "object",
+    "title": "Chart",
+    "id": "chart",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "chart._id"
+      },
+      {
+        "title": "active",
+        "type": "boolean",
+        "id": "chart.active"
+      },
+      {
+        "title": "created_at",
+        "type": "date",
+        "id": "chart.created_at"
+      },
+      {
+        "title": "creator",
+        "id": "chart.creator",
+        "type": "object",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "chart.creator.name"
+          },
+          {
+            "title": "_id",
+            "type": "string",
+            "id": "chart.creator._id"
+          }
+        ]
+      },
+      {
+        "title": "isClosed",
+        "type": "boolean",
+        "id": "chart.isClosed"
+      },
+      {
+        "title": "profile",
+        "type": "object",
+        "id": "chart.profile",
+        "children": [
+          {
+            "title": "country",
+            "type": "string",
+            "id": "chart.profile.country"
+          },
+          {
+            "title": "type",
+            "type": "string",
+            "id": "chart.profile.type"
+          },
+          {
+            "title": "version",
+            "type": "string",
+            "id": "chart.profile.version"
+          },
+          {
+            "title": "accountCount",
+            "type": "number",
+            "id": "chart.profile.accountCount"
+          },
+          {
+            "title": "conversionCount",
+            "type": "number",
+            "id": "chart.profile.conversionCount"
+          },
+          {
+            "title": "branched_at",
+            "type": "date",
+            "id": "chart.profile.branched_at"
+          },
+          {
+            "title": "isSystem",
+            "type": "boolean",
+            "id": "chart.profile.isSystem"
+          },
+          {
+            "title": "isSystemReference",
+            "type": "boolean",
+            "id": "chart.profile.isSystemReference"
+          },
+          {
+            "title": "name",
+            "type": "string",
+            "id": "chart.profile.name"
+          },
+          {
+            "title": "nameTranslations",
+            "id": "chart.profile.nameTranslations",
+            "type": "object",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "chart.profile.nameTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "description",
+            "type": "string",
+            "id": "chart.profile.description"
+          },
+          {
+            "title": "descriptionTranslations",
+            "id": "chart.profile.descriptionTranslations",
+            "type": "object",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "chart.profile.descriptionTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "company",
+            "id": "chart.profile.company",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "chart.profile.company.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "chart.profile.company._id"
+              }
+            ]
+          },
+          {
+            "title": "chartReference",
+            "id": "chart.profile.chartReference",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "chart.profile.chartReference.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "chart.profile.chartReference._id"
+              }
+            ]
+          },
+          {
+            "title": "branchedFrom",
+            "id": "chart.profile.branchedFrom",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "chart.profile.branchedFrom.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "chart.profile.branchedFrom._id"
+              }
+            ]
+          },
+          {
+            "title": "branchRoot",
+            "id": "chart.profile.branchRoot",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "chart.profile.branchRoot.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "chart.profile.branchRoot._id"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "settings",
+        "type": "object",
+        "id": "chart.settings",
+        "children": [
+          {
+            "title": "formats",
+            "type": "object",
+            "id": "chart.settings.formats",
+            "children": [
+              {
+                "title": "period",
+                "type": "object",
+                "id": "chart.settings.formats.period"
+              },
+              {
+                "title": "labelSeparator",
+                "type": "string",
+                "id": "chart.settings.formats.labelSeparator"
+              },
+              {
+                "title": "codeSeparator",
+                "type": "string",
+                "id": "chart.settings.formats.codeSeparator"
+              }
+            ]
+          },
+          {
+            "title": "languages",
+            "id": "chart.settings.languages",
+            "type": "array",
+            "children": [
+              {
+                "type": "string",
+                "id": "chart.settings.languages.$0",
+                "title": "{language}"
+              }
+            ]
+          },
+          {
+            "title": "importDefaultAccounts",
+            "type": "array",
+            "id": "chart.settings.importDefaultAccounts",
+            "children": [
+              {
+                "title": "{importDefaultAccountConfig}",
+                "type": "object",
+                "id": "chart.settings.importDefaultAccounts.$0",
+                "children": [
+                  {
+                    "title": "operation",
+                    "type": "string",
+                    "id": "chart.settings.importDefaultAccounts.$0.operation"
+                  },
+                  {
+                    "title": "parentCode",
+                    "type": "string",
+                    "id": "chart.settings.importDefaultAccounts.$0.parentCode"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "thirdpartyAccounts",
+            "type": "array",
+            "id": "chart.settings.thirdpartyAccounts",
+            "children": [
+              {
+                "title": "{thirdpartyAccount}",
+                "type": "object",
+                "id": "chart.settings.thirdpartyAccounts.$0",
+                "children": [
+                  {
+                    "title": "relationship",
+                    "type": "string",
+                    "id": "chart.settings.thirdpartyAccounts.$0.relationship"
+                  },
+                  {
+                    "title": "defaultType",
+                    "type": "string",
+                    "id": "chart.settings.thirdpartyAccounts.$0.defaultType"
+                  },
+                  {
+                    "title": "accountCategory",
+                    "type": "string",
+                    "id": "chart.settings.thirdpartyAccounts.$0.accountCategory"
+                  },
+                  {
+                    "title": "parentCodes",
+                    "type": "array",
+                    "id": "chart.settings.thirdpartyAccounts.$0.parentCodes",
+                    "children": [
+                      {
+                        "title": "{parentCode}",
+                        "type": "string",
+                        "id": "chart.settings.thirdpartyAccounts.$0.parentCodes.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "excludeLabels",
+                    "type": "array",
+                    "id": "chart.settings.thirdpartyAccounts.$0.excludeLabels",
+                    "children": [
+                      {
+                        "title": "{label}",
+                        "type": "string",
+                        "id": "chart.settings.thirdpartyAccounts.$0.excludeLabels.$0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "reportSchedule",
+            "type": "object",
+            "id": "chart.settings.reportSchedule",
+            "children": [
+              {
+                "title": "official",
+                "id": "chart.settings.reportSchedule.official",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "periodLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.official.periodLengthInMonths"
+                  },
+                  {
+                    "title": "accountingYearLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.official.accountingYearLengthInMonths"
+                  },
+                  {
+                    "title": "maxFirstYearEndDistance",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.official.maxFirstYearEndDistance"
+                  },
+                  {
+                    "title": "allowofficialFirstYearEnd",
+                    "type": "boolean",
+                    "id": "chart.settings.reportSchedule.official.allowofficialFirstYearEnd"
+                  },
+                  {
+                    "title": "startingPoint",
+                    "type": "object",
+                    "id": "chart.settings.reportSchedule.official.startingPoint",
+                    "children": [
+                      {
+                        "title": "type",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.type"
+                      },
+                      {
+                        "title": "month",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.month"
+                      },
+                      {
+                        "title": "week_day_match_method",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.week_day_match_method"
+                      },
+                      {
+                        "title": "week",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.week"
+                      },
+                      {
+                        "title": "week_day",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.week_day"
+                      },
+                      {
+                        "title": "month_date",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.month_date"
+                      },
+                      {
+                        "title": "fixed_date",
+                        "type": "date",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.fixed_date"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "default",
+                "id": "chart.settings.reportSchedule.default",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "periodLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.default.periodLengthInMonths"
+                  },
+                  {
+                    "title": "accountingYearLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.default.accountingYearLengthInMonths"
+                  },
+                  {
+                    "title": "maxFirstYearEndDistance",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.default.maxFirstYearEndDistance"
+                  },
+                  {
+                    "title": "allowofficialFirstYearEnd",
+                    "type": "boolean",
+                    "id": "chart.settings.reportSchedule.default.allowofficialFirstYearEnd"
+                  },
+                  {
+                    "title": "startingPoint",
+                    "type": "object",
+                    "id": "chart.settings.reportSchedule.default.startingPoint",
+                    "children": [
+                      {
+                        "title": "type",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.type"
+                      },
+                      {
+                        "title": "month",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.month"
+                      },
+                      {
+                        "title": "week_day_match_method",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.week_day_match_method"
+                      },
+                      {
+                        "title": "week",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.week"
+                      },
+                      {
+                        "title": "week_day",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.week_day"
+                      },
+                      {
+                        "title": "month_date",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.month_date"
+                      },
+                      {
+                        "title": "fixed_date",
+                        "type": "date",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.fixed_date"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "custom",
+                "id": "chart.settings.reportSchedule.custom",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "periodLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.custom.periodLengthInMonths"
+                  },
+                  {
+                    "title": "accountingYearLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.custom.accountingYearLengthInMonths"
+                  },
+                  {
+                    "title": "maxFirstYearEndDistance",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.custom.maxFirstYearEndDistance"
+                  },
+                  {
+                    "title": "allowofficialFirstYearEnd",
+                    "type": "boolean",
+                    "id": "chart.settings.reportSchedule.custom.allowofficialFirstYearEnd"
+                  },
+                  {
+                    "title": "startingPoint",
+                    "type": "object",
+                    "id": "chart.settings.reportSchedule.custom.startingPoint",
+                    "children": [
+                      {
+                        "title": "type",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.type"
+                      },
+                      {
+                        "title": "month",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.month"
+                      },
+                      {
+                        "title": "week_day_match_method",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.week_day_match_method"
+                      },
+                      {
+                        "title": "week",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.week"
+                      },
+                      {
+                        "title": "week_day",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.week_day"
+                      },
+                      {
+                        "title": "month_date",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.month_date"
+                      },
+                      {
+                        "title": "fixed_date",
+                        "type": "date",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.fixed_date"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "reports",
+            "type": "array",
+            "id": "chart.settings.reports",
+            "children": [
+              {
+                "title": "{reportDefinition}",
+                "type": "object",
+                "id": "chart.settings.reports.$0",
+                "children": [
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "chart.settings.reports.$0.name"
+                  },
+                  {
+                    "title": "dependencies",
+                    "type": "array",
+                    "id": "chart.settings.reports.$0.dependencies",
+                    "children": [
+                      {
+                        "title": "{dependency}",
+                        "type": "string",
+                        "id": "chart.settings.reports.$0.dependencies.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "dataConfig",
+                    "type": "object",
+                    "id": "chart.settings.reports.$0.dataConfig",
+                    "children": [
+                      {
+                        "title": "text",
+                        "id": "chart.settings.reports.$0.dataConfig.text",
+                        "type": "object",
+                        "children": [
+                          {
+                            "title": "type",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.text.type"
+                          },
+                          {
+                            "title": "text",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.text.text"
+                          },
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.text.name"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "textTranslated",
+                        "id": "chart.settings.reports.$0.dataConfig.textTranslated",
+                        "type": "object",
+                        "children": [
+                          {
+                            "title": "type",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.textTranslated.type"
+                          },
+                          {
+                            "title": "translations",
+                            "type": "object",
+                            "id": "chart.settings.reports.$0.dataConfig.textTranslated.translations",
+                            "children": [
+                              {
+                                "title": "[lang]",
+                                "type": "string",
+                                "id": "chart.settings.reports.$0.dataConfig.textTranslated.translations.[lang]"
+                              }
+                            ]
+                          },
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.textTranslated.name"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "variableLocal",
+                        "id": "chart.settings.reports.$0.dataConfig.variableLocal",
+                        "type": "object",
+                        "children": [
+                          {
+                            "title": "type",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableLocal.type"
+                          },
+                          {
+                            "title": "formula",
+                            "type": "object",
+                            "id": "chart.settings.reports.$0.dataConfig.variableLocal.formula"
+                          },
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableLocal.name"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "variableFromSource",
+                        "id": "chart.settings.reports.$0.dataConfig.variableFromSource",
+                        "type": "object",
+                        "children": [
+                          {
+                            "title": "type",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.type"
+                          },
+                          {
+                            "title": "source",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.source"
+                          },
+                          {
+                            "title": "path",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.path"
+                          },
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.name"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "variableFromSourceTranslated",
+                        "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated",
+                        "type": "object",
+                        "children": [
+                          {
+                            "title": "type",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.type"
+                          },
+                          {
+                            "title": "source",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.source"
+                          },
+                          {
+                            "title": "path",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.path"
+                          },
+                          {
+                            "title": "translationFailSafePath",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.translationFailSafePath"
+                          },
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.name"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "variableFromSourceFormula",
+                        "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula",
+                        "type": "object",
+                        "children": [
+                          {
+                            "title": "type",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula.type"
+                          },
+                          {
+                            "title": "source",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula.source"
+                          },
+                          {
+                            "title": "formula",
+                            "type": "string",
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula.formula"
+                          },
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "reportDataVariableFromSourceTranslated.name"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "displayConfig",
+                    "type": "object",
+                    "id": "chart.settings.reports.$0.displayConfig",
+                    "children": [
+                      {
+                        "title": "template",
+                        "type": "string",
+                        "id": "chart.settings.reports.$0.displayConfig.template"
+                      },
+                      {
+                        "title": "size",
+                        "type": "object",
+                        "id": "chart.settings.reports.$0.displayConfig.size",
+                        "children": [
+                          {
+                            "title": "rows",
+                            "type": "number",
+                            "id": "chart.settings.reports.$0.displayConfig.size.rows"
+                          },
+                          {
+                            "title": "columns",
+                            "type": "number",
+                            "id": "chart.settings.reports.$0.displayConfig.size.columns"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "properties",
+                        "type": "object",
+                        "id": "chart.settings.reports.$0.displayConfig.properties",
+                        "children": [
+                          {
+                            "title": "worksheet",
+                            "type": "object",
+                            "id": "chart.settings.reports.$0.displayConfig.properties.worksheet",
+                            "children": [
+                              {
+                                "title": "defaultRowHeight",
+                                "type": "number",
+                                "id": "chart.settings.reports.$0.displayConfig.properties.worksheet.defaultRowHeight"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "title": "style",
+                        "type": "object",
+                        "id": "chart.settings.reports.$0.displayConfig.style",
+                        "children": [
+                          {
+                            "title": "global",
+                            "id": "chart.settings.reports.$0.displayConfig.style.global",
+                            "type": "object",
+                            "children": [
+                              {
+                                "title": "aligment",
+                                "id": "chart.settings.reports.$0.displayConfig.style.global.aligment",
+                                "type": "object",
+                                "children": [
+                                  {
+                                    "title": "horizontal",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.aligment.horizontal",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "title": "vertical",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.aligment.vertical",
+                                    "type": "string"
+                                  }
+                                ]
+                              },
+                              {
+                                "title": "width",
+                                "id": "chart.settings.reports.$0.displayConfig.style.global.width",
+                                "type": "number"
+                              },
+                              {
+                                "title": "numFmt",
+                                "id": "chart.settings.reports.$0.displayConfig.style.global.numFmt",
+                                "type": "number"
+                              },
+                              {
+                                "title": "border",
+                                "id": "chart.settings.reports.$0.displayConfig.style.global.border",
+                                "type": "object",
+                                "children": [
+                                  {
+                                    "title": "top",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.border.top",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "style",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.border.top.style",
+                                        "type": "string"
+                                      },
+                                      {
+                                        "title": "color",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.border.top.color",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "argb",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.global.border.top.color.argb",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "left",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.border.left",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "style",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.border.left.style",
+                                        "type": "string"
+                                      },
+                                      {
+                                        "title": "color",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.border.left.color",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "argb",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.global.border.left.color.argb",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "bottom",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.border.bottom",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "style",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.border.bottom.style",
+                                        "type": "string"
+                                      },
+                                      {
+                                        "title": "color",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.border.bottom.color",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "argb",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.global.border.bottom.color.argb",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "right",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.border.right",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "style",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.border.right.style",
+                                        "type": "string"
+                                      },
+                                      {
+                                        "title": "color",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.border.right.color",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "argb",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.global.border.right.color.argb",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "title": "fill",
+                                "id": "chart.settings.reports.$0.displayConfig.style.global.fill",
+                                "type": "object",
+                                "children": [
+                                  {
+                                    "title": "type",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.fill.type",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "title": "pattern",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.fill.pattern",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "title": "fgColor",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.fill.fgColor",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "argb",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.fill.fgColor.argb",
+                                        "type": "string"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "font",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.global.font",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "bold",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.font.bold",
+                                        "type": "boolean"
+                                      },
+                                      {
+                                        "title": "underline",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.font.underline",
+                                        "type": "string"
+                                      },
+                                      {
+                                        "title": "italic",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.font.italic",
+                                        "type": "boolean"
+                                      },
+                                      {
+                                        "title": "size",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.font.size",
+                                        "type": "boolean"
+                                      },
+                                      {
+                                        "title": "wrapText",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.font.wrapText",
+                                        "type": "boolean"
+                                      },
+                                      {
+                                        "title": "name",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.font.name",
+                                        "type": "string"
+                                      },
+                                      {
+                                        "title": "family",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.font.family",
+                                        "type": "number"
+                                      },
+                                      {
+                                        "title": "color",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.global.font.color",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "argb",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.global.font.color.argb",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "rows",
+                            "type": "array",
+                            "id": "chart.settings.reports.$0.displayConfig.style.rows",
+                            "children": [
+                              {
+                                "title": "{rowStyleConfig}",
+                                "type": "object",
+                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0",
+                                "children": [
+                                  {
+                                    "title": "row",
+                                    "type": "number",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.row"
+                                  },
+                                  {
+                                    "title": "style",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "aligment",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.aligment",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "horizontal",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.aligment.horizontal",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "vertical",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.aligment.vertical",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "title": "width",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.width",
+                                        "type": "number"
+                                      },
+                                      {
+                                        "title": "numFmt",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.numFmt",
+                                        "type": "number"
+                                      },
+                                      {
+                                        "title": "border",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "top",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.top",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.top.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.top.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.top.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "left",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.left",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.left.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.left.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.left.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "bottom",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.bottom",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.bottom.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.bottom.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.bottom.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "right",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.right",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.right.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.right.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.right.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "title": "fill",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.fill",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "type",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.fill.type",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "pattern",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.fill.pattern",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "fgColor",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.fill.fgColor",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "argb",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.fill.fgColor.argb",
+                                                "type": "string"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "font",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "bold",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.bold",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "underline",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.underline",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "italic",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.italic",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "size",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.size",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "wrapText",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.wrapText",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "name",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.name",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "family",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.family",
+                                                "type": "number"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "columns",
+                            "type": "array",
+                            "id": "chart.settings.reports.$0.displayConfig.style.columns",
+                            "children": [
+                              {
+                                "title": "{columnStyleConfig}",
+                                "type": "object",
+                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0",
+                                "children": [
+                                  {
+                                    "title": "col",
+                                    "type": "number",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.col"
+                                  },
+                                  {
+                                    "title": "style",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "aligment",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.aligment",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "horizontal",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.aligment.horizontal",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "vertical",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.aligment.vertical",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "title": "width",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.width",
+                                        "type": "number"
+                                      },
+                                      {
+                                        "title": "numFmt",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.numFmt",
+                                        "type": "number"
+                                      },
+                                      {
+                                        "title": "border",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "top",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.top",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.top.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.top.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.top.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "left",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.left",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.left.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.left.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.left.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "bottom",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.bottom",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.bottom.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.bottom.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.bottom.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "right",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.right",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.right.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.right.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.right.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "title": "fill",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.fill",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "type",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.fill.type",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "pattern",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.fill.pattern",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "fgColor",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.fill.fgColor",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "argb",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.fill.fgColor.argb",
+                                                "type": "string"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "font",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "bold",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.bold",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "underline",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.underline",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "italic",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.italic",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "size",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.size",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "wrapText",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.wrapText",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "name",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.name",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "family",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.family",
+                                                "type": "number"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "cellGroups",
+                            "type": "array",
+                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups",
+                            "children": [
+                              {
+                                "title": "{cellGroupsStyleConfig}",
+                                "type": "object",
+                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0",
+                                "children": [
+                                  {
+                                    "title": "cells",
+                                    "type": "array",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.cells",
+                                    "children": [
+                                      {
+                                        "title": "{cellName}",
+                                        "type": "string",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.cells.$0"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "style",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "aligment",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.aligment",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "horizontal",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.aligment.horizontal",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "vertical",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.aligment.vertical",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "title": "width",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.width",
+                                        "type": "number"
+                                      },
+                                      {
+                                        "title": "numFmt",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.numFmt",
+                                        "type": "number"
+                                      },
+                                      {
+                                        "title": "border",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "top",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.top",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.top.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.top.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.top.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "left",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.left",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.left.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.left.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.left.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "bottom",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.bottom",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.bottom.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.bottom.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.bottom.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "right",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.right",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.right.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.right.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.right.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "title": "fill",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.fill",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "type",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.fill.type",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "pattern",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.fill.pattern",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "fgColor",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.fill.fgColor",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "argb",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.fill.fgColor.argb",
+                                                "type": "string"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "font",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "bold",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.bold",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "underline",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.underline",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "italic",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.italic",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "size",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.size",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "wrapText",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.wrapText",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "name",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.name",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "family",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.family",
+                                                "type": "number"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "lines",
+                            "type": "array",
+                            "id": "chart.settings.reports.$0.displayConfig.style.lines",
+                            "children": [
+                              {
+                                "title": "{lineStyleConfig}",
+                                "type": "object",
+                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0",
+                                "children": [
+                                  {
+                                    "title": "location",
+                                    "type": "string",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.location"
+                                  },
+                                  {
+                                    "title": "merge",
+                                    "type": "string",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.merge"
+                                  },
+                                  {
+                                    "title": "data",
+                                    "type": "string",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.data"
+                                  },
+                                  {
+                                    "title": "style",
+                                    "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style",
+                                    "type": "object",
+                                    "children": [
+                                      {
+                                        "title": "aligment",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.aligment",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "horizontal",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.aligment.horizontal",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "vertical",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.aligment.vertical",
+                                            "type": "string"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "title": "width",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.width",
+                                        "type": "number"
+                                      },
+                                      {
+                                        "title": "numFmt",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.numFmt",
+                                        "type": "number"
+                                      },
+                                      {
+                                        "title": "border",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "top",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.top",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.top.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.top.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.top.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "left",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.left",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.left.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.left.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.left.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "bottom",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.bottom",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.bottom.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.bottom.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.bottom.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "right",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.right",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "style",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.right.style",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.right.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.right.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "title": "fill",
+                                        "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.fill",
+                                        "type": "object",
+                                        "children": [
+                                          {
+                                            "title": "type",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.fill.type",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "pattern",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.fill.pattern",
+                                            "type": "string"
+                                          },
+                                          {
+                                            "title": "fgColor",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.fill.fgColor",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "argb",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.fill.fgColor.argb",
+                                                "type": "string"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "font",
+                                            "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font",
+                                            "type": "object",
+                                            "children": [
+                                              {
+                                                "title": "bold",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.bold",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "underline",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.underline",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "italic",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.italic",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "size",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.size",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "wrapText",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.wrapText",
+                                                "type": "boolean"
+                                              },
+                                              {
+                                                "title": "name",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.name",
+                                                "type": "string"
+                                              },
+                                              {
+                                                "title": "family",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.family",
+                                                "type": "number"
+                                              },
+                                              {
+                                                "title": "color",
+                                                "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.color",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "argb",
+                                                    "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.color.argb",
+                                                    "type": "string"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "numFmts",
+                            "stringTitle": "{numberFormat}",
+                            "id": "chart.settings.reports.$0.displayConfig.style.numFmts",
+                            "type": "array",
+                            "children": [
+                              {
+                                "title": "{numberFormat}",
+                                "type": "string",
+                                "id": "chart.settings.reports.$0.displayConfig.style.numFmts.$0"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "automatedAccounts",
+            "id": "chart.settings.automatedAccounts",
+            "type": "array",
+            "children": [
+              {
+                "title": "{automatedAccountConfig}",
+                "type": "object",
+                "id": "chart.settings.automatedAccounts.$0",
+                "children": [
+                  {
+                    "title": "operationType",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.operationType"
+                  },
+                  {
+                    "title": "operation",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.operation"
+                  },
+                  {
+                    "title": "method",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.method"
+                  },
+                  {
+                    "title": "debit",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.debit"
+                  },
+                  {
+                    "title": "credit",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.credit"
+                  },
+                  {
+                    "title": "nestedDepth",
+                    "type": "number",
+                    "id": "chart.settings.automatedAccounts.$0.nestedDepth"
+                  },
+                  {
+                    "title": "from",
+                    "type": "array",
+                    "id": "chart.settings.automatedAccounts.$0.from",
+                    "children": [
+                      {
+                        "title": "{codeFrom}",
+                        "type": "string",
+                        "id": "chart.settings.automatedAccounts.$0.from.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "to",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.to"
+                  },
+                  {
+                    "title": "entryDescription",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.entryDescription"
+                  },
+                  {
+                    "title": "entryDescriptions",
+                    "type": "object",
+                    "id": "chart.settings.automatedAccounts.$0.entryDescriptions",
+                    "children": [
+                      {
+                        "title": "[lang]",
+                        "type": "string",
+                        "id": "chart.settings.automatedAccounts.$0.entryDescriptions.[lang]"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "conditions",
+                    "type": "array",
+                    "id": "chart.settings.automatedAccounts.$0.conditions",
+                    "children": [
+                      {
+                        "title": "{condition}",
+                        "type": "string",
+                        "id": "chart.settings.automatedAccounts.$0.conditions.$0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "generalLedger",
+            "type": "object",
+            "id": "chart.settings.generalLedger",
+            "children": [
+              {
+                "title": "additionalColumns",
+                "type": "array",
+                "id": "chart.settings.generalLedger.additionalColumns"
+              },
+              {
+                "title": "automatedEOP",
+                "id": "chart.settings.generalLedger.automatedEOP",
+                "type": "array",
+                "children": [
+                  {
+                    "title": "{automatedAccountConfig}",
+                    "type": "object",
+                    "id": "chart.settings.generalLedger.automatedEOP.$0",
+                    "children": [
+                      {
+                        "title": "operationType",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.operationType"
+                      },
+                      {
+                        "title": "operation",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.operation"
+                      },
+                      {
+                        "title": "method",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.method"
+                      },
+                      {
+                        "title": "debit",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.debit"
+                      },
+                      {
+                        "title": "credit",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.credit"
+                      },
+                      {
+                        "title": "nestedDepth",
+                        "type": "number",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.nestedDepth"
+                      },
+                      {
+                        "title": "from",
+                        "type": "array",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.from",
+                        "children": [
+                          {
+                            "title": "{codeFrom}",
+                            "type": "string",
+                            "id": "chart.settings.generalLedger.automatedEOP.$0.from.$0"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "to",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.to"
+                      },
+                      {
+                        "title": "entryDescription",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.entryDescription"
+                      },
+                      {
+                        "title": "entryDescriptions",
+                        "type": "object",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.entryDescriptions",
+                        "children": [
+                          {
+                            "title": "[lang]",
+                            "type": "string",
+                            "id": "chart.settings.generalLedger.automatedEOP.$0.entryDescriptions.[lang]"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "conditions",
+                        "type": "array",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.conditions",
+                        "children": [
+                          {
+                            "title": "{condition}",
+                            "type": "string",
+                            "id": "chart.settings.generalLedger.automatedEOP.$0.conditions.$0"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "existingPrompts",
+            "type": "array",
+            "id": "chart.settings.existingPrompts"
+          },
+          {
+            "title": "conversions",
+            "type": "object",
+            "id": "chart.settings.conversions",
+            "children": [
+              {
+                "title": "toReference",
+                "type": "object",
+                "id": "chart.settings.conversions.toReference",
+                "children": [
+                  {
+                    "title": "adjustments",
+                    "id": "chart.settings.conversions.toReference.adjustments",
+                    "type": "array",
+                    "children": [
+                      {
+                        "title": "{adjustment}",
+                        "type": "object",
+                        "id": "chart.settings.conversions.toReference.adjustments.$0",
+                        "children": [
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.name"
+                          },
+                          {
+                            "title": "task",
+                            "type": "string",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.task"
+                          },
+                          {
+                            "title": "condition",
+                            "type": "string",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.condition"
+                          },
+                          {
+                            "title": "debitAccount",
+                            "type": "string",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.debitAccount"
+                          },
+                          {
+                            "title": "taskDefinition",
+                            "type": "array",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition",
+                            "children": [
+                              {
+                                "title": "{adjustmentTask}",
+                                "type": "object",
+                                "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0",
+                                "children": [
+                                  {
+                                    "title": "type",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.type"
+                                  },
+                                  {
+                                    "title": "accountRanges",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.accountRanges",
+                                    "children": [
+                                      {
+                                        "title": "{accountRange}",
+                                        "type": "string",
+                                        "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.accountRanges.$0"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "table",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table",
+                                    "children": [
+                                      {
+                                        "title": "{table}",
+                                        "type": "object",
+                                        "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table.$0",
+                                        "children": [
+                                          {
+                                            "title": "realExpenseType",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table.$0.realExpenseType"
+                                          },
+                                          {
+                                            "title": "toCode",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table.$0.toCode"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "prompts",
+                            "type": "array",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts",
+                            "children": [
+                              {
+                                "title": "{adjustmentPrompt}",
+                                "type": "object",
+                                "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0",
+                                "children": [
+                                  {
+                                    "title": "fields",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields",
+                                    "children": [
+                                      {
+                                        "title": "{adjustmentPromptField}",
+                                        "type": "object",
+                                        "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0",
+                                        "children": [
+                                          {
+                                            "title": "label",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.label"
+                                          },
+                                          {
+                                            "title": "valueName",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.valueName"
+                                          },
+                                          {
+                                            "title": "type",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.type"
+                                          },
+                                          {
+                                            "title": "autofillSource",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.autofillSource"
+                                          },
+                                          {
+                                            "title": "optionName",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.optionName"
+                                          },
+                                          {
+                                            "title": "displayForSimple",
+                                            "type": "boolean",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.displayForSimple"
+                                          },
+                                          {
+                                            "title": "displayForManual",
+                                            "type": "boolean",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.displayForManual"
+                                          },
+                                          {
+                                            "title": "accountRange",
+                                            "type": "array",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.accountRange",
+                                            "children": [
+                                              {
+                                                "title": "{accountRange}",
+                                                "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.accountRange.$0",
+                                                "type": "string"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "options",
+                                            "type": "array",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.options",
+                                            "children": [
+                                              {
+                                                "title": "{adjustmentPromptFieldOptions}",
+                                                "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.options.$0",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "value",
+                                                    "type": "string",
+                                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.options.$0.value"
+                                                  },
+                                                  {
+                                                    "title": "label",
+                                                    "type": "string",
+                                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.options.$0.label"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "minDate",
+                                            "type": "object",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.minDate",
+                                            "children": [
+                                              {
+                                                "title": "[dateProp]",
+                                                "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.minDate.[dateProp]",
+                                                "type": "date"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "title",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.title"
+                                  },
+                                  {
+                                    "title": "type",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.string"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "toReference",
+                "type": "object",
+                "id": "chart.settings.conversions.fromReference",
+                "children": [
+                  {
+                    "title": "adjustments",
+                    "id": "chart.settings.conversions.fromReference.adjustments",
+                    "type": "array",
+                    "children": [
+                      {
+                        "title": "{adjustment}",
+                        "type": "object",
+                        "id": "chart.settings.conversions.fromReference.adjustments.$0",
+                        "children": [
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.name"
+                          },
+                          {
+                            "title": "task",
+                            "type": "string",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.task"
+                          },
+                          {
+                            "title": "condition",
+                            "type": "string",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.condition"
+                          },
+                          {
+                            "title": "debitAccount",
+                            "type": "string",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.debitAccount"
+                          },
+                          {
+                            "title": "taskDefinition",
+                            "type": "array",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition",
+                            "children": [
+                              {
+                                "title": "{adjustmentTask}",
+                                "type": "object",
+                                "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0",
+                                "children": [
+                                  {
+                                    "title": "type",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.type"
+                                  },
+                                  {
+                                    "title": "accountRanges",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.accountRanges",
+                                    "children": [
+                                      {
+                                        "title": "{accountRange}",
+                                        "type": "string",
+                                        "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.accountRanges.$0"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "table",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table",
+                                    "children": [
+                                      {
+                                        "title": "{table}",
+                                        "type": "object",
+                                        "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table.$0",
+                                        "children": [
+                                          {
+                                            "title": "realExpenseType",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table.$0.realExpenseType"
+                                          },
+                                          {
+                                            "title": "toCode",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table.$0.toCode"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "prompts",
+                            "type": "array",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts",
+                            "children": [
+                              {
+                                "title": "{adjustmentPrompt}",
+                                "type": "object",
+                                "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0",
+                                "children": [
+                                  {
+                                    "title": "fields",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields",
+                                    "children": [
+                                      {
+                                        "title": "{adjustmentPromptField}",
+                                        "type": "object",
+                                        "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0",
+                                        "children": [
+                                          {
+                                            "title": "label",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.label"
+                                          },
+                                          {
+                                            "title": "valueName",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.valueName"
+                                          },
+                                          {
+                                            "title": "type",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.type"
+                                          },
+                                          {
+                                            "title": "autofillSource",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.autofillSource"
+                                          },
+                                          {
+                                            "title": "optionName",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.optionName"
+                                          },
+                                          {
+                                            "title": "displayForSimple",
+                                            "type": "boolean",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.displayForSimple"
+                                          },
+                                          {
+                                            "title": "displayForManual",
+                                            "type": "boolean",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.displayForManual"
+                                          },
+                                          {
+                                            "title": "accountRange",
+                                            "type": "array",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.accountRange",
+                                            "children": [
+                                              {
+                                                "title": "{accountRange}",
+                                                "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.accountRange.$0",
+                                                "type": "string"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "options",
+                                            "type": "array",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.options",
+                                            "children": [
+                                              {
+                                                "title": "{adjustmentPromptFieldOptions}",
+                                                "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.options.$0",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "value",
+                                                    "type": "string",
+                                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.options.$0.value"
+                                                  },
+                                                  {
+                                                    "title": "label",
+                                                    "type": "string",
+                                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.options.$0.label"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "minDate",
+                                            "type": "object",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.minDate",
+                                            "children": [
+                                              {
+                                                "title": "[dateProp]",
+                                                "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.minDate.[dateProp]",
+                                                "type": "date"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "title",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.title"
+                                  },
+                                  {
+                                    "title": "type",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.string"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "restrictedLegalEntities",
+            "type": "boolean",
+            "id": "chart.settings.restrictedLegalEntities"
+          },
+          {
+            "title": "legalEntities",
+            "type": "object",
+            "id": "chart.settings.legalEntities",
+            "children": [
+              {
+                "title": "{legalEntityCode}",
+                "type": "string",
+                "id": "chart.settings.legalEntities.$0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "object",
+    "title": "Account",
+    "id": "acc",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "acc._id"
+      },
+      {
+        "title": "active",
+        "type": "boolean",
+        "id": "acc.active"
+      },
+      {
+        "title": "created_at",
+        "type": "date",
+        "id": "acc.created_at"
+      },
+      {
+        "title": "creator",
+        "id": "acc.creator",
+        "type": "object",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "acc.creator.name"
+          },
+          {
+            "title": "_id",
+            "type": "string",
+            "id": "acc.creator._id"
+          }
+        ]
+      },
+      {
+        "title": "isClosed",
+        "type": "boolean",
+        "id": "acc.isClosed"
+      },
+      {
+        "title": "profile",
+        "type": "object",
+        "id": "acc.profile",
+        "children": [
+          {
+            "title": "company",
+            "id": "acc.profile.company",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "acc.profile.company.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "acc.profile.company._id"
+              }
+            ]
+          },
+          {
+            "title": "branchedFrom",
+            "id": "acc.profile.branchedFrom",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "acc.profile.branchedFrom.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "acc.profile.branchedFrom._id"
+              }
+            ]
+          },
+          {
+            "title": "chart",
+            "id": "acc.profile.chart",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "acc.profile.chart.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "acc.profile.chart._id"
+              }
+            ]
+          },
+          {
+            "title": "thirdparty",
+            "id": "acc.profile.thirdparty",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "acc.profile.thirdparty.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "acc.profile.thirdparty._id"
+              }
+            ]
+          },
+          {
+            "title": "codePath",
+            "id": "acc.profile.codePath",
+            "stringTitle": "{codeSegment}",
+            "type": "array",
+            "children": [
+              {
+                "title": "{codeSegment}",
+                "type": "string",
+                "id": "acc.profile.codePath.$0"
+              }
+            ]
+          },
+          {
+            "title": "labelPathTranslations",
+            "id": "acc.profile.labelPathTranslations",
+            "type": "object",
+            "children": [
+              {
+                "title": "[lang]",
+                "id": "acc.profile.labelPathTranslations.[lang]",
+                "stringTitle": "{labelSegment}",
+                "type": "array",
+                "children": [
+                  {
+                    "title": "{labelSegment}",
+                    "type": "string",
+                    "id": "acc.profile.labelPathTranslations.[lang].$0"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "patternPathTranslations",
+            "id": "acc.profile.patternPathTranslations",
+            "type": "object",
+            "children": [
+              {
+                "title": "[lang]",
+                "id": "acc.profile.patternPathTranslations.[lang]",
+                "stringTitle": "{patternSegment}",
+                "type": "array",
+                "children": [
+                  {
+                    "title": "{patternSegment}",
+                    "type": "string",
+                    "id": "acc.profile.patternPathTranslations.[lang].$0"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "labelPath",
+            "id": "acc.profile.labelPath",
+            "stringTitle": "{labelSegment}",
+            "type": "array",
+            "children": [
+              {
+                "title": "{labelSegment}",
+                "type": "string",
+                "id": "acc.profile.labelPath.$0"
+              }
+            ]
+          },
+          {
+            "title": "code",
+            "type": "string",
+            "id": "acc.profile.code"
+          },
+          {
+            "title": "label",
+            "type": "string",
+            "id": "acc.profile.label"
+          },
+          {
+            "title": "locale",
+            "type": "string",
+            "id": "acc.profile.locale"
+          },
+          {
+            "title": "nestedDepth",
+            "type": "number",
+            "id": "acc.profile.nestedDepth"
+          },
+          {
+            "title": "isCustom",
+            "type": "boolean",
+            "id": "acc.profile.isCustom"
+          },
+          {
+            "title": "credit",
+            "type": "boolean",
+            "id": "acc.profile.credit"
+          },
+          {
+            "title": "debit",
+            "type": "boolean",
+            "id": "acc.profile.debit"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "object",
+    "title": "Book",
+    "id": "bk",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "bk._id"
+      },
+      {
+        "title": "active",
+        "type": "boolean",
+        "id": "bk.active"
+      },
+      {
+        "title": "created_at",
+        "type": "date",
+        "id": "bk.created_at"
+      },
+      {
+        "title": "creator",
+        "id": "bk.creator",
+        "type": "object",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "bk.creator.name"
+          },
+          {
+            "title": "_id",
+            "type": "string",
+            "id": "bk.creator._id"
+          }
+        ]
+      },
+      {
+        "title": "isClosed",
+        "type": "boolean",
+        "id": "bk.isClosed"
+      },
+      {
+        "title": "profile",
+        "type": "object",
+        "id": "bk.profile",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "bk.profile.name"
+          },
+          {
+            "title": "nameTranslations",
+            "id": "bk.profile.nameTranslations",
+            "type": "object",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "bk.profile.nameTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "company",
+            "id": "bk.profile.company",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "bk.profile.company.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "bk.profile.company._id"
+              }
+            ]
+          },
+          {
+            "title": "chart",
+            "id": "bk.profile.chart",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "bk.profile.chart.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "bk.profile.chart._id"
+              }
+            ]
+          },
+          {
+            "title": "currency",
+            "type": "string",
+            "id": "bk.profile.currency"
+          },
+          {
+            "title": "statuatoryReportFamily",
+            "type": "string",
+            "id": "bk.profile.statuatoryReportFamily"
+          },
+          {
+            "title": "fiscalYearStarts",
+            "id": "bk.profile.fiscalYearStarts",
+            "stringTitle": "{yearStartDate}",
+            "type": "array",
+            "children": [
+              {
+                "title": "{yearStartDate}",
+                "type": "string",
+                "id": "bk.profile.fiscalYearStarts.$0"
+              }
+            ]
+          },
+          {
+            "title": "statuatoryReports",
+            "id": "bk.profile.statuatoryReports",
+            "stringTitle": "{reportId}",
+            "type": "array",
+            "children": [
+              {
+                "title": "{reportId}",
+                "type": "string",
+                "id": "bk.profile.statuatoryReports.$0"
+              }
+            ]
+          },
+          {
+            "title": "period",
+            "id": "bk.profile.period",
+            "type": "object",
+            "children": [
+              {
+                "title": "date_from",
+                "type": "date",
+                "id": "bk.profile.period.date_from"
+              },
+              {
+                "title": "date_to",
+                "type": "date",
+                "id": "bk.profile.period.date_to"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "settings",
+        "type": "object",
+        "id": "bk.settings",
+        "children": [
+          {
+            "title": "timezone",
+            "type": "string",
+            "id": "bk.settings.timezone"
+          },
+          {
+            "title": "locale",
+            "type": "string",
+            "id": "bk.settings.locale"
+          },
+          {
+            "title": "language",
+            "type": "string",
+            "id": "bk.settings.language"
+          },
+          {
+            "title": "languages",
+            "id": "bk.settings.languages",
+            "type": "array",
+            "children": [
+              {
+                "type": "string",
+                "id": "bk.settings.languages.$0",
+                "title": "{language}"
+              }
+            ]
+          },
+          {
+            "title": "fiscalYearConfig",
+            "id": "bk.settings.fiscalYearConfig",
+            "type": "object",
+            "children": [
+              {
+                "title": "fixed",
+                "type": "array",
+                "id": "bk.settings.fiscalYearConfig.$0.fixed",
+                "children": [
+                  {
+                    "title": "{propName}",
+                    "type": "string",
+                    "id": "bk.settings.fiscalYearConfig.$0.fixed.$0"
+                  }
+                ]
+              },
+              {
+                "title": "calendar",
+                "type": "string",
+                "id": "bk.settings.fiscalYearConfig.$0.calendar"
+              },
+              {
+                "title": "year_type",
+                "type": "string",
+                "id": "bk.settings.fiscalYearConfig.$0.year_type"
+              },
+              {
+                "title": "max_first_year_end_length",
+                "type": "number",
+                "id": "bk.settings.fiscalYearConfig.$0.max_first_year_end_length"
+              },
+              {
+                "title": "allow_custom_year_lengths",
+                "type": "boolean",
+                "id": "bk.settings.fiscalYearConfig.$0.allow_custom_year_lengths"
+              },
+              {
+                "title": "allow_custom_first_year_end",
+                "type": "boolean",
+                "id": "bk.settings.fiscalYearConfig.$0.allow_custom_first_year_end"
+              },
+              {
+                "title": "periods_in_year",
+                "type": "number",
+                "id": "bk.settings.fiscalYearConfig.$0.periods_in_year"
+              },
+              {
+                "title": "year_start_type",
+                "type": "string",
+                "id": "bk.settings.fiscalYearConfig.$0.year_start_type"
+              },
+              {
+                "title": "year_period",
+                "id": "bk.settings.fiscalYearConfig.$0.year_period",
+                "$ref": "./definitions.json#/fiscalYearUnitNumber"
+              },
+              {
+                "title": "year_reporting_period",
+                "id": "bk.settings.fiscalYearConfig.$0.year_reporting_period",
+                "$ref": "./definitions.json#/fiscalYearUnitNumber"
+              },
+              {
+                "title": "code",
+                "type": "string",
+                "id": "bk.settings.fiscalYearConfig.$0.code"
+              },
+              {
+                "title": "date_from",
+                "type": "date",
+                "id": "bk.settings.fiscalYearConfig.$0.date_from"
+              },
+              {
+                "title": "date_to",
+                "type": "date",
+                "id": "bk.settings.fiscalYearConfig.$0.date_to"
+              },
+              {
+                "title": "current",
+                "type": "boolean",
+                "id": "bk.settings.fiscalYearConfig.$0.current"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "owners",
+        "type": "array",
+        "id": "bk.owners",
+        "children": [
+          {
+            "title": "{owner}",
+            "id": "bk.owners.$0",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "bk.owners.$0.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "bk.owners.$0._id"
+              },
+              {
+                "title": "date_from",
+                "type": "date",
+                "id": "bk.owners.$0.date_from"
+              },
+              {
+                "title": "date_to",
+                "type": "date",
+                "id": "bk.owners.$0.date_to"
+              },
+              {
+                "title": "current",
+                "type": "boolean",
+                "id": "bk.owners.$0.current"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "users",
+        "type": "array",
+        "id": "bk.users",
+        "children": [
+          {
+            "title": "{userSub}",
+            "type": "string",
+            "id": "bk.users.$0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "from": "cp.profile.chart_id",
+    "to": "chart._id"
+  },
+  {
+    "from": "cp.profile.charts.$0._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "chart.profile.company._id",
+    "to": "cp._id"
+  },
+  {
+    "from": "chart.profile.chartReference._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "chart.profile.branchedFrom._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "chart.profile.branchRoot._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "acc.profile.company._id",
+    "to": "cp._id"
+  },
+  {
+    "from": "acc.profile.chart._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "acc.profile.branchedFrom._id",
+    "to": "acc._id"
+  },
+  {
+    "from": "bk.profile.company._id",
+    "to": "cp._id"
+  },
+  {
+    "from": "bk.profile.chart._id",
+    "to": "chart._id"
   }
 ]

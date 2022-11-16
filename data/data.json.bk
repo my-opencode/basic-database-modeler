@@ -1,0 +1,1916 @@
+[
+  {
+    "id": "cp",
+    "title": "Company",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "cp._id"
+      },
+      {
+        "title": "active",
+        "type": "boolean",
+        "id": "cp.active"
+      },
+      {
+        "title": "created_at",
+        "type": "date",
+        "id": "cp.created_at"
+      },
+      {
+        "title": "creator",
+        "type": "object",
+        "id": "cp.creator",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "cp.creator.name"
+          },
+          {
+            "title": "_id",
+            "type": "string",
+            "id": "cp.creator._id"
+          }
+        ]
+      },
+      {
+        "title": "isClosed",
+        "type": "boolean",
+        "id": "cp.isClosed"
+      },
+      {
+        "title": "owners",
+        "type": "array",
+        "id": "cp.owners",
+        "children": [
+          {
+            "title": "{owner}",
+            "type": "object",
+            "id": "cp.owners.$0",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "cp.owners.$0.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "cp.owners.$0._id"
+              },
+              {
+                "title": "date_from",
+                "type": "date",
+                "id": "cp.owners.$0.date_from"
+              },
+              {
+                "title": "date_to",
+                "type": "date",
+                "id": "cp.owners.$0.date_to"
+              },
+              {
+                "title": "current",
+                "type": "boolean",
+                "id": "cp.owners.$0.current"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "profile",
+        "type": "object",
+        "id": "cp.profile",
+        "children": [
+          {
+            "title": "country",
+            "type": "string",
+            "id": "cp.profile.country"
+          },
+          {
+            "title": "legalEntity",
+            "type": "string",
+            "id": "cp.profile.legalEntity"
+          },
+          {
+            "title": "registrationId",
+            "type": "string",
+            "id": "cp.profile.registrationId"
+          },
+          {
+            "title": "chart_id",
+            "type": "ObjectId",
+            "id": "cp.profile.chart_id"
+          },
+          {
+            "title": "name",
+            "type": "string",
+            "id": "cp.profile.name"
+          },
+          {
+            "title": "nameTranslations",
+            "type": "object",
+            "id": "cp.profile.nameTranslations",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "cp.profile.nameTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "registrations",
+            "type": "array",
+            "id": "cp.profile.registrations",
+            "children": [
+              {
+                "title": "{companyRegistration}",
+                "type": "object",
+                "id": "cp.profile.registrations.$0",
+                "children": [
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "cp.profile.registrations.$0.name"
+                  },
+                  {
+                    "title": "id",
+                    "type": "string",
+                    "id": "cp.profile.registrations.$0.id"
+                  },
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.profile.registrations.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.profile.registrations.$0.date_to"
+                  },
+                  {
+                    "title": "current",
+                    "type": "boolean",
+                    "id": "cp.profile.registrations.$0.current"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "charts",
+            "type": "object",
+            "id": "cp.profile.charts",
+            "children": [
+              {
+                "title": "[dateReference]",
+                "type": "object",
+                "id": "cp.profile.charts.$0",
+                "children": [
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "cp.profile.charts.$0.name"
+                  },
+                  {
+                    "title": "_id",
+                    "type": "string",
+                    "id": "cp.profile.charts.$0._id"
+                  },
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.profile.charts.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.profile.charts.$0.date_to"
+                  },
+                  {
+                    "title": "current",
+                    "type": "boolean",
+                    "id": "cp.profile.charts.$0.current"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "legalEntities",
+            "type": "object",
+            "id": "cp.profile.legalEntities",
+            "children": [
+              {
+                "title": "[datedParamReference]",
+                "type": "object",
+                "id": "cp.profile.legalEntities.$0",
+                "children": [
+                  {
+                    "title": "categoryCode",
+                    "type": "string",
+                    "id": "cp.profile.legalEntities.$0.categoryCode"
+                  },
+                  {
+                    "title": "code",
+                    "type": "string",
+                    "id": "cp.profile.legalEntities.$0.code"
+                  },
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.profile.legalEntities.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.profile.legalEntities.$0.date_to"
+                  },
+                  {
+                    "title": "current",
+                    "type": "boolean",
+                    "id": "cp.profile.legalEntities.$0.current"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "fiscalYears",
+            "type": "array",
+            "id": "cp.profile.fiscalYears",
+            "children": [
+              {
+                "title": "[datedFiscalYear]",
+                "type": "object",
+                "id": "cp.profile.fiscalYears.$0",
+                "children": [
+                  {
+                    "title": "fixed",
+                    "type": "array",
+                    "id": "cp.profile.fiscalYears.$0.fixed",
+                    "children": [
+                      {
+                        "title": "{propName}",
+                        "type": "string",
+                        "id": "cp.profile.fiscalYears.$0.fixed.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "calendar",
+                    "type": "string",
+                    "id": "cp.profile.fiscalYears.$0.calendar"
+                  },
+                  {
+                    "title": "year_type",
+                    "type": "string",
+                    "id": "cp.profile.fiscalYears.$0.year_type"
+                  },
+                  {
+                    "title": "max_first_year_end_length",
+                    "type": "number",
+                    "id": "cp.profile.fiscalYears.$0.max_first_year_end_length"
+                  },
+                  {
+                    "title": "allow_custom_year_lengths",
+                    "type": "boolean",
+                    "id": "cp.profile.fiscalYears.$0.allow_custom_year_lengths"
+                  },
+                  {
+                    "title": "allow_custom_first_year_end",
+                    "type": "boolean",
+                    "id": "cp.profile.fiscalYears.$0.allow_custom_first_year_end"
+                  },
+                  {
+                    "title": "periods_in_year",
+                    "type": "number",
+                    "id": "cp.profile.fiscalYears.$0.periods_in_year"
+                  },
+                  {
+                    "title": "year_start_type",
+                    "type": "string",
+                    "id": "cp.profile.fiscalYears.$0.year_start_type"
+                  },
+                  {
+                    "title": "year_period",
+                    "type": "object",
+                    "id": "cp.profile.fiscalYears.$0.year_period",
+                    "children": [
+                      {
+                        "title": "unit",
+                        "type": "string",
+                        "id": "cp.profile.fiscalYears.$0.year_period.unit"
+                      },
+                      {
+                        "title": "number",
+                        "type": "number",
+                        "id": "cp.profile.fiscalYears.$0.year_period.number"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "year_reporting_period",
+                    "type": "object",
+                    "id": "cp.profile.fiscalYears.$0.year_reporting_period",
+                    "children": [
+                      {
+                        "title": "unit",
+                        "type": "string",
+                        "id": "cp.profile.fiscalYears.$0.year_reporting_period.unit"
+                      },
+                      {
+                        "title": "number",
+                        "type": "number",
+                        "id": "cp.profile.fiscalYears.$0.year_reporting_period.number"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "code",
+                    "type": "string",
+                    "id": "cp.profile.fiscalYears.$0.code"
+                  },
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.profile.fiscalYears.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.profile.fiscalYears.$0.date_to"
+                  },
+                  {
+                    "title": "current",
+                    "type": "boolean",
+                    "id": "cp.profile.fiscalYears.$0.current"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "settings",
+        "type": "object",
+        "id": "cp.settings",
+        "children": [
+          {
+            "title": "allowSearchAndJoin",
+            "type": "boolean",
+            "id": "cp.settings.allowSearchAndJoin"
+          },
+          {
+            "title": "timezone",
+            "type": "string",
+            "id": "cp.settings.timezone"
+          },
+          {
+            "title": "locale",
+            "type": "string",
+            "id": "cp.settings.locale"
+          },
+          {
+            "title": "xrateSource",
+            "type": "string",
+            "id": "cp.settings.xrateSource"
+          },
+          {
+            "title": "language",
+            "type": "string",
+            "id": "cp.settings.language"
+          },
+          {
+            "title": "languages",
+            "type": "array",
+            "id": "cp.settings.languages",
+            "children": [
+              {
+                "type": "string",
+                "id": "cp.settings.languages.$0",
+                "title": "{language}"
+              }
+            ]
+          },
+          {
+            "title": "periods",
+            "type": "array",
+            "id": "cp.settings.periods",
+            "children": [
+              {
+                "type": "object",
+                "id": "cp.settings.periods.$0",
+                "title": "{period}",
+                "children": [
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.settings.periods.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.settings.periods.$0.date_to"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "tax",
+            "type": "array",
+            "id": "cp.settings.tax",
+            "children": [
+              {
+                "type": "object",
+                "id": "cp.settings.tax.$0",
+                "title": "{taxConfig}",
+                "children": [
+                  {
+                    "title": "date_from",
+                    "type": "date",
+                    "id": "cp.settings.tax.$0.date_from"
+                  },
+                  {
+                    "title": "date_to",
+                    "type": "date",
+                    "id": "cp.settings.tax.$0.date_to"
+                  },
+                  {
+                    "title": "current",
+                    "type": "boolean",
+                    "id": "cp.settings.tax.$0.current"
+                  },
+                  {
+                    "title": "values",
+                    "type": "array",
+                    "id": "cp.settings.tax.$0.values",
+                    "children": [
+                      {
+                        "type": "object",
+                        "id": "cp.settings.tax.$0.values.$0",
+                        "title": "{taxValue}",
+                        "children": [
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "cp.settings.tax.$0.values.$0.name"
+                          },
+                          {
+                            "title": "description",
+                            "type": "string",
+                            "id": "cp.settings.tax.$0.values.$0.description"
+                          },
+                          {
+                            "title": "value",
+                            "type": "string",
+                            "id": "cp.settings.tax.$0.values.$0.value"
+                          },
+                          {
+                            "title": "selected",
+                            "type": "number",
+                            "id": "cp.settings.tax.$0.values.$0.selected"
+                          },
+                          {
+                            "title": "id",
+                            "type": "string",
+                            "id": "cp.settings.tax.$0.values.$0.id"
+                          },
+                          {
+                            "title": "nameTranslations",
+                            "type": "object",
+                            "id": "cp.settings.tax.$0.values.$0.nameTranslations",
+                            "children": [
+                              {
+                                "title": "[lang]",
+                                "type": "string",
+                                "id": "cp.settings.tax.$0.values.$0.nameTranslations.[lang]"
+                              }
+                            ]
+                          },
+                          {
+                            "title": "descriptionTranslations",
+                            "type": "object",
+                            "id": "cp.settings.tax.$0.values.$0.descriptionTranslations",
+                            "children": [
+                              {
+                                "title": "[lang]",
+                                "type": "string",
+                                "id": "cp.settings.tax.$0.values.$0.descriptionTranslations.[lang]"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "users",
+        "type": "array",
+        "id": "cp.users",
+        "children": [
+          {
+            "title": "{userSub}",
+            "type": "string",
+            "id": "cp.users.$0"
+          }
+        ]
+      },
+      {
+        "title": "depreciatingAssets",
+        "type": "array",
+        "id": "cp.depreciatingAssets",
+        "children": [
+          {
+            "title": "{depreciatingAsset}",
+            "type": "object",
+            "id": "cp.depreciatingAssets.$0",
+            "children": [
+              {
+                "title": "description",
+                "type": "string",
+                "id": "cp.depreciatingAssets.$0.description"
+              },
+              {
+                "title": "baseValue",
+                "type": "string",
+                "id": "cp.depreciatingAssets.$0.baseValue"
+              },
+              {
+                "title": "salvageValue",
+                "type": "string",
+                "id": "cp.depreciatingAssets.$0.salvageValue"
+              },
+              {
+                "title": "periodType",
+                "type": "string",
+                "id": "cp.depreciatingAssets.$0.periodType"
+              },
+              {
+                "title": "serial",
+                "type": "string",
+                "id": "cp.depreciatingAssets.$0.serial"
+              },
+              {
+                "title": "endOfLife",
+                "type": "date",
+                "id": "cp.depreciatingAssets.$0.endOfLife"
+              },
+              {
+                "title": "dateAdded",
+                "type": "date",
+                "id": "cp.depreciatingAssets.$0.dateAdded"
+              },
+              {
+                "title": "inInventory",
+                "type": "boolean",
+                "id": "cp.depreciatingAssets.$0.inInventory"
+              },
+              {
+                "title": "method",
+                "type": "object",
+                "id": "cp.depreciatingAssets.$0.method",
+                "children": [
+                  {
+                    "title": "requireUserInput",
+                    "type": "boolean",
+                    "id": "cp.depreciatingAssets.$0.method.requireUserInput"
+                  },
+                  {
+                    "title": "default",
+                    "type": "boolean",
+                    "id": "cp.depreciatingAssets.$0.method.default"
+                  },
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "cp.depreciatingAssets.$0.method.name"
+                  },
+                  {
+                    "title": "patterns",
+                    "type": "array",
+                    "id": "cp.depreciatingAssets.$0.method.patterns",
+                    "children": [
+                      {
+                        "title": "{pattern}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.patterns.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "fieldsRequiringUserInputAtInit",
+                    "type": "array",
+                    "id": "cp.depreciatingAssets.$0.method.fieldsRequiringUserInputAtInit",
+                    "children": [
+                      {
+                        "title": "{fieldName}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.fieldsRequiringUserInputAtInit.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "fieldsRequiringUserInputAtComputation",
+                    "type": "array",
+                    "id": "cp.depreciatingAssets.$0.method.fieldsRequiringUserInputAtComputation",
+                    "children": [
+                      {
+                        "title": "{fieldName}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.fieldsRequiringUserInputAtComputation.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "initFields",
+                    "type": "array",
+                    "id": "cp.depreciatingAssets.$0.method.initFields",
+                    "children": [
+                      {
+                        "title": "{fieldName}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.initFields.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "computationFields",
+                    "type": "array",
+                    "id": "cp.depreciatingAssets.$0.method.computationFields",
+                    "children": [
+                      {
+                        "title": "{fieldName}",
+                        "type": "string",
+                        "id": "cp.depreciatingAssets.$0.method.computationFields.$0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "object",
+    "title": "Chart",
+    "id": "chart",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "chart._id"
+      },
+      {
+        "title": "active",
+        "type": "boolean",
+        "id": "chart.active"
+      },
+      {
+        "title": "created_at",
+        "type": "date",
+        "id": "chart.created_at"
+      },
+      {
+        "title": "creator",
+        "type": "object",
+        "id": "chart.creator",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "chart.creator.name"
+          },
+          {
+            "title": "_id",
+            "type": "string",
+            "id": "chart.creator._id"
+          }
+        ]
+      },
+      {
+        "title": "isClosed",
+        "type": "boolean",
+        "id": "chart.isClosed"
+      },
+      {
+        "title": "profile",
+        "type": "object",
+        "id": "chart.profile",
+        "children": [
+          {
+            "title": "country",
+            "type": "string",
+            "id": "chart.profile.country"
+          },
+          {
+            "title": "type",
+            "type": "string",
+            "id": "chart.profile.type"
+          },
+          {
+            "title": "version",
+            "type": "string",
+            "id": "chart.profile.version"
+          },
+          {
+            "title": "accountCount",
+            "type": "number",
+            "id": "chart.profile.accountCount"
+          },
+          {
+            "title": "conversionCount",
+            "type": "number",
+            "id": "chart.profile.conversionCount"
+          },
+          {
+            "title": "branched_at",
+            "type": "date",
+            "id": "chart.profile.branched_at"
+          },
+          {
+            "title": "isSystem",
+            "type": "boolean",
+            "id": "chart.profile.isSystem"
+          },
+          {
+            "title": "isSystemReference",
+            "type": "boolean",
+            "id": "chart.profile.isSystemReference"
+          },
+          {
+            "title": "name",
+            "type": "string",
+            "id": "chart.profile.name"
+          },
+          {
+            "title": "nameTranslations",
+            "type": "object",
+            "id": "chart.profile.nameTranslations",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "chart.profile.nameTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "description",
+            "type": "string",
+            "id": "chart.profile.description"
+          },
+          {
+            "title": "descriptionTranslations",
+            "type": "object",
+            "id": "chart.profile.descriptionTranslations",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "chart.profile.descriptionTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "company",
+            "type": "object",
+            "id": "chart.profile.company",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "chart.profile.company.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "chart.profile.company._id"
+              }
+            ]
+          },
+          {
+            "title": "chartReference",
+            "type": "object",
+            "id": "chart.profile.chartReference",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "chart.profile.chartReference.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "chart.profile.chartReference._id"
+              }
+            ]
+          },
+          {
+            "title": "branchedFrom",
+            "type": "object",
+            "id": "chart.profile.branchedFrom",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "chart.profile.branchedFrom.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "chart.profile.branchedFrom._id"
+              }
+            ]
+          },
+          {
+            "title": "branchRoot",
+            "type": "object",
+            "id": "chart.profile.branchRoot",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "chart.profile.branchRoot.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "chart.profile.branchRoot._id"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "settings",
+        "type": "object",
+        "id": "chart.settings",
+        "children": [
+          {
+            "title": "formats",
+            "type": "object",
+            "id": "chart.settings.formats",
+            "children": [
+              {
+                "title": "period",
+                "type": "object",
+                "id": "chart.settings.formats.period"
+              },
+              {
+                "title": "labelSeparator",
+                "type": "string",
+                "id": "chart.settings.formats.labelSeparator"
+              },
+              {
+                "title": "codeSeparator",
+                "type": "string",
+                "id": "chart.settings.formats.codeSeparator"
+              }
+            ]
+          },
+          {
+            "title": "languages",
+            "type": "array",
+            "id": "chart.settings.languages",
+            "children": [
+              {
+                "type": "string",
+                "id": "chart.settings.languages.$0",
+                "title": "{language}"
+              }
+            ]
+          },
+          {
+            "title": "importDefaultAccounts",
+            "type": "array",
+            "id": "chart.settings.importDefaultAccounts",
+            "children": [
+              {
+                "title": "{importDefaultAccountConfig}",
+                "type": "object",
+                "id": "chart.settings.importDefaultAccounts.$0",
+                "children": [
+                  {
+                    "title": "operation",
+                    "type": "string",
+                    "id": "chart.settings.importDefaultAccounts.$0.operation"
+                  },
+                  {
+                    "title": "parentCode",
+                    "type": "string",
+                    "id": "chart.settings.importDefaultAccounts.$0.parentCode"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "thirdpartyAccounts",
+            "type": "array",
+            "id": "chart.settings.thirdpartyAccounts",
+            "children": [
+              {
+                "title": "{thirdpartyAccount}",
+                "type": "object",
+                "id": "chart.settings.thirdpartyAccounts.$0",
+                "children": [
+                  {
+                    "title": "relationship",
+                    "type": "string",
+                    "id": "chart.settings.thirdpartyAccounts.$0.relationship"
+                  },
+                  {
+                    "title": "defaultType",
+                    "type": "string",
+                    "id": "chart.settings.thirdpartyAccounts.$0.defaultType"
+                  },
+                  {
+                    "title": "accountCategory",
+                    "type": "string",
+                    "id": "chart.settings.thirdpartyAccounts.$0.accountCategory"
+                  },
+                  {
+                    "title": "parentCodes",
+                    "type": "array",
+                    "id": "chart.settings.thirdpartyAccounts.$0.parentCodes",
+                    "children": [
+                      {
+                        "title": "{parentCode}",
+                        "type": "string",
+                        "id": "chart.settings.thirdpartyAccounts.$0.parentCodes.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "excludeLabels",
+                    "type": "array",
+                    "id": "chart.settings.thirdpartyAccounts.$0.excludeLabels",
+                    "children": [
+                      {
+                        "title": "{label}",
+                        "type": "string",
+                        "id": "chart.settings.thirdpartyAccounts.$0.excludeLabels.$0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "reportSchedule",
+            "type": "object",
+            "id": "chart.settings.reportSchedule",
+            "children": [
+              {
+                "title": "official",
+                "type": "object",
+                "id": "chart.settings.reportSchedule.official",
+                "children": [
+                  {
+                    "title": "periodLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.official.periodLengthInMonths"
+                  },
+                  {
+                    "title": "accountingYearLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.official.accountingYearLengthInMonths"
+                  },
+                  {
+                    "title": "maxFirstYearEndDistance",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.official.maxFirstYearEndDistance"
+                  },
+                  {
+                    "title": "allowofficialFirstYearEnd",
+                    "type": "boolean",
+                    "id": "chart.settings.reportSchedule.official.allowofficialFirstYearEnd"
+                  },
+                  {
+                    "title": "startingPoint",
+                    "type": "object",
+                    "id": "chart.settings.reportSchedule.official.startingPoint",
+                    "children": [
+                      {
+                        "title": "type",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.type"
+                      },
+                      {
+                        "title": "month",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.month"
+                      },
+                      {
+                        "title": "week_day_match_method",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.week_day_match_method"
+                      },
+                      {
+                        "title": "week",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.week"
+                      },
+                      {
+                        "title": "week_day",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.week_day"
+                      },
+                      {
+                        "title": "month_date",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.month_date"
+                      },
+                      {
+                        "title": "fixed_date",
+                        "type": "date",
+                        "id": "chart.settings.reportSchedule.official.startingPoint.fixed_date"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "default",
+                "type": "object",
+                "id": "chart.settings.reportSchedule.default",
+                "children": [
+                  {
+                    "title": "periodLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.default.periodLengthInMonths"
+                  },
+                  {
+                    "title": "accountingYearLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.default.accountingYearLengthInMonths"
+                  },
+                  {
+                    "title": "maxFirstYearEndDistance",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.default.maxFirstYearEndDistance"
+                  },
+                  {
+                    "title": "allowdefaultFirstYearEnd",
+                    "type": "boolean",
+                    "id": "chart.settings.reportSchedule.default.allowdefaultFirstYearEnd"
+                  },
+                  {
+                    "title": "startingPoint",
+                    "type": "object",
+                    "id": "chart.settings.reportSchedule.default.startingPoint",
+                    "children": [
+                      {
+                        "title": "type",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.type"
+                      },
+                      {
+                        "title": "month",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.month"
+                      },
+                      {
+                        "title": "week_day_match_method",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.week_day_match_method"
+                      },
+                      {
+                        "title": "week",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.week"
+                      },
+                      {
+                        "title": "week_day",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.week_day"
+                      },
+                      {
+                        "title": "month_date",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.month_date"
+                      },
+                      {
+                        "title": "fixed_date",
+                        "type": "date",
+                        "id": "chart.settings.reportSchedule.default.startingPoint.fixed_date"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "custom",
+                "type": "object",
+                "id": "chart.settings.reportSchedule.custom",
+                "children": [
+                  {
+                    "title": "periodLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.custom.periodLengthInMonths"
+                  },
+                  {
+                    "title": "accountingYearLengthInMonths",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.custom.accountingYearLengthInMonths"
+                  },
+                  {
+                    "title": "maxFirstYearEndDistance",
+                    "type": "number",
+                    "id": "chart.settings.reportSchedule.custom.maxFirstYearEndDistance"
+                  },
+                  {
+                    "title": "allowCustomFirstYearEnd",
+                    "type": "boolean",
+                    "id": "chart.settings.reportSchedule.custom.allowCustomFirstYearEnd"
+                  },
+                  {
+                    "title": "startingPoint",
+                    "type": "object",
+                    "id": "chart.settings.reportSchedule.custom.startingPoint",
+                    "children": [
+                      {
+                        "title": "type",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.type"
+                      },
+                      {
+                        "title": "month",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.month"
+                      },
+                      {
+                        "title": "week_day_match_method",
+                        "type": "string",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.week_day_match_method"
+                      },
+                      {
+                        "title": "week",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.week"
+                      },
+                      {
+                        "title": "week_day",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.week_day"
+                      },
+                      {
+                        "title": "month_date",
+                        "type": "number",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.month_date"
+                      },
+                      {
+                        "title": "fixed_date",
+                        "type": "date",
+                        "id": "chart.settings.reportSchedule.custom.startingPoint.fixed_date"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "reports",
+            "type": "array",
+            "id": "chart.settings.reports",
+            "children": [
+              {
+                "title":"{reportDefinition}",
+                "type": "object",
+                "id": "chart.settings.reports.$0",
+                "children":[
+                  {
+                    "title":"name",
+                    "type": "string",
+                    "id": "chart.settings.reports.$0.name"
+                  },
+                  {
+                    "title":"dependencies",
+                    "type": "array",
+                    "id": "chart.settings.reports.$0.dependencies",
+                    "children": [
+                      {
+                        "title":"{dependency}",
+                        "type":"string",
+                        "id": "chart.settings.reports.$0.dependencies.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title":"dataConfig",
+                    "type": "object",
+                    "id": "chart.settings.reports.$0.dataConfig",
+                    "children": [
+                      {
+                        "title":"text",
+                        "type":"array",
+                        "id": "chart.settings.reports.$0.dataConfig.text",
+                        "children":""
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "automatedAccounts",
+            "type": "array",
+            "id": "chart.settings.automatedAccounts",
+            "children": [
+              {
+                "title": "{automatedAccountConfig}",
+                "type": "object",
+                "id": "chart.settings.automatedAccounts.$0",
+                "children": [
+                  {
+                    "title": "operationType",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.operationType"
+                  },
+                  {
+                    "title": "operation",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.operation"
+                  },
+                  {
+                    "title": "method",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.method"
+                  },
+                  {
+                    "title": "debit",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.debit"
+                  },
+                  {
+                    "title": "credit",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.credit"
+                  },
+                  {
+                    "title": "nestedDepth",
+                    "type": "number",
+                    "id": "chart.settings.automatedAccounts.$0.nestedDepth"
+                  },
+                  {
+                    "title": "from",
+                    "type": "array",
+                    "id": "chart.settings.automatedAccounts.$0.from",
+                    "children": [
+                      {
+                        "title": "{codeFrom}",
+                        "type": "string",
+                        "id": "chart.settings.automatedAccounts.$0.from.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "to",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.to"
+                  },
+                  {
+                    "title": "entryDescription",
+                    "type": "string",
+                    "id": "chart.settings.automatedAccounts.$0.entryDescription"
+                  },
+                  {
+                    "title": "entryDescriptions",
+                    "type": "object",
+                    "id": "chart.settings.automatedAccounts.$0.entryDescriptions",
+                    "children": [
+                      {
+                        "title": "[lang]",
+                        "type": "string",
+                        "id": "chart.settings.automatedAccounts.$0.entryDescriptions.[lang]"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "conditions",
+                    "type": "array",
+                    "id": "chart.settings.automatedAccounts.$0.conditions",
+                    "children": [
+                      {
+                        "title": "{condition}",
+                        "type": "string",
+                        "id": "chart.settings.automatedAccounts.$0.conditions.$0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "generalLedger",
+            "type": "object",
+            "id": "chart.settings.generalLedger",
+            "children": [
+              {
+                "title": "additionalColumns",
+                "type": "array",
+                "id": "chart.settings.generalLedger.additionalColumns"
+              },
+              {
+                "title": "automatedEOP",
+                "type": "array",
+                "id": "chart.settings.generalLedger.automatedEOP",
+                "children": [
+                  {
+                    "title": "{automatedAccountConfig}",
+                    "type": "object",
+                    "id": "chart.settings.generalLedger.automatedEOP.$0",
+                    "children": [
+                      {
+                        "title": "operationType",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.operationType"
+                      },
+                      {
+                        "title": "operation",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.operation"
+                      },
+                      {
+                        "title": "method",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.method"
+                      },
+                      {
+                        "title": "debit",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.debit"
+                      },
+                      {
+                        "title": "credit",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.credit"
+                      },
+                      {
+                        "title": "nestedDepth",
+                        "type": "number",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.nestedDepth"
+                      },
+                      {
+                        "title": "from",
+                        "type": "array",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.from",
+                        "children": [
+                          {
+                            "title": "{codeFrom}",
+                            "type": "string",
+                            "id": "chart.settings.generalLedger.automatedEOP.$0.from.$0"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "to",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.to"
+                      },
+                      {
+                        "title": "entryDescription",
+                        "type": "string",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.entryDescription"
+                      },
+                      {
+                        "title": "entryDescriptions",
+                        "type": "object",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.entryDescriptions",
+                        "children": [
+                          {
+                            "title": "[lang]",
+                            "type": "string",
+                            "id": "chart.settings.generalLedger.automatedEOP.$0.entryDescriptions.[lang]"
+                          }
+                        ]
+                      },
+                      {
+                        "title": "conditions",
+                        "type": "array",
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.conditions",
+                        "children": [
+                          {
+                            "title": "{condition}",
+                            "type": "string",
+                            "id": "chart.settings.generalLedger.automatedEOP.$0.conditions.$0"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "existingPrompts",
+            "type": "array",
+            "id": "chart.settings.existingPrompts"
+          },
+          {
+            "title": "conversions",
+            "type": "object",
+            "id": "chart.settings.conversions",
+            "children": [
+              {
+                "title": "toReference",
+                "type": "object",
+                "id": "chart.settings.conversions.toReference",
+                "children": [
+                  {
+                    "title": "adjustments",
+                    "type": "array",
+                    "id": "chart.settings.conversions.toReference.adjustments",
+                    "children": [
+                      {
+                        "title": "{adjustment}",
+                        "type": "object",
+                        "id": "chart.settings.conversions.toReference.adjustments.$0",
+                        "children": [
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.name"
+                          },
+                          {
+                            "title": "task",
+                            "type": "string",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.task"
+                          },
+                          {
+                            "title": "condition",
+                            "type": "string",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.condition"
+                          },
+                          {
+                            "title": "debitAccount",
+                            "type": "string",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.debitAccount"
+                          },
+                          {
+                            "title": "taskDefinition",
+                            "type": "array",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition",
+                            "children": [
+                              {
+                                "title": "{adjustmentTask}",
+                                "type": "object",
+                                "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0",
+                                "children": [
+                                  {
+                                    "title": "type",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.type"
+                                  },
+                                  {
+                                    "title": "accountRanges",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.accountRanges",
+                                    "children": [
+                                      {
+                                        "title": "{accountRange}",
+                                        "type": "string",
+                                        "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.accountRanges.$0"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "table",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table",
+                                    "children": [
+                                      {
+                                        "title": "{table}",
+                                        "type": "object",
+                                        "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table.$0",
+                                        "children": [
+                                          {
+                                            "title": "realExpenseType",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table.$0.realExpenseType"
+                                          },
+                                          {
+                                            "title": "toCode",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table.$0.toCode"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "prompts",
+                            "type": "array",
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts",
+                            "children": [
+                              {
+                                "title": "{adjustmentPrompt}",
+                                "type": "object",
+                                "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0",
+                                "children": [
+                                  {
+                                    "title": "fields",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields",
+                                    "children": [
+                                      {
+                                        "title": "{adjustmentPromptField}",
+                                        "type": "object",
+                                        "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0",
+                                        "children": [
+                                          {
+                                            "title": "label",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.label"
+                                          },
+                                          {
+                                            "title": "valueName",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.valueName"
+                                          },
+                                          {
+                                            "title": "type",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.type"
+                                          },
+                                          {
+                                            "title": "autofillSource",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.autofillSource"
+                                          },
+                                          {
+                                            "title": "optionName",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.optionName"
+                                          },
+                                          {
+                                            "title": "displayForSimple",
+                                            "type": "boolean",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.displayForSimple"
+                                          },
+                                          {
+                                            "title": "displayForManual",
+                                            "type": "boolean",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.displayForManual"
+                                          },
+                                          {
+                                            "title": "accountRange",
+                                            "type": "array",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.accountRange",
+                                            "children": [
+                                              {
+                                                "title": "{accountRange}",
+                                                "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.accountRange.$0",
+                                                "type": "string"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "options",
+                                            "type": "array",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.options",
+                                            "children": [
+                                              {
+                                                "title": "{adjustmentPromptFieldOptions}",
+                                                "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.options.$0",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "value",
+                                                    "type": "string",
+                                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.options.$0.value"
+                                                  },
+                                                  {
+                                                    "title": "label",
+                                                    "type": "string",
+                                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.options.$0.label"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "minDate",
+                                            "type": "object",
+                                            "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.minDate",
+                                            "children": [
+                                              {
+                                                "title": "[dateProp]",
+                                                "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.minDate.[dateProp]",
+                                                "type": "date"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "title",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.title"
+                                  },
+                                  {
+                                    "title": "type",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.string"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "toReference",
+                "type": "object",
+                "id": "chart.settings.conversions.fromReference",
+                "children": [
+                  {
+                    "title": "adjustments",
+                    "type": "array",
+                    "id": "chart.settings.conversions.fromReference.adjustments",
+                    "children": [
+                      {
+                        "title": "{adjustment}",
+                        "type": "object",
+                        "id": "chart.settings.conversions.fromReference.adjustments.$0",
+                        "children": [
+                          {
+                            "title": "name",
+                            "type": "string",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.name"
+                          },
+                          {
+                            "title": "task",
+                            "type": "string",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.task"
+                          },
+                          {
+                            "title": "condition",
+                            "type": "string",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.condition"
+                          },
+                          {
+                            "title": "debitAccount",
+                            "type": "string",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.debitAccount"
+                          },
+                          {
+                            "title": "taskDefinition",
+                            "type": "array",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition",
+                            "children": [
+                              {
+                                "title": "{adjustmentTask}",
+                                "type": "object",
+                                "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0",
+                                "children": [
+                                  {
+                                    "title": "type",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.type"
+                                  },
+                                  {
+                                    "title": "accountRanges",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.accountRanges",
+                                    "children": [
+                                      {
+                                        "title": "{accountRange}",
+                                        "type": "string",
+                                        "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.accountRanges.$0"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "table",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table",
+                                    "children": [
+                                      {
+                                        "title": "{table}",
+                                        "type": "object",
+                                        "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table.$0",
+                                        "children": [
+                                          {
+                                            "title": "realExpenseType",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table.$0.realExpenseType"
+                                          },
+                                          {
+                                            "title": "toCode",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table.$0.toCode"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "prompts",
+                            "type": "array",
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts",
+                            "children": [
+                              {
+                                "title": "{adjustmentPrompt}",
+                                "type": "object",
+                                "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0",
+                                "children": [
+                                  {
+                                    "title": "fields",
+                                    "type": "array",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields",
+                                    "children": [
+                                      {
+                                        "title": "{adjustmentPromptField}",
+                                        "type": "object",
+                                        "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0",
+                                        "children": [
+                                          {
+                                            "title": "label",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.label"
+                                          },
+                                          {
+                                            "title": "valueName",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.valueName"
+                                          },
+                                          {
+                                            "title": "type",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.type"
+                                          },
+                                          {
+                                            "title": "autofillSource",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.autofillSource"
+                                          },
+                                          {
+                                            "title": "optionName",
+                                            "type": "string",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.optionName"
+                                          },
+                                          {
+                                            "title": "displayForSimple",
+                                            "type": "boolean",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.displayForSimple"
+                                          },
+                                          {
+                                            "title": "displayForManual",
+                                            "type": "boolean",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.displayForManual"
+                                          },
+                                          {
+                                            "title": "accountRange",
+                                            "type": "array",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.accountRange",
+                                            "children": [
+                                              {
+                                                "title": "{accountRange}",
+                                                "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.accountRange.$0",
+                                                "type": "string"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "options",
+                                            "type": "array",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.options",
+                                            "children": [
+                                              {
+                                                "title": "{adjustmentPromptFieldOptions}",
+                                                "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.options.$0",
+                                                "type": "object",
+                                                "children": [
+                                                  {
+                                                    "title": "value",
+                                                    "type": "string",
+                                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.options.$0.value"
+                                                  },
+                                                  {
+                                                    "title": "label",
+                                                    "type": "string",
+                                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.options.$0.label"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "title": "minDate",
+                                            "type": "object",
+                                            "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.minDate",
+                                            "children": [
+                                              {
+                                                "title": "[dateProp]",
+                                                "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.minDate.[dateProp]",
+                                                "type": "date"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "title": "title",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.title"
+                                  },
+                                  {
+                                    "title": "type",
+                                    "type": "string",
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.string"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "restrictedLegalEntities",
+            "type": "boolean",
+            "id": "chart.settings.restrictedLegalEntities"
+          },
+          {
+            "title": "legalEntities",
+            "type": "object",
+            "id": "chart.settings.legalEntities",
+            "children": [
+              {
+                "title": "{legalEntityCode}",
+                "type": "string",
+                "id": "chart.settings.legalEntities.$0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "from": "cp.profile.chart_id",
+    "to": "chart._id"
+  },
+  {
+    "from": "cp.profile.charts.$0._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "chart.profile.company._id",
+    "to": "cp._id"
+  },
+  {
+    "from": "chart.profile.chartReference._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "chart.profile.branchedFrom._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "chart.profile.branchRoot._id",
+    "to": "chart._id"
+  }
+]
