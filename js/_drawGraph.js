@@ -61,7 +61,7 @@
 export function redrawGraph(paper, graph, elems) {
   graph.clear();
   let X = 20, Y = 20;
-  const Xoff = 420, Yoff = 0;
+  const Xoff = 480, Yoff = 0;
 
   const C = {
     Container: joint.shapes.container.Parent,
@@ -72,7 +72,7 @@ export function redrawGraph(paper, graph, elems) {
 
   const links = [];
   for (const elem of elems) {
-    if(elem.source) {
+    if(elem.from) {
       links.push(elem);
       continue;
     }
@@ -101,7 +101,8 @@ export function redrawGraph(paper, graph, elems) {
   }
   for(const link of links) {
     const _link = new C.Link({
-      ...link,
+      source: {id: link.from},
+      target: {id: link.to},
       z: 99
     });
     graph.addCells([_link]);
