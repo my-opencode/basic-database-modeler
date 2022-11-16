@@ -1,0 +1,1063 @@
+{
+  "databaseReference": {
+    "title": "databaseReference",
+    "type": "object",
+    "id": "databaseReference",
+    "children": [
+      {
+        "title": "name",
+        "type": "string",
+        "id": "databaseReference.name"
+      },
+      {
+        "title": "_id",
+        "type": "string",
+        "id": "databaseReference._id"
+      }
+    ]
+  },
+  "datedDatabaseReference": {
+    "title": "datedDatabaseReference",
+    "type": "object",
+    "id": "datedDatabaseReference",
+    "children": [
+      {
+        "title": "name",
+        "type": "string",
+        "id": "datedDatabaseReference.name"
+      },
+      {
+        "title": "_id",
+        "type": "string",
+        "id": "datedDatabaseReference._id"
+      },
+      {
+        "title": "date_from",
+        "type": "date",
+        "id": "datedDatabaseReference.date_from"
+      },
+      {
+        "title": "date_to",
+        "type": "date",
+        "id": "datedDatabaseReference.date_to"
+      },
+      {
+        "title": "current",
+        "type": "boolean",
+        "id": "datedDatabaseReference.current"
+      }
+    ]
+  },
+  "datedParamReference": {
+    "title": "datedParamReference",
+    "type": "object",
+    "id": "datedParamReference",
+    "children": [
+      {
+        "title": "categoryCode",
+        "type": "string",
+        "id": "datedParamReference.categoryCode"
+      },
+      {
+        "title": "code",
+        "type": "string",
+        "id": "datedParamReference.code"
+      },
+      {
+        "title": "date_from",
+        "type": "date",
+        "id": "datedParamReference.date_from"
+      },
+      {
+        "title": "date_to",
+        "type": "date",
+        "id": "datedParamReference.date_to"
+      },
+      {
+        "title": "current",
+        "type": "boolean",
+        "id": "datedParamReference.current"
+      }
+    ]
+  },
+  "fiscalYearUnitNumber": {
+    "title": "fiscalYearUnitNumber",
+    "type": "object",
+    "id": "fiscalYearUnitNumber",
+    "children": [
+      {
+        "title": "unit",
+        "type": "string",
+        "id": "fiscalYearUnitNumber.unit"
+      },
+      {
+        "title": "number",
+        "type": "number",
+        "id": "fiscalYearUnitNumber.number"
+      }
+    ]
+  },
+  "stringTranslations": {
+    "title": "stringTranslations",
+    "type": "object",
+    "id": "stringTranslations",
+    "children": [
+      {
+        "title": "[lang]",
+        "type": "string",
+        "id": "stringTranslations.[lang]"
+      }
+    ]
+  },
+  "languageArray": {
+    "title": "languageArray",
+    "type": "array",
+    "id": "languageArray",
+    "children": [
+      {
+        "type": "string",
+        "id": "languageArray.$0",
+        "title": "{language}"
+      }
+    ]
+  },
+  "period": {
+    "type": "object",
+    "id": "period",
+    "title": "period",
+    "children": [
+      {
+        "title": "date_from",
+        "type": "date",
+        "id": "period.date_from"
+      },
+      {
+        "title": "date_to",
+        "type": "date",
+        "id": "period.date_to"
+      }
+    ]
+  },
+  "stringArray": {
+    "title": "stringArray",
+    "type": "array",
+    "id": "stringArray",
+    "children": [
+      {
+        "title": "{string}",
+        "type": "string",
+        "id": "stringArray.$0"
+      }
+    ]
+  },
+  "reportSchedule": {
+    "title": "reportSchedule",
+    "type": "object",
+    "id": "reportSchedule",
+    "children": [
+      {
+        "title": "periodLengthInMonths",
+        "type": "number",
+        "id": "reportSchedule.periodLengthInMonths"
+      },
+      {
+        "title": "accountingYearLengthInMonths",
+        "type": "number",
+        "id": "reportSchedule.accountingYearLengthInMonths"
+      },
+      {
+        "title": "maxFirstYearEndDistance",
+        "type": "number",
+        "id": "reportSchedule.maxFirstYearEndDistance"
+      },
+      {
+        "title": "allowofficialFirstYearEnd",
+        "type": "boolean",
+        "id": "reportSchedule.allowofficialFirstYearEnd"
+      },
+      {
+        "title": "startingPoint",
+        "type": "object",
+        "id": "reportSchedule.startingPoint",
+        "children": [
+          {
+            "title": "type",
+            "type": "string",
+            "id": "reportSchedule.startingPoint.type"
+          },
+          {
+            "title": "month",
+            "type": "string",
+            "id": "reportSchedule.startingPoint.month"
+          },
+          {
+            "title": "week_day_match_method",
+            "type": "string",
+            "id": "reportSchedule.startingPoint.week_day_match_method"
+          },
+          {
+            "title": "week",
+            "type": "number",
+            "id": "reportSchedule.startingPoint.week"
+          },
+          {
+            "title": "week_day",
+            "type": "number",
+            "id": "reportSchedule.startingPoint.week_day"
+          },
+          {
+            "title": "month_date",
+            "type": "number",
+            "id": "reportSchedule.startingPoint.month_date"
+          },
+          {
+            "title": "fixed_date",
+            "type": "date",
+            "id": "reportSchedule.startingPoint.fixed_date"
+          }
+        ]
+      }
+    ]
+  },
+  "EOPConfig": {
+    "title": "EOPConfig",
+    "type": "array",
+    "id": "EOPConfig",
+    "children": [
+      {
+        "title": "{automatedAccountConfig}",
+        "type": "object",
+        "id": "EOPConfig.$0",
+        "children": [
+          {
+            "title": "operationType",
+            "type": "string",
+            "id": "EOPConfig.$0.operationType"
+          },
+          {
+            "title": "operation",
+            "type": "string",
+            "id": "EOPConfig.$0.operation"
+          },
+          {
+            "title": "method",
+            "type": "string",
+            "id": "EOPConfig.$0.method"
+          },
+          {
+            "title": "debit",
+            "type": "string",
+            "id": "EOPConfig.$0.debit"
+          },
+          {
+            "title": "credit",
+            "type": "string",
+            "id": "EOPConfig.$0.credit"
+          },
+          {
+            "title": "nestedDepth",
+            "type": "number",
+            "id": "EOPConfig.$0.nestedDepth"
+          },
+          {
+            "title": "from",
+            "type": "array",
+            "id": "EOPConfig.$0.from",
+            "children": [
+              {
+                "title": "{codeFrom}",
+                "type": "string",
+                "id": "EOPConfig.$0.from.$0"
+              }
+            ]
+          },
+          {
+            "title": "to",
+            "type": "string",
+            "id": "EOPConfig.$0.to"
+          },
+          {
+            "title": "entryDescription",
+            "type": "string",
+            "id": "EOPConfig.$0.entryDescription"
+          },
+          {
+            "title": "entryDescriptions",
+            "type": "object",
+            "id": "EOPConfig.$0.entryDescriptions",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "EOPConfig.$0.entryDescriptions.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "conditions",
+            "type": "array",
+            "id": "EOPConfig.$0.conditions",
+            "children": [
+              {
+                "title": "{condition}",
+                "type": "string",
+                "id": "EOPConfig.$0.conditions.$0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "chartConversionAdjustments": {
+    "title": "chartConversionAdjustments",
+    "type": "array",
+    "id": "chartConversionAdjustments",
+    "children": [
+      {
+        "title": "{adjustment}",
+        "type": "object",
+        "id": "chartConversionAdjustments.$0",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "chartConversionAdjustments.$0.name"
+          },
+          {
+            "title": "task",
+            "type": "string",
+            "id": "chartConversionAdjustments.$0.task"
+          },
+          {
+            "title": "condition",
+            "type": "string",
+            "id": "chartConversionAdjustments.$0.condition"
+          },
+          {
+            "title": "debitAccount",
+            "type": "string",
+            "id": "chartConversionAdjustments.$0.debitAccount"
+          },
+          {
+            "title": "taskDefinition",
+            "type": "array",
+            "id": "chartConversionAdjustments.$0.taskDefinition",
+            "children": [
+              {
+                "title": "{adjustmentTask}",
+                "type": "object",
+                "id": "chartConversionAdjustments.$0.taskDefinition.$0",
+                "children": [
+                  {
+                    "title": "type",
+                    "type": "string",
+                    "id": "chartConversionAdjustments.$0.taskDefinition.$0.type"
+                  },
+                  {
+                    "title": "accountRanges",
+                    "type": "array",
+                    "id": "chartConversionAdjustments.$0.taskDefinition.$0.accountRanges",
+                    "children": [
+                      {
+                        "title": "{accountRange}",
+                        "type": "string",
+                        "id": "chartConversionAdjustments.$0.taskDefinition.$0.accountRanges.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "table",
+                    "type": "array",
+                    "id": "chartConversionAdjustments.$0.taskDefinition.$0.table",
+                    "children": [
+                      {
+                        "title": "{table}",
+                        "type": "object",
+                        "id": "chartConversionAdjustments.$0.taskDefinition.$0.table.$0",
+                        "children": [
+                          {
+                            "title": "realExpenseType",
+                            "type": "string",
+                            "id": "chartConversionAdjustments.$0.taskDefinition.$0.table.$0.realExpenseType"
+                          },
+                          {
+                            "title": "toCode",
+                            "type": "string",
+                            "id": "chartConversionAdjustments.$0.taskDefinition.$0.table.$0.toCode"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "prompts",
+            "type": "array",
+            "id": "chartConversionAdjustments.$0.prompts",
+            "children": [
+              {
+                "title": "{adjustmentPrompt}",
+                "type": "object",
+                "id": "chartConversionAdjustments.$0.prompts.$0",
+                "children": [
+                  {
+                    "title": "fields",
+                    "type": "array",
+                    "id": "chartConversionAdjustments.$0.prompts.$0.fields",
+                    "children": [
+                      {
+                        "title": "{adjustmentPromptField}",
+                        "type": "object",
+                        "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0",
+                        "children": [
+                          {
+                            "title": "label",
+                            "type": "string",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.label"
+                          },
+                          {
+                            "title": "valueName",
+                            "type": "string",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.valueName"
+                          },
+                          {
+                            "title": "type",
+                            "type": "string",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.type"
+                          },
+                          {
+                            "title": "autofillSource",
+                            "type": "string",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.autofillSource"
+                          },
+                          {
+                            "title": "optionName",
+                            "type": "string",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.optionName"
+                          },
+                          {
+                            "title": "displayForSimple",
+                            "type": "boolean",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.displayForSimple"
+                          },
+                          {
+                            "title": "displayForManual",
+                            "type": "boolean",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.displayForManual"
+                          },
+                          {
+                            "title": "accountRange",
+                            "type": "array",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.accountRange",
+                            "children": [
+                              {
+                                "title": "{accountRange}",
+                                "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.accountRange.$0",
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          {
+                            "title": "options",
+                            "type": "array",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.options",
+                            "children": [
+                              {
+                                "title": "{adjustmentPromptFieldOptions}",
+                                "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.options.$0",
+                                "type": "object",
+                                "children": [
+                                  {
+                                    "title": "value",
+                                    "type": "string",
+                                    "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.options.$0.value"
+                                  },
+                                  {
+                                    "title": "label",
+                                    "type": "string",
+                                    "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.options.$0.label"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "title": "minDate",
+                            "type": "object",
+                            "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.minDate",
+                            "children": [
+                              {
+                                "title": "[dateProp]",
+                                "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.minDate.[dateProp]",
+                                "type": "date"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "title": "title",
+                    "type": "string",
+                    "id": "chartConversionAdjustments.$0.prompts.$0.title"
+                  },
+                  {
+                    "title": "type",
+                    "type": "string",
+                    "id": "chartConversionAdjustments.$0.prompts.$0.string"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reportDataText": {
+    "title": "reportDataText",
+    "type": "object",
+    "id": "reportDataText",
+    "children": [
+      {
+        "title": "type",
+        "type": "string",
+        "id": "reportDataText.type"
+      },
+      {
+        "title": "text",
+        "type": "string",
+        "id": "reportDataText.text"
+      },
+      {
+        "title": "name",
+        "type": "string",
+        "id": "reportDataText.name"
+      }
+    ]
+  },
+  "reportDataTextTranslated": {
+    "title": "reportDataTextTranslated",
+    "type": "object",
+    "id": "reportDataTextTranslated",
+    "children": [
+      {
+        "title": "type",
+        "type": "string",
+        "id": "reportDataTextTranslated.type"
+      },
+      {
+        "title": "translations",
+        "type": "object",
+        "id": "reportDataTextTranslated.translations",
+        "children": [
+          {
+            "title": "[lang]",
+            "type": "string",
+            "id": "reportDataTextTranslated.translations.[lang]"
+          }
+        ]
+      },
+      {
+        "title": "name",
+        "type": "string",
+        "id": "reportDataTextTranslated.name"
+      }
+    ]
+  },
+  "reportDataVariableLocal": {
+    "title": "reportDataVariableLocal",
+    "type": "object",
+    "id": "reportDataVariableLocal",
+    "children": [
+      {
+        "title": "type",
+        "type": "string",
+        "id": "reportDataVariableLocal.type"
+      },
+      {
+        "title": "formula",
+        "type": "object",
+        "id": "reportDataVariableLocal.formula"
+      },
+      {
+        "title": "name",
+        "type": "string",
+        "id": "reportDataVariableLocal.name"
+      }
+    ]
+  },
+  "reportDataVariableFromSource": {
+    "title": "reportDataVariableFromSource",
+    "type": "object",
+    "id": "reportDataVariableFromSource",
+    "children": [
+      {
+        "title": "type",
+        "type": "string",
+        "id": "reportDataVariableFromSource.type"
+      },
+      {
+        "title": "source",
+        "type": "string",
+        "id": "reportDataVariableFromSource.source"
+      },
+      {
+        "title": "path",
+        "type": "string",
+        "id": "reportDataVariableFromSource.path"
+      },
+      {
+        "title": "name",
+        "type": "string",
+        "id": "reportDataVariableFromSource.name"
+      }
+    ]
+  },
+  "reportDataVariableFromSourceTranslated": {
+    "title": "reportDataVariableFromSourceTranslated",
+    "type": "object",
+    "id": "reportDataVariableFromSourceTranslated",
+    "children": [
+      {
+        "title": "type",
+        "type": "string",
+        "id": "reportDataVariableFromSourceTranslated.type"
+      },
+      {
+        "title": "source",
+        "type": "string",
+        "id": "reportDataVariableFromSourceTranslated.source"
+      },
+      {
+        "title": "path",
+        "type": "string",
+        "id": "reportDataVariableFromSourceTranslated.path"
+      },
+      {
+        "title": "translationFailSafePath",
+        "type": "string",
+        "id": "reportDataVariableFromSourceTranslated.translationFailSafePath"
+      },
+      {
+        "title": "name",
+        "type": "string",
+        "id": "reportDataVariableFromSourceTranslated.name"
+      }
+    ]
+  },
+  "reportDataVariableFromSourceFormula": {
+    "title": "reportDataVariableFromSourceFormula",
+    "type": "object",
+    "id": "reportDataVariableFromSourceFormula",
+    "children": [
+      {
+        "title": "type",
+        "type": "string",
+        "id": "reportDataVariableFromSourceFormula.type"
+      },
+      {
+        "title": "source",
+        "type": "string",
+        "id": "reportDataVariableFromSourceFormula.source"
+      },
+      {
+        "title": "formula",
+        "type": "string",
+        "id": "reportDataVariableFromSourceFormula.formula"
+      },
+      {
+        "title": "name",
+        "type": "string",
+        "id": "reportDataVariableFromSourceTranslated.name"
+      }
+    ]
+  },
+  "reportDisplayBorderStyle": {
+    "title": "reportDisplayBorderStyle",
+    "id": "reportDisplayBorderStyle",
+    "type": "object",
+    "children": [
+      {
+        "title": "style",
+        "id": "reportDisplayBorderStyle.style",
+        "type": "string"
+      },
+      {
+        "title": "color",
+        "id": "reportDisplayBorderStyle.color",
+        "type": "object",
+        "children": [
+          {
+            "title": "argb",
+            "id": "reportDisplayBorderStyle.color.argb",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "reportDisplayCellStyle": {
+    "title": "reportDisplayCellStyle",
+    "id": "reportDisplayCellStyle",
+    "type": "object",
+    "children": [
+      {
+        "title": "aligment",
+        "id": "reportDisplayCellStyle.aligment",
+        "type": "object",
+        "children": [
+          {
+            "title": "horizontal",
+            "id": "reportDisplayCellStyle.aligment.horizontal",
+            "type": "string"
+          },
+          {
+            "title": "vertical",
+            "id": "reportDisplayCellStyle.aligment.vertical",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "title": "width",
+        "id": "reportDisplayCellStyle.width",
+        "type": "number"
+      },
+      {
+        "title": "numFmt",
+        "id": "reportDisplayCellStyle.numFmt",
+        "type": "number"
+      },
+      {
+        "title": "border",
+        "id": "reportDisplayCellStyle.border",
+        "type": "object",
+        "children": [
+          {
+            "title": "top",
+            "id": "reportDisplayCellStyle.border.top",
+            "type": "object",
+            "children": [
+              {
+                "title": "style",
+                "id": "reportDisplayCellStyle.border.top.style",
+                "type": "string"
+              },
+              {
+                "title": "color",
+                "id": "reportDisplayCellStyle.border.top.color",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "argb",
+                    "id": "reportDisplayCellStyle.border.top.color.argb",
+                    "type": "string"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "left",
+            "id": "reportDisplayCellStyle.border.left",
+            "type": "object",
+            "children": [
+              {
+                "title": "style",
+                "id": "reportDisplayCellStyle.border.left.style",
+                "type": "string"
+              },
+              {
+                "title": "color",
+                "id": "reportDisplayCellStyle.border.left.color",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "argb",
+                    "id": "reportDisplayCellStyle.border.left.color.argb",
+                    "type": "string"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "bottom",
+            "id": "reportDisplayCellStyle.border.bottom",
+            "type": "object",
+            "children": [
+              {
+                "title": "style",
+                "id": "reportDisplayCellStyle.border.bottom.style",
+                "type": "string"
+              },
+              {
+                "title": "color",
+                "id": "reportDisplayCellStyle.border.bottom.color",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "argb",
+                    "id": "reportDisplayCellStyle.border.bottom.color.argb",
+                    "type": "string"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "right",
+            "id": "reportDisplayCellStyle.border.right",
+            "type": "object",
+            "children": [
+              {
+                "title": "style",
+                "id": "reportDisplayCellStyle.border.right.style",
+                "type": "string"
+              },
+              {
+                "title": "color",
+                "id": "reportDisplayCellStyle.border.right.color",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "argb",
+                    "id": "reportDisplayCellStyle.border.right.color.argb",
+                    "type": "string"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "fill",
+        "id": "reportDisplayCellStyle.fill",
+        "type": "object",
+        "children": [
+          {
+            "title": "type",
+            "id": "reportDisplayCellStyle.fill.type",
+            "type": "string"
+          },
+          {
+            "title": "pattern",
+            "id": "reportDisplayCellStyle.fill.pattern",
+            "type": "string"
+          },
+          {
+            "title": "fgColor",
+            "id": "reportDisplayCellStyle.fill.fgColor",
+            "type": "object",
+            "children": [
+              {
+                "title": "argb",
+                "id": "reportDisplayCellStyle.fill.fgColor.argb",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "title": "font",
+            "id": "reportDisplayCellStyle.font",
+            "type": "object",
+            "children": [
+              {
+                "title": "bold",
+                "id": "reportDisplayCellStyle.font.bold",
+                "type": "boolean"
+              },
+              {
+                "title": "underline",
+                "id": "reportDisplayCellStyle.font.underline",
+                "type": "string"
+              },
+              {
+                "title": "italic",
+                "id": "reportDisplayCellStyle.font.italic",
+                "type": "boolean"
+              },
+              {
+                "title": "size",
+                "id": "reportDisplayCellStyle.font.size",
+                "type": "boolean"
+              },
+              {
+                "title": "wrapText",
+                "id": "reportDisplayCellStyle.font.wrapText",
+                "type": "boolean"
+              },
+              {
+                "title": "name",
+                "id": "reportDisplayCellStyle.font.name",
+                "type": "string"
+              },
+              {
+                "title": "family",
+                "id": "reportDisplayCellStyle.font.family",
+                "type": "number"
+              },
+              {
+                "title": "color",
+                "id": "reportDisplayCellStyle.font.color",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "argb",
+                    "id": "reportDisplayCellStyle.font.color.argb",
+                    "type": "string"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reportDisplayFontDefinition": {
+    "title": "reportDisplayFontDefinition",
+    "id": "reportDisplayFontDefinition",
+    "type": "object",
+    "children": [
+      {
+        "title": "bold",
+        "id": "reportDisplayFontDefinition.bold",
+        "type": "boolean"
+      },
+      {
+        "title": "underline",
+        "id": "reportDisplayFontDefinition.underline",
+        "type": "string"
+      },
+      {
+        "title": "italic",
+        "id": "reportDisplayFontDefinition.italic",
+        "type": "boolean"
+      },
+      {
+        "title": "size",
+        "id": "reportDisplayFontDefinition.size",
+        "type": "boolean"
+      },
+      {
+        "title": "wrapText",
+        "id": "reportDisplayFontDefinition.wrapText",
+        "type": "boolean"
+      },
+      {
+        "title": "name",
+        "id": "reportDisplayFontDefinition.name",
+        "type": "string"
+      },
+      {
+        "title": "family",
+        "id": "reportDisplayFontDefinition.family",
+        "type": "number"
+      },
+      {
+        "title": "color",
+        "id": "reportDisplayFontDefinition.color",
+        "type": "object",
+        "children": [
+          {
+            "title": "argb",
+            "id": "reportDisplayFontDefinition.color.argb",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "fiscalYearConfig": {
+    "title": "fiscalYearConfig",
+    "id": "fiscalYearConfig.$0",
+    "type": "object",
+    "children": [
+      {
+        "title": "fixed",
+        "type": "array",
+        "id": "fiscalYearConfig.$0.fixed",
+        "children": [
+          {
+            "title": "{propName}",
+            "type": "string",
+            "id": "fiscalYearConfig.$0.fixed.$0"
+          }
+        ]
+      },
+      {
+        "title": "calendar",
+        "type": "string",
+        "id": "fiscalYearConfig.$0.calendar"
+      },
+      {
+        "title": "year_type",
+        "type": "string",
+        "id": "fiscalYearConfig.$0.year_type"
+      },
+      {
+        "title": "max_first_year_end_length",
+        "type": "number",
+        "id": "fiscalYearConfig.$0.max_first_year_end_length"
+      },
+      {
+        "title": "allow_custom_year_lengths",
+        "type": "boolean",
+        "id": "fiscalYearConfig.$0.allow_custom_year_lengths"
+      },
+      {
+        "title": "allow_custom_first_year_end",
+        "type": "boolean",
+        "id": "fiscalYearConfig.$0.allow_custom_first_year_end"
+      },
+      {
+        "title": "periods_in_year",
+        "type": "number",
+        "id": "fiscalYearConfig.$0.periods_in_year"
+      },
+      {
+        "title": "year_start_type",
+        "type": "string",
+        "id": "fiscalYearConfig.$0.year_start_type"
+      },
+      {
+        "title": "year_period",
+        "id": "fiscalYearConfig.$0.year_period",
+        "$ref": "./definitions.json#/fiscalYearUnitNumber"
+      },
+      {
+        "title": "year_reporting_period",
+        "id": "fiscalYearConfig.$0.year_reporting_period",
+        "$ref": "./definitions.json#/fiscalYearUnitNumber"
+      },
+      {
+        "title": "code",
+        "type": "string",
+        "id": "fiscalYearConfig.$0.code"
+      },
+      {
+        "title": "date_from",
+        "type": "date",
+        "id": "fiscalYearConfig.$0.date_from"
+      },
+      {
+        "title": "date_to",
+        "type": "date",
+        "id": "fiscalYearConfig.$0.date_to"
+      },
+      {
+        "title": "current",
+        "type": "boolean",
+        "id": "fiscalYearConfig.$0.current"
+      }
+    ]
+  }
+}
