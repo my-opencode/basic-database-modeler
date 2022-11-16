@@ -26,14 +26,14 @@
         </div>
         <div class="col col-9">
           <main>
-            <h3>Visualization 
+            <h3>Visualization
               <button class="btn btn-sm btn-outline-primary"
                 id="btn-check-data">Show updated data</button>
               <button class="btn btn-sm btn-outline-primary"
                 id="btn-update-data">Updated editor</button>
               <!-- <button class="btn btn-sm btn-outline-primary"
                 id="btn-copy-data">Copy to clipboard</button> -->
-              </h3>
+            </h3>
             <div id="graph"></div>
           </main></div>
       </div>
@@ -48,300 +48,7 @@
     <script src="/js/jointjs.3.6.2.js"></script>
     <script>
       var editorEl = document.getElementById(`editor`);
-      var testJson = [
-  {
-    "id": "cp",
-    "title": "Company",
-    "children": [
-      {
-        "title": "active",
-        "type": "boolean",
-        "id": "cp.active"
-      },
-      {
-        "title": "created_at",
-        "type": "date",
-        "id": "cp.created_at"
-      },
-      {
-        "title": "creator",
-        "type": "object",
-        "id": "cp.creator",
-        "children": [
-          {
-            "title": "name",
-            "type": "string",
-            "id": "cp.creator.name"
-          },
-          {
-            "title": "_id",
-            "type": "string",
-            "id": "cp.creator._id"
-          }
-        ]
-      },
-      {
-        "title": "isClosed",
-        "type": "boolean",
-        "id": "cp.isClosed"
-      },
-      {
-        "title": "owners",
-        "type": "array",
-        "id": "cp.owners",
-        "children": [
-          {
-            "title": "[owner]",
-            "type": "object",
-            "id": "cp.owners.$0",
-            "children": [
-              {
-                "title": "name",
-                "type": "string",
-                "id": "cp.owners.$0.name"
-              },
-              {
-                "title": "_id",
-                "type": "string",
-                "id": "cp.owners.$0._id"
-              },
-              {
-                "title": "date_from",
-                "type": "date",
-                "id": "cp.owners.$0.date_from"
-              },
-              {
-                "title": "date_to",
-                "type": "date",
-                "id": "cp.owners.$0.date_to"
-              },
-              {
-                "title": "current",
-                "type": "boolean",
-                "id": "cp.owners.$0.current"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "profile",
-        "type": "object",
-        "id": "cp.profile",
-        "children": [
-          {
-            "title": "name",
-            "type": "string",
-            "id": "cp.profile.name"
-          }
-        ]
-      },
-      {
-        "title": "settings",
-        "type": "object",
-        "id": "cp.settings",
-        "children": [
-          {
-            "title": "allowSearchAndJoin",
-            "type": "boolean",
-            "id": "cp.settings.allowSearchAndJoin"
-          },
-          {
-            "title": "timezone",
-            "type": "string",
-            "id": "cp.settings.timezone"
-          },
-          {
-            "title": "locale",
-            "type": "string",
-            "id": "cp.settings.locale"
-          },
-          {
-            "title": "xrateSource",
-            "type": "string",
-            "id": "cp.settings.xrateSource"
-          },
-          {
-            "title": "language",
-            "type": "string",
-            "id": "cp.settings.language"
-          },
-          {
-            "title": "languages",
-            "type": "array",
-            "id": "cp.settings.languages",
-            "children": [
-              {
-                "type": "string",
-                "id": "cp.settings.languages.$0",
-                "title": "[language]"
-              }
-            ]
-          },
-          {
-            "title": "periods",
-            "type": "array",
-            "id": "cp.settings.periods",
-            "children": [
-              {
-                "type": "object",
-                "id": "cp.settings.periods.$0",
-                "title": "[period]",
-                "children": []
-              }
-            ]
-          },
-          {
-            "title": "tax",
-            "type": "array",
-            "id": "cp.settings.tax",
-            "children": [
-              {
-                "type": "object",
-                "id": "cp.settings.tax.$0",
-                "title": "[taxConfig]",
-                "children": [
-                  {
-                    "title": "date_from",
-                    "type": "date",
-                    "id": "cp.settings.tax.$0.date_from"
-                  },
-                  {
-                    "title": "date_to",
-                    "type": "date",
-                    "id": "cp.settings.tax.$0.date_to"
-                  },
-                  {
-                    "title": "current",
-                    "type": "boolean",
-                    "id": "cp.settings.tax.$0.current"
-                  },
-                  {
-                    "title": "values",
-                    "type": "array",
-                    "id": "cp.settings.tax.$0.values",
-                    "children": [
-                      {
-                        "type": "object",
-                        "id": "cp.settings.tax.$0.values.$0",
-                        "title": "[taxValue]",
-                        "children": [
-                          {
-                            "title": "name",
-                            "type": "string",
-                            "id": "cp.settings.tax.$0.values.$0.name"
-                          },
-                          {
-                            "title": "description",
-                            "type": "string",
-                            "id": "cp.settings.tax.$0.values.$0.description"
-                          },
-                          {
-                            "title": "value",
-                            "type": "string",
-                            "id": "cp.settings.tax.$0.values.$0.value"
-                          },
-                          {
-                            "title": "selected",
-                            "type": "number",
-                            "id": "cp.settings.tax.$0.values.$0.selected"
-                          },
-                          {
-                            "title": "id",
-                            "type": "string",
-                            "id": "cp.settings.tax.$0.values.$0.id"
-                          },
-                          {
-                            "title": "nameTranslations",
-                            "type": "object",
-                            "id": "cp.settings.tax.$0.values.$0.nameTranslations",
-                            "children": [
-                              {
-                                "title": "[lang]",
-                                "type": "string",
-                                "id": "cp.settings.tax.$0.values.$0.nameTranslations.[lang]"
-                              }
-                            ]
-                          },
-                          {
-                            "title": "descriptionTranslations",
-                            "type": "object",
-                            "id": "cp.settings.tax.$0.values.$0.descriptionTranslations",
-                            "children": [
-                              {
-                                "title": "[lang]",
-                                "type": "string",
-                                "id": "cp.settings.tax.$0.values.$0.descriptionTranslations.[lang]"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "users",
-        "type": "array",
-        "id": "cp.users",
-        "children": [
-          {
-            "title": "[user_sub]",
-            "type": "string",
-            "id": "cp.users.$0"
-          }
-        ]
-      },
-      {
-        "title": "depreciatingAssets",
-        "type": "array",
-        "id": "cp.depreciatingAssets",
-        "children": [
-          {
-            "title": "[depreciatingAsset]",
-            "type": "object",
-            "id": "cp.depreciatingAssets.$0",
-            "children": [
-              {
-                "title": "description",
-                "type": "string",
-                "id": "cp.depreciatingAssets.$0.description"
-              },
-              {
-                "title": "serial",
-                "type": "string",
-                "id": "cp.depreciatingAssets.$0.serial"
-              },
-              {
-                "title": "endOfLife",
-                "type": "date",
-                "id": "cp.depreciatingAssets.$0.endOfLife"
-              },
-              {
-                "title": "dateAdded",
-                "type": "date",
-                "id": "cp.depreciatingAssets.$0.dateAdded"
-              },
-              {
-                "title": "inInventory",
-                "type": "boolean",
-                "id": "cp.depreciatingAssets.$0.inInventory"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-
-        // {"source":{"id":"c2a23212-6861-4de1-9db5-9c733bd20f21"}, "target":{"id":"2b3b1148-8ef5-4103-a206-f6742ec58c52"}}
-      ];
-      editorEl.innerHTML = JSON.stringify(testJson, null, ` `);
+      var testJson = [];
     </script>
     <script>
         var editor = ace.edit("editor");
@@ -355,33 +62,40 @@
       var {graph,paper} = initGraph(graphEl);
 
       // initial draw
-      testJson = redrawGraph(paper, graph,testJson);
+      fetch("./data/data.json")
+        .then(response => response.json())
+        .then(initialData => {
+          testJson = initialData;
+          editor.setValue(JSON.stringify(initialData,null,` `))
+          redrawGraph(paper, graph,initialData);
+        });
 
       // update graph on valid editor change
       function isJsonValid(value, nested){
-        return value.every(e => {
-          let _r = false;
-          if (!e) {
-            console.log(e, `falsy`);
-          }
-          else if ( e.title) {
-            if(
-              typeof e.title === `string` && 
-              (!nested || (e.type && 
-              typeof e.type ==="string")) &&
-              (!e.children || isJsonValid(e.children, true))
-              ) _r = true;
-              else console.log(e, `invalid title`)
-          }
-          else if (
-          e.source && e.target && e.source.id && e.target.id
-          ) _r = true;
-              else console.log(e, `invalid link`)
+          return value.every(e => {
+            let _r = false;
+            if (!e) {
+              console.log(e, `falsy`);
+            }
+            else if ( e.title) {
+              if(
+                typeof e.title === `string` && 
+                (!nested || (e.type && 
+                typeof e.type ==="string")) &&
+                (!e.children || isJsonValid(e.children, true))
+                ) _r = true;
+                else console.log(e, `invalid title`)
+            }
+            else if (
+            e.source && e.target && e.source.id && e.target.id
+            ) _r = true;
+                else console.log(e, `invalid link`)
 
-        return _r;
+          return _r;
+          
+        });
+      }
         
-      });
-    }
       editor.getSession().on("changeAnnotation", function(){
         const annot = editor.getSession().getAnnotations();
         if(!Object.values(annot)?.length) {
@@ -390,48 +104,48 @@
           testJson = redrawGraph(paper, graph,newValue);
           // testJson = newValue;
         } else console.log(JSON.stringify(testJson)===JSON.stringify(newValue)?`identical`:`invalid 2`);
-       } else console.log(`invalid 1`);
+      } else console.log(`invalid 1`);
       });
-</script>
+    </script>
     <script>
-  document.getElementById(`btn-check-data`).addEventListener(`click`, function(){
-    alert(JSON.stringify(testJson));
-  })
-  document.getElementById(`btn-update-data`).addEventListener(`click`, function(){
-    editor.setValue(JSON.stringify(testJson, null, ` `));
-  })
-  // document.getElementById(`btn-copy-data`).addEventListener(`click`, function(){
-  //   isClipboardWritingAllowed().then(function(allowed){
-  //       // 4. Write to clipboard if allowed
-  //       if(allowed){
-  //           navigator.clipboard.writeText(JSON.stringify(testJson, null, ` `)).then(function(){
-  //               alert("Updated JSON data has been copied to clipboard.");
-  //           });
-  //       }
-  //   }).catch(function(err){
-  //       console.log("Cannot copy to clipboard", err);
-  //   });
-  // })
-//   function isClipboardWritingAllowed(){
-//     return new Promise(function(resolve, reject){
-//         try{
-//             navigator.permissions.query({ name: "clipboard-write" }).then(function(status){
-//                 // PermissionStatus object
-//                 // {
-//                 //  onchange: null,
-//                 //  state: "granted" (it could be as well `denied` or `prompt`)
-//                 // }
-//                 console.log(status);
+    document.getElementById(`btn-check-data`).addEventListener(`click`, function(){
+      alert(JSON.stringify(testJson));
+    })
+    document.getElementById(`btn-update-data`).addEventListener(`click`, function(){
+      editor.setValue(JSON.stringify(testJson, null, ` `));
+    })
+    // document.getElementById(`btn-copy-data`).addEventListener(`click`, function(){
+    //   isClipboardWritingAllowed().then(function(allowed){
+    //       // 4. Write to clipboard if allowed
+    //       if(allowed){
+    //           navigator.clipboard.writeText(JSON.stringify(testJson, null, ` `)).then(function(){
+    //               alert("Updated JSON data has been copied to clipboard.");
+    //           });
+    //       }
+    //   }).catch(function(err){
+    //       console.log("Cannot copy to clipboard", err);
+    //   });
+    // })
+  //   function isClipboardWritingAllowed(){
+  //     return new Promise(function(resolve, reject){
+  //         try{
+  //             navigator.permissions.query({ name: "clipboard-write" }).then(function(status){
+  //                 // PermissionStatus object
+  //                 // {
+  //                 //  onchange: null,
+  //                 //  state: "granted" (it could be as well `denied` or `prompt`)
+  //                 // }
+  //                 console.log(status);
 
-//                 resolve((status.state == "granted"));
-//             });
-//         }catch(error){
-//             // This could be caused because of a Browser incompatibility or security error
-//             // Remember that this feature works only through HTTPS
-//             reject(error);
-//         }
-//     });
-// }
-</script>
+  //                 resolve((status.state == "granted"));
+  //             });
+  //         }catch(error){
+  //             // This could be caused because of a Browser incompatibility or security error
+  //             // Remember that this feature works only through HTTPS
+  //             reject(error);
+  //         }
+  //     });
+  // }
+  </script>
   </body>
 </html>
