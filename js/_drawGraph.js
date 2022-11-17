@@ -102,6 +102,7 @@ function addChildren(C, graph, parentData, parentEl, X, Y, level = 1) {
           typeText: { text: c.type }
         }
       };
+      if(c.required) o.attrs.label.fill = `#FF0000`;
       if (c.id) o.id = c.id;
       child = new C.ObjectChild(o);
       graph.addCells([child]);
@@ -116,6 +117,9 @@ function addChildren(C, graph, parentData, parentEl, X, Y, level = 1) {
           typeText: { text: c.type }
         }
       };
+      if(c.required) o.attrs.label.fill = `#FF0000`;
+      else if (c.default!==undefined) o.attrs.label.fill = `#0099FF`;
+      if(c.enum) o.attrs.typeText.fill = `#FF0000`;
       if (c.id) o.id = c.id;
       child = new C.Child(o);
       children.push(child);
