@@ -1059,5 +1059,149 @@
         "id": "fiscalYearConfig.$0.current"
       }
     ]
+  },
+  "entryEditPathValues": {
+    "title":"entryEditPathValues",
+    "id":"entryEditPathValues",
+    "type":"array",
+    "children": [
+      {
+        "title":"{editPathValue}",
+        "id":"entryEditPathValues.$0",
+        "type":"object",
+        "children": [
+          {
+            "title":"path",
+            "id":"entryEditPathValues.$0.path",
+            "type":"string"
+          },
+          {
+            "title":"value",
+            "id":"entryEditPathValues.$0.value",
+            "type":"string"
+          }
+        ]
+      }
+    ]
+  },
+  "databaseAccountReference":{
+    "title":"databaseAccountReference",
+    "id":"databaseAccountReference",
+    "type":"object",
+    "children":[
+      {
+        "title": "_id",
+        "type": "string",
+        "id": "databaseAccountReference._id"
+      },
+      {
+        "title": "code",
+        "type": "string",
+        "id": "databaseAccountReference.code"
+      },
+      {
+        "title": "label",
+        "type": "string",
+        "id": "databaseAccountReference.label"
+      },
+      {
+        "title": "debit",
+        "type": "boolean",
+        "id": "databaseAccountReference.debit"
+      },
+      {
+        "title": "credit",
+        "type": "boolean",
+        "id": "databaseAccountReference.credit"
+      },
+      {
+        "title": "codePath",
+        "type": "array",
+        "id": "databaseAccountReference.codePath",
+        "children": [
+          {
+            "title": "{codeSegment}",
+            "type": "string",
+            "id": "databaseAccountReference.codePath.$0"
+          }
+        ]
+      },
+      {
+        "title": "labelPath",
+        "type": "array",
+        "id": "databaseAccountReference.labelPath",
+        "children": [
+          {
+            "title": "{codeSegment}",
+            "type": "string",
+            "id": "databaseAccountReference.labelPath.$0"
+          }
+        ]
+      }
+    ]
+  },
+  "amount":{
+    "title":"amount",
+    "id":"amount",
+    "type":"object",
+    "children":[
+      {
+        "title": "value",
+        "type": "string",
+        "id": "amount.value"
+      },
+      {
+        "title": "currency",
+        "type": "string",
+        "id": "amount.currency"
+      },
+      {
+        "title": "originalCurrency",
+        "type": "string",
+        "id": "amount.originalCurrency"
+      },
+      {
+        "title": "originalValue",
+        "type": "object",
+        "id": "amount.originalValue"
+      },
+      {
+        "title": "rate",
+        "type": "object",
+        "id": "amount.rate",
+        "children":[
+          {
+            "title": "value",
+            "type": "string",
+            "id": "amount.rate.value"
+          },
+          {
+            "title": "currencyFrom",
+            "type": "string",
+            "id": "amount.rate.currencyFrom"
+          },
+          {
+            "title": "currencyTo",
+            "type": "string",
+            "id": "amount.rate.currencyTo"
+          },
+          {
+            "title": "source",
+            "type": "string",
+            "id": "amount.rate.source"
+          },
+          {
+            "title": "manual",
+            "type": "boolean",
+            "id": "amount.rate.manual"
+          },
+          {
+            "title": "date",
+            "type": "date",
+            "id": "amount.rate.date"
+          }
+        ]
+      }
+    ]
   }
 }

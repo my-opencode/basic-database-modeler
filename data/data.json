@@ -1,5 +1,17 @@
 [
   {
+    "id": "user",
+    "title": "User",
+    "children": [
+      {
+        "title": "sub",
+        "type": "string",
+        "id": "user.sub"
+      }
+    ],
+    "color": "#EE9900"
+  },
+  {
     "id": "cp",
     "title": "Company",
     "children": [
@@ -644,7 +656,8 @@
           }
         ]
       }
-    ]
+    ],
+    "color": "#43a345"
   },
   {
     "type": "object",
@@ -3282,7 +3295,8 @@
           }
         ]
       }
-    ]
+    ],
+    "color": "#b5224e"
   },
   {
     "type": "object",
@@ -3502,7 +3516,8 @@
           }
         ]
       }
-    ]
+    ],
+    "color": "#bfb654"
   },
   {
     "type": "object",
@@ -3826,6 +3841,1051 @@
           }
         ]
       }
+    ],
+    "color": "#54bbbf"
+  },
+  {
+    "type": "object",
+    "title": "Entry",
+    "id": "entry",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "entry._id"
+      },
+      {
+        "title": "active",
+        "type": "boolean",
+        "id": "entry.active"
+      },
+      {
+        "title": "created_at",
+        "type": "date",
+        "id": "entry.created_at"
+      },
+      {
+        "title": "creator",
+        "id": "entry.creator",
+        "type": "object",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "entry.creator.name"
+          },
+          {
+            "title": "_id",
+            "type": "string",
+            "id": "entry.creator._id"
+          }
+        ]
+      },
+      {
+        "title": "isClosed",
+        "type": "boolean",
+        "id": "entry.isClosed"
+      },
+      {
+        "title": "profile",
+        "type": "object",
+        "id": "entry.profile",
+        "children": [
+          {
+            "title": "description",
+            "type": "string",
+            "id": "entry.profile.description"
+          },
+          {
+            "title": "descriptionTranslations",
+            "id": "entry.profile.descriptionTranslations",
+            "type": "object",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "entry.profile.descriptionTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "company",
+            "id": "entry.profile.company",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "entry.profile.company.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "entry.profile.company._id"
+              }
+            ]
+          },
+          {
+            "title": "chart",
+            "id": "entry.profile.chart",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "entry.profile.chart.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "entry.profile.chart._id"
+              }
+            ]
+          },
+          {
+            "title": "book",
+            "id": "entry.profile.book",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "entry.profile.book.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "entry.profile.book._id"
+              }
+            ]
+          },
+          {
+            "title": "report",
+            "id": "entry.profile.report",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "entry.profile.report.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "entry.profile.report._id"
+              }
+            ]
+          },
+          {
+            "title": "date",
+            "type": "date",
+            "id": "entry.profile.date"
+          },
+          {
+            "title": "operationType",
+            "type": "string",
+            "id": "entry.profile.operationType"
+          },
+          {
+            "title": "operation",
+            "type": "string",
+            "id": "entry.profile.operation"
+          },
+          {
+            "title": "debit",
+            "type": "string",
+            "id": "entry.profile.debit"
+          },
+          {
+            "title": "credit",
+            "type": "string",
+            "id": "entry.profile.credit"
+          },
+          {
+            "title": "currency",
+            "type": "string",
+            "id": "entry.profile.currency"
+          },
+          {
+            "title": "journalNumber",
+            "type": "number",
+            "id": "entry.profile.journalNumber"
+          },
+          {
+            "title": "documents",
+            "type": "array",
+            "id": "entry.profile.documents"
+          },
+          {
+            "title": "invoice",
+            "type": "object",
+            "id": "entry.profile.invoice"
+          },
+          {
+            "title": "originalData",
+            "type": "object",
+            "id": "entry.profile.originalData"
+          },
+          {
+            "title": "additionalData",
+            "type": "object",
+            "id": "entry.profile.additionalData"
+          },
+          {
+            "title": "automated",
+            "type": "boolean",
+            "id": "entry.profile.automated"
+          }
+        ]
+      },
+      {
+        "title": "void",
+        "type": "object",
+        "id": "entry.void",
+        "children": [
+          {
+            "title": "user",
+            "id": "entry.void.user",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "entry.void.user.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "entry.void.user._id"
+              }
+            ]
+          },
+          {
+            "title": "reason",
+            "type": "string",
+            "id": "entry.void.reason"
+          },
+          {
+            "title": "voided_at",
+            "type": "date",
+            "id": "entry.void.voided_at"
+          },
+          {
+            "title": "additionalData",
+            "type": "object",
+            "id": "entry.void.additionalData"
+          }
+        ]
+      },
+      {
+        "title": "lines",
+        "type": "array",
+        "id": "entry.lines",
+        "children": [
+          {
+            "title": "{line}",
+            "type": "object",
+            "id": "entry.lines.$0",
+            "children": [
+              {
+                "title": "description",
+                "type": "string",
+                "id": "entry.lines.$0.description"
+              },
+              {
+                "title": "descriptionTranslations",
+                "id": "entry.lines.$0.descriptionTranslations",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "[lang]",
+                    "type": "string",
+                    "id": "entry.lines.$0.descriptionTranslations.[lang]"
+                  }
+                ]
+              },
+              {
+                "title": "order",
+                "type": "number",
+                "id": "entry.lines.$0.order"
+              },
+              {
+                "title": "entryLineNumber",
+                "type": "number",
+                "id": "entry.lines.$0.entryLineNumber"
+              },
+              {
+                "title": "openingLineNumber",
+                "type": "number",
+                "id": "entry.lines.$0.openingLineNumber"
+              },
+              {
+                "title": "date",
+                "type": "date",
+                "id": "entry.lines.$0.date"
+              },
+              {
+                "title": "entryType",
+                "type": "string",
+                "id": "entry.lines.$0.entryType"
+              },
+              {
+                "title": "account",
+                "id": "entry.lines.$0.account",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "_id",
+                    "type": "string",
+                    "id": "entry.lines.$0.account._id"
+                  },
+                  {
+                    "title": "code",
+                    "type": "string",
+                    "id": "entry.lines.$0.account.code"
+                  },
+                  {
+                    "title": "label",
+                    "type": "string",
+                    "id": "entry.lines.$0.account.label"
+                  },
+                  {
+                    "title": "debit",
+                    "type": "boolean",
+                    "id": "entry.lines.$0.account.debit"
+                  },
+                  {
+                    "title": "credit",
+                    "type": "boolean",
+                    "id": "entry.lines.$0.account.credit"
+                  },
+                  {
+                    "title": "codePath",
+                    "type": "array",
+                    "id": "entry.lines.$0.account.codePath",
+                    "children": [
+                      {
+                        "title": "{codeSegment}",
+                        "type": "string",
+                        "id": "entry.lines.$0.account.codePath.$0"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "labelPath",
+                    "type": "array",
+                    "id": "entry.lines.$0.account.labelPath",
+                    "children": [
+                      {
+                        "title": "{codeSegment}",
+                        "type": "string",
+                        "id": "entry.lines.$0.account.labelPath.$0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "debit",
+                "id": "entry.lines.$0.debit",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "value",
+                    "type": "string",
+                    "id": "entry.lines.$0.debit.value"
+                  },
+                  {
+                    "title": "currency",
+                    "type": "string",
+                    "id": "entry.lines.$0.debit.currency"
+                  },
+                  {
+                    "title": "originalCurrency",
+                    "type": "string",
+                    "id": "entry.lines.$0.debit.originalCurrency"
+                  },
+                  {
+                    "title": "originalValue",
+                    "type": "object",
+                    "id": "entry.lines.$0.debit.originalValue"
+                  },
+                  {
+                    "title": "rate",
+                    "type": "object",
+                    "id": "entry.lines.$0.debit.rate",
+                    "children": [
+                      {
+                        "title": "value",
+                        "type": "string",
+                        "id": "entry.lines.$0.debit.rate.value"
+                      },
+                      {
+                        "title": "currencyFrom",
+                        "type": "string",
+                        "id": "entry.lines.$0.debit.rate.currencyFrom"
+                      },
+                      {
+                        "title": "currencyTo",
+                        "type": "string",
+                        "id": "entry.lines.$0.debit.rate.currencyTo"
+                      },
+                      {
+                        "title": "source",
+                        "type": "string",
+                        "id": "entry.lines.$0.debit.rate.source"
+                      },
+                      {
+                        "title": "manual",
+                        "type": "boolean",
+                        "id": "entry.lines.$0.debit.rate.manual"
+                      },
+                      {
+                        "title": "date",
+                        "type": "date",
+                        "id": "entry.lines.$0.debit.rate.date"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "credit",
+                "id": "entry.lines.$0.credit",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "value",
+                    "type": "string",
+                    "id": "entry.lines.$0.credit.value"
+                  },
+                  {
+                    "title": "currency",
+                    "type": "string",
+                    "id": "entry.lines.$0.credit.currency"
+                  },
+                  {
+                    "title": "originalCurrency",
+                    "type": "string",
+                    "id": "entry.lines.$0.credit.originalCurrency"
+                  },
+                  {
+                    "title": "originalValue",
+                    "type": "object",
+                    "id": "entry.lines.$0.credit.originalValue"
+                  },
+                  {
+                    "title": "rate",
+                    "type": "object",
+                    "id": "entry.lines.$0.credit.rate",
+                    "children": [
+                      {
+                        "title": "value",
+                        "type": "string",
+                        "id": "entry.lines.$0.credit.rate.value"
+                      },
+                      {
+                        "title": "currencyFrom",
+                        "type": "string",
+                        "id": "entry.lines.$0.credit.rate.currencyFrom"
+                      },
+                      {
+                        "title": "currencyTo",
+                        "type": "string",
+                        "id": "entry.lines.$0.credit.rate.currencyTo"
+                      },
+                      {
+                        "title": "source",
+                        "type": "string",
+                        "id": "entry.lines.$0.credit.rate.source"
+                      },
+                      {
+                        "title": "manual",
+                        "type": "boolean",
+                        "id": "entry.lines.$0.credit.rate.manual"
+                      },
+                      {
+                        "title": "date",
+                        "type": "date",
+                        "id": "entry.lines.$0.credit.rate.date"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "originalData",
+                "type": "object",
+                "id": "entry.lines.$0.originalData"
+              },
+              {
+                "title": "additionalData",
+                "type": "object",
+                "id": "entry.lines.$0.additionalData"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "edits",
+        "type": "array",
+        "id": "entry.edits",
+        "children": [
+          {
+            "title": "{edit}",
+            "type": "object",
+            "id": "entry.edits.$0",
+            "children": [
+              {
+                "title": "reason",
+                "type": "string",
+                "id": "entry.edits.$0.reason"
+              },
+              {
+                "title": "editor",
+                "id": "entry.edits.$0.editor",
+                "type": "object",
+                "children": [
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "entry.edits.$0.editor.name"
+                  },
+                  {
+                    "title": "_id",
+                    "type": "string",
+                    "id": "entry.edits.$0.editor._id"
+                  }
+                ]
+              },
+              {
+                "title": "before",
+                "id": "entry.edits.$0.before",
+                "type": "array",
+                "children": [
+                  {
+                    "title": "{editPathValue}",
+                    "id": "entry.edits.$0.before.$0",
+                    "type": "object",
+                    "children": [
+                      {
+                        "title": "path",
+                        "id": "entry.edits.$0.before.$0.path",
+                        "type": "string"
+                      },
+                      {
+                        "title": "value",
+                        "id": "entry.edits.$0.before.$0.value",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "after",
+                "id": "entry.edits.$0.after",
+                "type": "array",
+                "children": [
+                  {
+                    "title": "{editPathValue}",
+                    "id": "entry.edits.$0.after.$0",
+                    "type": "object",
+                    "children": [
+                      {
+                        "title": "path",
+                        "id": "entry.edits.$0.after.$0.path",
+                        "type": "string"
+                      },
+                      {
+                        "title": "value",
+                        "id": "entry.edits.$0.after.$0.value",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "title": "edited_at",
+                "type": "date",
+                "id": "entry.edits.$0.edited_at"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "color": "#bd54bf"
+  },
+  {
+    "type": "object",
+    "title": "Report",
+    "id": "rep",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "rep._id"
+      },
+      {
+        "title": "active",
+        "type": "boolean",
+        "id": "rep.active"
+      },
+      {
+        "title": "created_at",
+        "type": "date",
+        "id": "rep.created_at"
+      },
+      {
+        "title": "creator",
+        "id": "rep.creator",
+        "type": "object",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "rep.creator.name"
+          },
+          {
+            "title": "_id",
+            "type": "string",
+            "id": "rep.creator._id"
+          }
+        ]
+      },
+      {
+        "title": "isClosed",
+        "type": "boolean",
+        "id": "rep.isClosed"
+      },
+      {
+        "title": "profile",
+        "type": "object",
+        "id": "rep.profile",
+        "children": [
+          {
+            "title": "name",
+            "type": "string",
+            "id": "rep.profile.name"
+          },
+          {
+            "title": "nameTranslations",
+            "id": "rep.profile.nameTranslations",
+            "type": "object",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "rep.profile.nameTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "description",
+            "type": "string",
+            "id": "rep.profile.description"
+          },
+          {
+            "title": "descriptionTranslations",
+            "id": "rep.profile.descriptionTranslations",
+            "type": "object",
+            "children": [
+              {
+                "title": "[lang]",
+                "type": "string",
+                "id": "rep.profile.descriptionTranslations.[lang]"
+              }
+            ]
+          },
+          {
+            "title": "company",
+            "id": "rep.profile.company",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "rep.profile.company.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "rep.profile.company._id"
+              }
+            ]
+          },
+          {
+            "title": "book",
+            "id": "rep.profile.book",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "rep.profile.book.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "rep.profile.book._id"
+              }
+            ]
+          },
+          {
+            "title": "chart",
+            "id": "rep.profile.chart",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "rep.profile.chart.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "rep.profile.chart._id"
+              }
+            ]
+          },
+          {
+            "title": "currency",
+            "type": "string",
+            "id": "rep.profile.currency"
+          },
+          {
+            "title": "language",
+            "type": "string",
+            "id": "rep.profile.language"
+          },
+          {
+            "title": "reportFamily",
+            "type": "string",
+            "id": "rep.profile.reportFamily"
+          },
+          {
+            "title": "reportFamilyOrder",
+            "type": "number",
+            "id": "rep.profile.reportFamilyOrder"
+          },
+          {
+            "title": "bookPeriod",
+            "id": "rep.profile.bookPeriod",
+            "type": "object",
+            "children": [
+              {
+                "title": "date_from",
+                "type": "date",
+                "id": "rep.profile.bookPeriod.date_from"
+              },
+              {
+                "title": "date_to",
+                "type": "date",
+                "id": "rep.profile.bookPeriod.date_to"
+              }
+            ]
+          },
+          {
+            "title": "bookFiscalYearStarts",
+            "id": "rep.profile.bookFiscalYearStarts",
+            "stringTitle": "{yearStartDate}",
+            "type": "array",
+            "children": [
+              {
+                "title": "{yearStartDate}",
+                "type": "string",
+                "id": "rep.profile.bookFiscalYearStarts.$0"
+              }
+            ]
+          },
+          {
+            "title": "isStatuatory",
+            "type": "boolean",
+            "id": "rep.profile.isStatuatory"
+          },
+          {
+            "title": "generated_at",
+            "type": "date",
+            "id": "rep.profile.generated_at"
+          },
+          {
+            "title": "pages",
+            "type": "array",
+            "id": "rep.profile.pages",
+            "children": [
+              {
+                "title": "{reportPageStatus}",
+                "type": "object",
+                "id": "rep.profile.pages.$0",
+                "children": [
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "rep.profile.pages.$0.name"
+                  },
+                  {
+                    "title": "generated",
+                    "type": "boolean",
+                    "id": "rep.profile.pages.$0.generated"
+                  },
+                  {
+                    "title": "isSystem",
+                    "type": "boolean",
+                    "id": "rep.profile.pages.$0.isSystem"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "editor",
+            "id": "rep.profile.editor",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "rep.profile.editor.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "rep.profile.editor._id"
+              }
+            ]
+          },
+          {
+            "title": "planned",
+            "type": "boolean",
+            "id": "rep.profile.planned"
+          },
+          {
+            "title": "manual",
+            "type": "boolean",
+            "id": "rep.profile.manual"
+          },
+          {
+            "title": "automatic",
+            "type": "boolean",
+            "id": "rep.profile.automatic"
+          },
+          {
+            "title": "generated",
+            "type": "boolean",
+            "id": "rep.profile.generated"
+          }
+        ]
+      },
+      {
+        "title": "settings",
+        "type": "object",
+        "id": "rep.settings",
+        "children": [
+          {
+            "title": "timezone",
+            "type": "string",
+            "id": "rep.settings.timezone"
+          },
+          {
+            "title": "locale",
+            "type": "string",
+            "id": "rep.settings.locale"
+          },
+          {
+            "title": "useLatestConfigOrSameAsCreation",
+            "type": "string",
+            "id": "rep.settings.useLatestConfigOrSameAsCreation"
+          },
+          {
+            "title": "configs",
+            "type": "array",
+            "id": "rep.settings.configs",
+            "children": [
+              {
+                "title": "{reportConfig}",
+                "type": "object",
+                "id": "rep.settings.configs.$0",
+                "children": [
+                  {
+                    "title": "name",
+                    "type": "string",
+                    "id": "rep.settings.configs.$0.name"
+                  },
+                  {
+                    "title": "date",
+                    "type": "date",
+                    "id": "rep.settings.configs.$0.date"
+                  },
+                  {
+                    "title": "source",
+                    "type": "object",
+                    "id": "rep.settings.configs.$0.source",
+                    "children": [
+                      {
+                        "title": "_id",
+                        "type": "string",
+                        "id": "rep.settings.configs.$0._id"
+                      },
+                      {
+                        "title": "modelName",
+                        "type": "string",
+                        "id": "rep.settings.configs.$0.modelName"
+                      },
+                      {
+                        "title": "dbName",
+                        "type": "string",
+                        "id": "rep.settings.configs.$0.dbName"
+                      },
+                      {
+                        "title": "collectionName",
+                        "type": "string",
+                        "id": "rep.settings.configs.$0.collectionName"
+                      },
+                      {
+                        "title": "latestEditDate",
+                        "type": "date",
+                        "id": "rep.settings.configs.$0.latestEditDate"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "definition",
+                    "type": "object",
+                    "id": "rep.settings.configs.$0.definition"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "owners",
+        "type": "array",
+        "id": "rep.owners",
+        "children": [
+          {
+            "title": "{owner}",
+            "id": "rep.owners.$0",
+            "type": "object",
+            "children": [
+              {
+                "title": "name",
+                "type": "string",
+                "id": "rep.owners.$0.name"
+              },
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "rep.owners.$0._id"
+              },
+              {
+                "title": "date_from",
+                "type": "date",
+                "id": "rep.owners.$0.date_from"
+              },
+              {
+                "title": "date_to",
+                "type": "date",
+                "id": "rep.owners.$0.date_to"
+              },
+              {
+                "title": "current",
+                "type": "boolean",
+                "id": "rep.owners.$0.current"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "users",
+        "id": "rep.users",
+        "stringTitle": "{userSub}",
+        "type": "array",
+        "children": [
+          {
+            "title": "{userSub}",
+            "type": "string",
+            "id": "rep.users.$0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "object",
+    "title": "ReportData",
+    "id": "rdata",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "rdata._id"
+      },
+      {
+        "title": "report_id",
+        "type": "string",
+        "id": "rdata.report_id"
+      },
+      {
+        "title": "created_at",
+        "type": "date",
+        "id": "rdata.created_at"
+      },
+      {
+        "title": "data",
+        "type": "object",
+        "id": "rdata.data",
+        "children": []
+      },
+      {
+        "title": "sourceUpdateTrackers",
+        "type": "array",
+        "id": "rdata.sourceUpdateTrackers",
+        "children": [
+          {
+            "title": "{sourceUpdateTracker}",
+            "type": "object",
+            "id": "rdata.sourceUpdateTrackers.$0",
+            "children": [
+              {
+                "title": "_id",
+                "type": "string",
+                "id": "rdata.sourceUpdateTrackers.$0._id"
+              },
+              {
+                "title": "modelName",
+                "type": "string",
+                "id": "rdata.sourceUpdateTrackers.$0.modelName"
+              },
+              {
+                "title": "dbName",
+                "type": "string",
+                "id": "rdata.sourceUpdateTrackers.$0.dbName"
+              },
+              {
+                "title": "collectionName",
+                "type": "string",
+                "id": "rdata.sourceUpdateTrackers.$0.collectionName"
+              },
+              {
+                "title": "hash",
+                "type": "string",
+                "id": "rdata.sourceUpdateTrackers.$0.hash"
+              },
+              {
+                "title": "latestEditDate",
+                "type": "string",
+                "id": "rdata.sourceUpdateTrackers.$0.latestEditDate"
+              }
+            ]
+          }
+        ]
+      }
     ]
   },
   {
@@ -3871,5 +4931,97 @@
   {
     "from": "bk.profile.chart._id",
     "to": "chart._id"
+  },
+  {
+    "from": "entry.profile.company._id",
+    "to": "cp._id"
+  },
+  {
+    "from": "entry.profile.chart._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "entry.profile.book._id",
+    "to": "bk._id"
+  },
+  {
+    "from": "rep.profile.company._id",
+    "to": "cp._id"
+  },
+  {
+    "from": "rep.profile.chart._id",
+    "to": "chart._id"
+  },
+  {
+    "from": "rep.profile.book._id",
+    "to": "bk._id"
+  },
+  {
+    "from": "cp.creator._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "cp.owners.$0._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "cp.users.$0",
+    "to": "user.sub"
+  },
+  {
+    "from": "chart.creator._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "acc.creator._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "bk.creator._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "bk.owners.$0._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "bk.users.$0",
+    "to": "user.sub"
+  },
+  {
+    "from": "entry.creator._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "entry.void.user._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "entry.edits.$0.editor._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "entry.lines.$0.account._id",
+    "to": "acc._id"
+  },
+  {
+    "from": "rep.creator._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "rep.owners.$0._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "rep.users.$0",
+    "to": "user.sub"
+  },
+  {
+    "from": "rep.profile.editor._id",
+    "to": "user.sub"
+  },
+  {
+    "from": "rdata.report_id",
+    "to": "rep._id"
   }
 ]
