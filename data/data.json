@@ -18,44 +18,52 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "cp._id"
+        "id": "cp._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "cp.active"
+        "id": "cp.active",
+        "default": "true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "cp.created_at"
+        "id": "cp.created_at",
+        "default": "Date.now"
       },
       {
         "title": "creator",
         "id": "cp.creator",
+        "required": true,
         "type": "object",
         "children": [
           {
             "title": "name",
             "type": "string",
-            "id": "cp.creator.name"
+            "id": "cp.creator.name",
+            "required": true
           },
           {
             "title": "_id",
             "type": "string",
-            "id": "cp.creator._id"
+            "id": "cp.creator._id",
+            "required": true
           }
         ]
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "cp.isClosed"
+        "id": "cp.isClosed",
+        "default": false
       },
       {
         "title": "owners",
         "type": "array",
         "id": "cp.owners",
+        "required": true,
         "children": [
           {
             "title": "{owner}",
@@ -65,27 +73,32 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "cp.owners.$0.name"
+                "id": "cp.owners.$0.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "cp.owners.$0._id"
+                "id": "cp.owners.$0._id",
+                "required": true
               },
               {
                 "title": "date_from",
                 "type": "date",
-                "id": "cp.owners.$0.date_from"
+                "id": "cp.owners.$0.date_from",
+                "default": "Date.now"
               },
               {
                 "title": "date_to",
                 "type": "date",
-                "id": "cp.owners.$0.date_to"
+                "id": "cp.owners.$0.date_to",
+                "default": "Date.now"
               },
               {
                 "title": "current",
                 "type": "boolean",
-                "id": "cp.owners.$0.current"
+                "id": "cp.owners.$0.current",
+                "required": true
               }
             ]
           }
@@ -95,11 +108,13 @@
         "title": "profile",
         "type": "object",
         "id": "cp.profile",
+        "required": true,
         "children": [
           {
             "title": "country",
             "type": "string",
-            "id": "cp.profile.country"
+            "id": "cp.profile.country",
+            "required": true
           },
           {
             "title": "legalEntity",
@@ -109,7 +124,8 @@
           {
             "title": "registrationId",
             "type": "string",
-            "id": "cp.profile.registrationId"
+            "id": "cp.profile.registrationId",
+            "required": true
           },
           {
             "title": "chart_id",
@@ -119,7 +135,8 @@
           {
             "title": "name",
             "type": "string",
-            "id": "cp.profile.name"
+            "id": "cp.profile.name",
+            "required": true
           },
           {
             "title": "nameTranslations",
@@ -137,6 +154,7 @@
             "title": "registrations",
             "type": "array",
             "id": "cp.profile.registrations",
+            "required": true,
             "children": [
               {
                 "title": "{companyRegistration}",
@@ -146,27 +164,32 @@
                   {
                     "title": "name",
                     "type": "string",
-                    "id": "cp.profile.registrations.$0.name"
+                    "id": "cp.profile.registrations.$0.name",
+                    "required": true
                   },
                   {
                     "title": "id",
                     "type": "string",
-                    "id": "cp.profile.registrations.$0.id"
+                    "id": "cp.profile.registrations.$0.id",
+                    "required": true
                   },
                   {
                     "title": "date_from",
                     "type": "date",
-                    "id": "cp.profile.registrations.$0.date_from"
+                    "id": "cp.profile.registrations.$0.date_from",
+                    "default": "Date.now"
                   },
                   {
                     "title": "date_to",
                     "type": "date",
-                    "id": "cp.profile.registrations.$0.date_to"
+                    "id": "cp.profile.registrations.$0.date_to",
+                    "default": "Date.now"
                   },
                   {
                     "title": "current",
                     "type": "boolean",
-                    "id": "cp.profile.registrations.$0.current"
+                    "id": "cp.profile.registrations.$0.current",
+                    "required": true
                   }
                 ]
               }
@@ -176,6 +199,7 @@
             "title": "charts",
             "type": "array",
             "id": "cp.profile.charts",
+            "required": true,
             "children": [
               {
                 "title": "{dateReference}",
@@ -185,27 +209,32 @@
                   {
                     "title": "name",
                     "type": "string",
-                    "id": "cp.profile.charts.$0.name"
+                    "id": "cp.profile.charts.$0.name",
+                    "required": true
                   },
                   {
                     "title": "_id",
                     "type": "string",
-                    "id": "cp.profile.charts.$0._id"
+                    "id": "cp.profile.charts.$0._id",
+                    "required": true
                   },
                   {
                     "title": "date_from",
                     "type": "date",
-                    "id": "cp.profile.charts.$0.date_from"
+                    "id": "cp.profile.charts.$0.date_from",
+                    "default": "Date.now"
                   },
                   {
                     "title": "date_to",
                     "type": "date",
-                    "id": "cp.profile.charts.$0.date_to"
+                    "id": "cp.profile.charts.$0.date_to",
+                    "default": "Date.now"
                   },
                   {
                     "title": "current",
                     "type": "boolean",
-                    "id": "cp.profile.charts.$0.current"
+                    "id": "cp.profile.charts.$0.current",
+                    "required": true
                   }
                 ]
               }
@@ -215,6 +244,7 @@
             "title": "legalEntities",
             "type": "array",
             "id": "cp.profile.legalEntities",
+            "required": true,
             "children": [
               {
                 "title": "{datedParamReference}",
@@ -234,12 +264,14 @@
                   {
                     "title": "date_from",
                     "type": "date",
-                    "id": "cp.profile.legalEntities.$0.date_from"
+                    "id": "cp.profile.legalEntities.$0.date_from",
+                    "default": "Date.now"
                   },
                   {
                     "title": "date_to",
                     "type": "date",
-                    "id": "cp.profile.legalEntities.$0.date_to"
+                    "id": "cp.profile.legalEntities.$0.date_to",
+                    "default": "Date.now"
                   },
                   {
                     "title": "current",
@@ -275,12 +307,20 @@
                   {
                     "title": "calendar",
                     "type": "string",
-                    "id": "cp.profile.fiscalYears.$0.$0.calendar"
+                    "id": "cp.profile.fiscalYears.$0.$0.calendar",
+                    "enum": [
+                      "gregorian"
+                    ]
                   },
                   {
                     "title": "year_type",
                     "type": "string",
-                    "id": "cp.profile.fiscalYears.$0.$0.year_type"
+                    "id": "cp.profile.fiscalYears.$0.$0.year_type",
+                    "required": true,
+                    "enum": [
+                      "monthly_year",
+                      "4_4_5_year"
+                    ]
                   },
                   {
                     "title": "max_first_year_end_length",
@@ -290,12 +330,14 @@
                   {
                     "title": "allow_custom_year_lengths",
                     "type": "boolean",
-                    "id": "cp.profile.fiscalYears.$0.$0.allow_custom_year_lengths"
+                    "id": "cp.profile.fiscalYears.$0.$0.allow_custom_year_lengths",
+                    "default": "false"
                   },
                   {
                     "title": "allow_custom_first_year_end",
                     "type": "boolean",
-                    "id": "cp.profile.fiscalYears.$0.$0.allow_custom_first_year_end"
+                    "id": "cp.profile.fiscalYears.$0.$0.allow_custom_first_year_end",
+                    "default": "false"
                   },
                   {
                     "title": "periods_in_year",
@@ -305,32 +347,75 @@
                   {
                     "title": "year_start_type",
                     "type": "string",
-                    "id": "cp.profile.fiscalYears.$0.$0.year_start_type"
+                    "id": "cp.profile.fiscalYears.$0.$0.year_start_type",
+                    "required": true,
+                    "enum": [
+                      "calendar",
+                      "offset",
+                      "custom"
+                    ]
                   },
                   {
                     "title": "year_period",
                     "id": "cp.profile.fiscalYears.$0.$0.year_period",
-                    "$ref": "./definitions.json#/fiscalYearUnitNumber"
+                    "type": "object",
+                    "children": [
+                      {
+                        "title": "unit",
+                        "type": "string",
+                        "id": "cp.profile.fiscalYears.$0.$0.year_period.unit",
+                        "required": true,
+                        "enum": [
+                          "years",
+                          "months",
+                          "weeks",
+                          "days"
+                        ]
+                      },
+                      {
+                        "title": "number",
+                        "type": "number",
+                        "id": "cp.profile.fiscalYears.$0.$0.year_period.number",
+                        "required": true
+                      }
+                    ]
                   },
                   {
                     "title": "year_reporting_period",
                     "id": "cp.profile.fiscalYears.$0.$0.year_reporting_period",
-                    "$ref": "./definitions.json#/fiscalYearUnitNumber"
-                  },
-                  {
-                    "title": "code",
-                    "type": "string",
-                    "id": "cp.profile.fiscalYears.$0.$0.code"
+                    "type": "object",
+                    "children": [
+                      {
+                        "title": "unit",
+                        "type": "string",
+                        "id": "cp.profile.fiscalYears.$0.$0.year_reporting_period.unit",
+                        "required": true,
+                        "enum": [
+                          "years",
+                          "months",
+                          "weeks",
+                          "days"
+                        ]
+                      },
+                      {
+                        "title": "number",
+                        "type": "number",
+                        "id": "cp.profile.fiscalYears.$0.$0.year_reporting_period.number",
+                        "required": true
+                      }
+                    ]
                   },
                   {
                     "title": "date_from",
                     "type": "date",
-                    "id": "cp.profile.fiscalYears.$0.$0.date_from"
+                    "id": "cp.profile.fiscalYears.$0.$0.date_from",
+                    "default": "Date.now"
                   },
                   {
                     "title": "date_to",
                     "type": "date",
-                    "id": "cp.profile.fiscalYears.$0.$0.date_to"
+                    "id": "cp.profile.fiscalYears.$0.$0.date_to",
+                    "default": "Date.now"
                   },
                   {
                     "title": "current",
@@ -347,31 +432,41 @@
         "title": "settings",
         "type": "object",
         "id": "cp.settings",
+        "required": true,
         "children": [
           {
             "title": "allowSearchAndJoin",
             "type": "boolean",
-            "id": "cp.settings.allowSearchAndJoin"
+            "id": "cp.settings.allowSearchAndJoin",
+            "default": "true"
           },
           {
             "title": "timezone",
             "type": "string",
-            "id": "cp.settings.timezone"
+            "id": "cp.settings.timezone",
+            "default": "UTC"
           },
           {
             "title": "locale",
             "type": "string",
-            "id": "cp.settings.locale"
+            "id": "cp.settings.locale",
+            "default": "en-US"
           },
           {
             "title": "xrateSource",
             "type": "string",
-            "id": "cp.settings.xrateSource"
+            "id": "cp.settings.xrateSource",
+            "default": "ecb",
+            "enum": [
+              "ecb",
+              "pbc"
+            ]
           },
           {
             "title": "language",
             "type": "string",
-            "id": "cp.settings.language"
+            "id": "cp.settings.language",
+            "required": true
           },
           {
             "title": "languages",
@@ -398,12 +493,14 @@
                   {
                     "title": "date_from",
                     "type": "date",
-                    "id": "cp.settings.periods.$0.date_from"
+                    "id": "cp.settings.periods.$0.date_from",
+                    "default": "Date.now"
                   },
                   {
                     "title": "date_to",
                     "type": "date",
-                    "id": "cp.settings.periods.$0.date_to"
+                    "id": "cp.settings.periods.$0.date_to",
+                    "default": "Date.now"
                   }
                 ]
               }
@@ -422,17 +519,20 @@
                   {
                     "title": "date_from",
                     "type": "date",
-                    "id": "cp.settings.tax.$0.date_from"
+                    "id": "cp.settings.tax.$0.date_from",
+                    "default": "Date.now"
                   },
                   {
                     "title": "date_to",
                     "type": "date",
-                    "id": "cp.settings.tax.$0.date_to"
+                    "id": "cp.settings.tax.$0.date_to",
+                    "default": "Date.now"
                   },
                   {
                     "title": "current",
                     "type": "boolean",
-                    "id": "cp.settings.tax.$0.current"
+                    "id": "cp.settings.tax.$0.current",
+                    "required": true
                   },
                   {
                     "title": "values",
@@ -507,6 +607,7 @@
         "title": "users",
         "type": "array",
         "id": "cp.users",
+        "required": true,
         "children": [
           {
             "title": "{userSub}",
@@ -519,6 +620,7 @@
         "title": "depreciatingAssets",
         "type": "array",
         "id": "cp.depreciatingAssets",
+        "default": "[]",
         "children": [
           {
             "title": "{depreciatingAsset}",
@@ -667,44 +769,52 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "chart._id"
+        "id": "chart._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "chart.active"
+        "id": "chart.active",
+        "default": "true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "chart.created_at"
+        "id": "chart.created_at",
+        "default": "Date.now"
       },
       {
         "title": "creator",
         "id": "chart.creator",
+        "required": true,
         "type": "object",
         "children": [
           {
             "title": "name",
             "type": "string",
-            "id": "chart.creator.name"
+            "id": "chart.creator.name",
+            "required": true
           },
           {
             "title": "_id",
             "type": "string",
-            "id": "chart.creator._id"
+            "id": "chart.creator._id",
+            "required": true
           }
         ]
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "chart.isClosed"
+        "id": "chart.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "chart.profile",
+        "required": true,
         "children": [
           {
             "title": "country",
@@ -788,12 +898,14 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "chart.profile.company.name"
+                "id": "chart.profile.company.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "chart.profile.company._id"
+                "id": "chart.profile.company._id",
+                "required": true
               }
             ]
           },
@@ -805,12 +917,14 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "chart.profile.chartReference.name"
+                "id": "chart.profile.chartReference.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "chart.profile.chartReference._id"
+                "id": "chart.profile.chartReference._id",
+                "required": true
               }
             ]
           },
@@ -822,12 +936,14 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "chart.profile.branchedFrom.name"
+                "id": "chart.profile.branchedFrom.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "chart.profile.branchedFrom._id"
+                "id": "chart.profile.branchedFrom._id",
+                "required": true
               }
             ]
           },
@@ -839,12 +955,14 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "chart.profile.branchRoot.name"
+                "id": "chart.profile.branchRoot.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "chart.profile.branchRoot._id"
+                "id": "chart.profile.branchRoot._id",
+                "required": true
               }
             ]
           }
@@ -854,6 +972,7 @@
         "title": "settings",
         "type": "object",
         "id": "chart.settings",
+        "required": true,
         "children": [
           {
             "title": "formats",
@@ -902,12 +1021,14 @@
                   {
                     "title": "operation",
                     "type": "string",
-                    "id": "chart.settings.importDefaultAccounts.$0.operation"
+                    "id": "chart.settings.importDefaultAccounts.$0.operation",
+                    "required": true
                   },
                   {
                     "title": "parentCode",
                     "type": "string",
-                    "id": "chart.settings.importDefaultAccounts.$0.parentCode"
+                    "id": "chart.settings.importDefaultAccounts.$0.parentCode",
+                    "required": true
                   }
                 ]
               }
@@ -1220,17 +1341,20 @@
                           {
                             "title": "type",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.text.type"
+                            "id": "chart.settings.reports.$0.dataConfig.text.type",
+                            "required": true
                           },
                           {
                             "title": "text",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.text.text"
+                            "id": "chart.settings.reports.$0.dataConfig.text.text",
+                            "required": true
                           },
                           {
                             "title": "name",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.text.name"
+                            "id": "chart.settings.reports.$0.dataConfig.text.name",
+                            "required": true
                           }
                         ]
                       },
@@ -1242,7 +1366,8 @@
                           {
                             "title": "type",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.textTranslated.type"
+                            "id": "chart.settings.reports.$0.dataConfig.textTranslated.type",
+                            "required": true
                           },
                           {
                             "title": "translations",
@@ -1259,7 +1384,8 @@
                           {
                             "title": "name",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.textTranslated.name"
+                            "id": "chart.settings.reports.$0.dataConfig.textTranslated.name",
+                            "required": true
                           }
                         ]
                       },
@@ -1271,7 +1397,8 @@
                           {
                             "title": "type",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableLocal.type"
+                            "id": "chart.settings.reports.$0.dataConfig.variableLocal.type",
+                            "required": true
                           },
                           {
                             "title": "formula",
@@ -1281,7 +1408,8 @@
                           {
                             "title": "name",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableLocal.name"
+                            "id": "chart.settings.reports.$0.dataConfig.variableLocal.name",
+                            "required": true
                           }
                         ]
                       },
@@ -1293,22 +1421,26 @@
                           {
                             "title": "type",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.type"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.type",
+                            "required": true
                           },
                           {
                             "title": "source",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.source"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.source",
+                            "required": true
                           },
                           {
                             "title": "path",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.path"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.path",
+                            "required": true
                           },
                           {
                             "title": "name",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.name"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSource.name",
+                            "required": true
                           }
                         ]
                       },
@@ -1320,27 +1452,32 @@
                           {
                             "title": "type",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.type"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.type",
+                            "required": true
                           },
                           {
                             "title": "source",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.source"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.source",
+                            "required": true
                           },
                           {
                             "title": "path",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.path"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.path",
+                            "required": true
                           },
                           {
                             "title": "translationFailSafePath",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.translationFailSafePath"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.translationFailSafePath",
+                            "required": true
                           },
                           {
                             "title": "name",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.name"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceTranslated.name",
+                            "required": true
                           }
                         ]
                       },
@@ -1352,22 +1489,30 @@
                           {
                             "title": "type",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula.type"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula.type",
+                            "required": true
                           },
                           {
                             "title": "source",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula.source"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula.source",
+                            "required": true,
+                            "enum": [
+                              "general-ledger",
+                              "trial-balance"
+                            ]
                           },
                           {
                             "title": "formula",
                             "type": "string",
-                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula.formula"
+                            "id": "chart.settings.reports.$0.dataConfig.variableFromSourceFormula.formula",
+                            "required": true
                           },
                           {
                             "title": "name",
                             "type": "string",
-                            "id": "reportDataVariableFromSourceTranslated.name"
+                            "id": "reportDataVariableFromSourceTranslated.name",
+                            "required": true
                           }
                         ]
                       }
@@ -1479,7 +1624,8 @@
                                           {
                                             "title": "argb",
                                             "id": "chart.settings.reports.$0.displayConfig.style.global.border.top.color.argb",
-                                            "type": "string"
+                                            "type": "string",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -1503,7 +1649,8 @@
                                           {
                                             "title": "argb",
                                             "id": "chart.settings.reports.$0.displayConfig.style.global.border.left.color.argb",
-                                            "type": "string"
+                                            "type": "string",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -1527,7 +1674,8 @@
                                           {
                                             "title": "argb",
                                             "id": "chart.settings.reports.$0.displayConfig.style.global.border.bottom.color.argb",
-                                            "type": "string"
+                                            "type": "string",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -1551,7 +1699,8 @@
                                           {
                                             "title": "argb",
                                             "id": "chart.settings.reports.$0.displayConfig.style.global.border.right.color.argb",
-                                            "type": "string"
+                                            "type": "string",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -1582,7 +1731,8 @@
                                       {
                                         "title": "argb",
                                         "id": "chart.settings.reports.$0.displayConfig.style.global.fill.fgColor.argb",
-                                        "type": "string"
+                                        "type": "string",
+                                        "required": true
                                       }
                                     ]
                                   },
@@ -1634,7 +1784,8 @@
                                           {
                                             "title": "argb",
                                             "id": "chart.settings.reports.$0.displayConfig.style.global.font.color.argb",
-                                            "type": "string"
+                                            "type": "string",
+                                            "required": true
                                           }
                                         ]
                                       }
@@ -1714,7 +1865,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.top.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -1738,7 +1890,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.left.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -1762,7 +1915,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.bottom.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -1786,7 +1940,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.border.right.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -1817,7 +1972,8 @@
                                               {
                                                 "title": "argb",
                                                 "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.fill.fgColor.argb",
-                                                "type": "string"
+                                                "type": "string",
+                                                "required": true
                                               }
                                             ]
                                           },
@@ -1869,7 +2025,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.rows.$0.style.font.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -1953,7 +2110,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.top.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -1977,7 +2135,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.left.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2001,7 +2160,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.bottom.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2025,7 +2185,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.border.right.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2056,7 +2217,8 @@
                                               {
                                                 "title": "argb",
                                                 "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.fill.fgColor.argb",
-                                                "type": "string"
+                                                "type": "string",
+                                                "required": true
                                               }
                                             ]
                                           },
@@ -2108,7 +2270,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.columns.$0.style.font.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2199,7 +2362,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.top.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2223,7 +2387,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.left.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2247,7 +2412,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.bottom.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2271,7 +2437,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.border.right.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2302,7 +2469,8 @@
                                               {
                                                 "title": "argb",
                                                 "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.fill.fgColor.argb",
-                                                "type": "string"
+                                                "type": "string",
+                                                "required": true
                                               }
                                             ]
                                           },
@@ -2354,7 +2522,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.cellGroups.$0.style.font.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2448,7 +2617,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.top.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2472,7 +2642,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.left.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2496,7 +2667,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.bottom.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2520,7 +2692,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.border.right.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2551,7 +2724,8 @@
                                               {
                                                 "title": "argb",
                                                 "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.fill.fgColor.argb",
-                                                "type": "string"
+                                                "type": "string",
+                                                "required": true
                                               }
                                             ]
                                           },
@@ -2603,7 +2777,8 @@
                                                   {
                                                     "title": "argb",
                                                     "id": "chart.settings.reports.$0.displayConfig.style.lines.$0.style.font.color.argb",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "required": true
                                                   }
                                                 ]
                                               }
@@ -2651,12 +2826,20 @@
                   {
                     "title": "operationType",
                     "type": "string",
-                    "id": "chart.settings.automatedAccounts.$0.operationType"
+                    "id": "chart.settings.automatedAccounts.$0.operationType",
+                    "required": true,
+                    "enum": [
+                      "entry",
+                      "general-ledger",
+                      "book-opening",
+                      "end-of-period-entry"
+                    ]
                   },
                   {
                     "title": "operation",
                     "type": "string",
-                    "id": "chart.settings.automatedAccounts.$0.operation"
+                    "id": "chart.settings.automatedAccounts.$0.operation",
+                    "required": true
                   },
                   {
                     "title": "method",
@@ -2751,12 +2934,20 @@
                       {
                         "title": "operationType",
                         "type": "string",
-                        "id": "chart.settings.generalLedger.automatedEOP.$0.operationType"
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.operationType",
+                        "required": true,
+                        "enum": [
+                          "entry",
+                          "general-ledger",
+                          "book-opening",
+                          "end-of-period-entry"
+                        ]
                       },
                       {
                         "title": "operation",
                         "type": "string",
-                        "id": "chart.settings.generalLedger.automatedEOP.$0.operation"
+                        "id": "chart.settings.generalLedger.automatedEOP.$0.operation",
+                        "required": true
                       },
                       {
                         "title": "method",
@@ -2858,7 +3049,8 @@
                           {
                             "title": "name",
                             "type": "string",
-                            "id": "chart.settings.conversions.toReference.adjustments.$0.name"
+                            "id": "chart.settings.conversions.toReference.adjustments.$0.name",
+                            "required": true
                           },
                           {
                             "title": "task",
@@ -2888,7 +3080,8 @@
                                   {
                                     "title": "type",
                                     "type": "string",
-                                    "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.type"
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.type",
+                                    "required": true
                                   },
                                   {
                                     "title": "accountRanges",
@@ -2915,11 +3108,13 @@
                                           {
                                             "title": "realExpenseType",
                                             "type": "string",
+                                            "required": true,
                                             "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table.$0.realExpenseType"
                                           },
                                           {
                                             "title": "toCode",
                                             "type": "string",
+                                            "required": true,
                                             "id": "chart.settings.conversions.toReference.adjustments.$0.taskDefinition.$0.table.$0.toCode"
                                           }
                                         ]
@@ -2958,11 +3153,13 @@
                                           {
                                             "title": "valueName",
                                             "type": "string",
+                                            "required": true,
                                             "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.valueName"
                                           },
                                           {
                                             "title": "type",
                                             "type": "string",
+                                            "required": true,
                                             "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.fields.$0.type"
                                           },
                                           {
@@ -3045,7 +3242,8 @@
                                   {
                                     "title": "type",
                                     "type": "string",
-                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.string"
+                                    "id": "chart.settings.conversions.toReference.adjustments.$0.prompts.$0.string",
+                                    "required": true
                                   }
                                 ]
                               }
@@ -3075,7 +3273,8 @@
                           {
                             "title": "name",
                             "type": "string",
-                            "id": "chart.settings.conversions.fromReference.adjustments.$0.name"
+                            "id": "chart.settings.conversions.fromReference.adjustments.$0.name",
+                            "required": true
                           },
                           {
                             "title": "task",
@@ -3105,7 +3304,8 @@
                                   {
                                     "title": "type",
                                     "type": "string",
-                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.type"
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.type",
+                                    "required": true
                                   },
                                   {
                                     "title": "accountRanges",
@@ -3132,11 +3332,13 @@
                                           {
                                             "title": "realExpenseType",
                                             "type": "string",
+                                            "required": true,
                                             "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table.$0.realExpenseType"
                                           },
                                           {
                                             "title": "toCode",
                                             "type": "string",
+                                            "required": true,
                                             "id": "chart.settings.conversions.fromReference.adjustments.$0.taskDefinition.$0.table.$0.toCode"
                                           }
                                         ]
@@ -3175,11 +3377,13 @@
                                           {
                                             "title": "valueName",
                                             "type": "string",
+                                            "required": true,
                                             "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.valueName"
                                           },
                                           {
                                             "title": "type",
                                             "type": "string",
+                                            "required": true,
                                             "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.fields.$0.type"
                                           },
                                           {
@@ -3262,7 +3466,8 @@
                                   {
                                     "title": "type",
                                     "type": "string",
-                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.string"
+                                    "id": "chart.settings.conversions.fromReference.adjustments.$0.prompts.$0.string",
+                                    "required": true
                                   }
                                 ]
                               }
@@ -3306,59 +3511,70 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "acc._id"
+        "id": "acc._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "acc.active"
+        "id": "acc.active",
+        "default": "true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "acc.created_at"
+        "id": "acc.created_at",
+        "default": "Date.now"
       },
       {
         "title": "creator",
         "id": "acc.creator",
+        "required": true,
         "type": "object",
         "children": [
           {
             "title": "name",
             "type": "string",
-            "id": "acc.creator.name"
+            "id": "acc.creator.name",
+            "required": true
           },
           {
             "title": "_id",
             "type": "string",
-            "id": "acc.creator._id"
+            "id": "acc.creator._id",
+            "required": true
           }
         ]
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "acc.isClosed"
+        "id": "acc.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "acc.profile",
+        "required": true,
         "children": [
           {
             "title": "company",
             "id": "acc.profile.company",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "acc.profile.company.name"
+                "id": "acc.profile.company.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "acc.profile.company._id"
+                "id": "acc.profile.company._id",
+                "required": true
               }
             ]
           },
@@ -3370,29 +3586,34 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "acc.profile.branchedFrom.name"
+                "id": "acc.profile.branchedFrom.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "acc.profile.branchedFrom._id"
+                "id": "acc.profile.branchedFrom._id",
+                "required": true
               }
             ]
           },
           {
             "title": "chart",
             "id": "acc.profile.chart",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "acc.profile.chart.name"
+                "id": "acc.profile.chart.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "acc.profile.chart._id"
+                "id": "acc.profile.chart._id",
+                "required": true
               }
             ]
           },
@@ -3404,12 +3625,14 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "acc.profile.thirdparty.name"
+                "id": "acc.profile.thirdparty.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "acc.profile.thirdparty._id"
+                "id": "acc.profile.thirdparty._id",
+                "required": true
               }
             ]
           },
@@ -3417,6 +3640,7 @@
             "title": "codePath",
             "id": "acc.profile.codePath",
             "stringTitle": "{codeSegment}",
+            "required": true,
             "type": "array",
             "children": [
               {
@@ -3470,6 +3694,7 @@
             "title": "labelPath",
             "id": "acc.profile.labelPath",
             "stringTitle": "{labelSegment}",
+            "required": true,
             "type": "array",
             "children": [
               {
@@ -3527,44 +3752,52 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "bk._id"
+        "id": "bk._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "bk.active"
+        "id": "bk.active",
+        "default": "true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "bk.created_at"
+        "id": "bk.created_at",
+        "default": "Date.now"
       },
       {
         "title": "creator",
         "id": "bk.creator",
+        "required": true,
         "type": "object",
         "children": [
           {
             "title": "name",
             "type": "string",
-            "id": "bk.creator.name"
+            "id": "bk.creator.name",
+            "required": true
           },
           {
             "title": "_id",
             "type": "string",
-            "id": "bk.creator._id"
+            "id": "bk.creator._id",
+            "required": true
           }
         ]
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "bk.isClosed"
+        "id": "bk.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "bk.profile",
+        "required": true,
         "children": [
           {
             "title": "name",
@@ -3586,34 +3819,40 @@
           {
             "title": "company",
             "id": "bk.profile.company",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "bk.profile.company.name"
+                "id": "bk.profile.company.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "bk.profile.company._id"
+                "id": "bk.profile.company._id",
+                "required": true
               }
             ]
           },
           {
             "title": "chart",
             "id": "bk.profile.chart",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "bk.profile.chart.name"
+                "id": "bk.profile.chart.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "bk.profile.chart._id"
+                "id": "bk.profile.chart._id",
+                "required": true
               }
             ]
           },
@@ -3661,12 +3900,14 @@
               {
                 "title": "date_from",
                 "type": "date",
-                "id": "bk.profile.period.date_from"
+                "id": "bk.profile.period.date_from",
+                "default": "Date.now"
               },
               {
                 "title": "date_to",
                 "type": "date",
-                "id": "bk.profile.period.date_to"
+                "id": "bk.profile.period.date_to",
+                "default": "Date.now"
               }
             ]
           }
@@ -3676,6 +3917,7 @@
         "title": "settings",
         "type": "object",
         "id": "bk.settings",
+        "required": true,
         "children": [
           {
             "title": "timezone",
@@ -3724,12 +3966,20 @@
               {
                 "title": "calendar",
                 "type": "string",
-                "id": "bk.settings.fiscalYearConfig.$0.calendar"
+                "id": "bk.settings.fiscalYearConfig.$0.calendar",
+                "enum": [
+                  "gregorian"
+                ]
               },
               {
                 "title": "year_type",
                 "type": "string",
-                "id": "bk.settings.fiscalYearConfig.$0.year_type"
+                "id": "bk.settings.fiscalYearConfig.$0.year_type",
+                "required": true,
+                "enum": [
+                  "monthly_year",
+                  "4_4_5_year"
+                ]
               },
               {
                 "title": "max_first_year_end_length",
@@ -3739,12 +3989,14 @@
               {
                 "title": "allow_custom_year_lengths",
                 "type": "boolean",
-                "id": "bk.settings.fiscalYearConfig.$0.allow_custom_year_lengths"
+                "id": "bk.settings.fiscalYearConfig.$0.allow_custom_year_lengths",
+                "default": "false"
               },
               {
                 "title": "allow_custom_first_year_end",
                 "type": "boolean",
-                "id": "bk.settings.fiscalYearConfig.$0.allow_custom_first_year_end"
+                "id": "bk.settings.fiscalYearConfig.$0.allow_custom_first_year_end",
+                "default": "false"
               },
               {
                 "title": "periods_in_year",
@@ -3754,32 +4006,75 @@
               {
                 "title": "year_start_type",
                 "type": "string",
-                "id": "bk.settings.fiscalYearConfig.$0.year_start_type"
+                "id": "bk.settings.fiscalYearConfig.$0.year_start_type",
+                "required": true,
+                "enum": [
+                  "calendar",
+                  "offset",
+                  "custom"
+                ]
               },
               {
                 "title": "year_period",
                 "id": "bk.settings.fiscalYearConfig.$0.year_period",
-                "$ref": "./definitions.json#/fiscalYearUnitNumber"
+                "type": "object",
+                "children": [
+                  {
+                    "title": "unit",
+                    "type": "string",
+                    "id": "bk.settings.fiscalYearConfig.$0.year_period.unit",
+                    "required": true,
+                    "enum": [
+                      "years",
+                      "months",
+                      "weeks",
+                      "days"
+                    ]
+                  },
+                  {
+                    "title": "number",
+                    "type": "number",
+                    "id": "bk.settings.fiscalYearConfig.$0.year_period.number",
+                    "required": true
+                  }
+                ]
               },
               {
                 "title": "year_reporting_period",
                 "id": "bk.settings.fiscalYearConfig.$0.year_reporting_period",
-                "$ref": "./definitions.json#/fiscalYearUnitNumber"
-              },
-              {
-                "title": "code",
-                "type": "string",
-                "id": "bk.settings.fiscalYearConfig.$0.code"
+                "type": "object",
+                "children": [
+                  {
+                    "title": "unit",
+                    "type": "string",
+                    "id": "bk.settings.fiscalYearConfig.$0.year_reporting_period.unit",
+                    "required": true,
+                    "enum": [
+                      "years",
+                      "months",
+                      "weeks",
+                      "days"
+                    ]
+                  },
+                  {
+                    "title": "number",
+                    "type": "number",
+                    "id": "bk.settings.fiscalYearConfig.$0.year_reporting_period.number",
+                    "required": true
+                  }
+                ]
               },
               {
                 "title": "date_from",
                 "type": "date",
-                "id": "bk.settings.fiscalYearConfig.$0.date_from"
+                "id": "bk.settings.fiscalYearConfig.$0.date_from",
+                "default": "Date.now"
               },
               {
                 "title": "date_to",
                 "type": "date",
-                "id": "bk.settings.fiscalYearConfig.$0.date_to"
+                "id": "bk.settings.fiscalYearConfig.$0.date_to",
+                "default": "Date.now"
               },
               {
                 "title": "current",
@@ -3794,6 +4089,7 @@
         "title": "owners",
         "type": "array",
         "id": "bk.owners",
+        "required": true,
         "children": [
           {
             "title": "{owner}",
@@ -3803,27 +4099,32 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "bk.owners.$0.name"
+                "id": "bk.owners.$0.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "bk.owners.$0._id"
+                "id": "bk.owners.$0._id",
+                "required": true
               },
               {
                 "title": "date_from",
                 "type": "date",
-                "id": "bk.owners.$0.date_from"
+                "id": "bk.owners.$0.date_from",
+                "default": "Date.now"
               },
               {
                 "title": "date_to",
                 "type": "date",
-                "id": "bk.owners.$0.date_to"
+                "id": "bk.owners.$0.date_to",
+                "default": "Date.now"
               },
               {
                 "title": "current",
                 "type": "boolean",
-                "id": "bk.owners.$0.current"
+                "id": "bk.owners.$0.current",
+                "required": true
               }
             ]
           }
@@ -3852,44 +4153,52 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "entry._id"
+        "id": "entry._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "entry.active"
+        "id": "entry.active",
+        "default": "true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "entry.created_at"
+        "id": "entry.created_at",
+        "default": "Date.now"
       },
       {
         "title": "creator",
         "id": "entry.creator",
+        "required": true,
         "type": "object",
         "children": [
           {
             "title": "name",
             "type": "string",
-            "id": "entry.creator.name"
+            "id": "entry.creator.name",
+            "required": true
           },
           {
             "title": "_id",
             "type": "string",
-            "id": "entry.creator._id"
+            "id": "entry.creator._id",
+            "required": true
           }
         ]
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "entry.isClosed"
+        "id": "entry.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "entry.profile",
+        "required": true,
         "children": [
           {
             "title": "description",
@@ -3911,51 +4220,60 @@
           {
             "title": "company",
             "id": "entry.profile.company",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "entry.profile.company.name"
+                "id": "entry.profile.company.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "entry.profile.company._id"
+                "id": "entry.profile.company._id",
+                "required": true
               }
             ]
           },
           {
             "title": "chart",
             "id": "entry.profile.chart",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "entry.profile.chart.name"
+                "id": "entry.profile.chart.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "entry.profile.chart._id"
+                "id": "entry.profile.chart._id",
+                "required": true
               }
             ]
           },
           {
             "title": "book",
             "id": "entry.profile.book",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "entry.profile.book.name"
+                "id": "entry.profile.book.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "entry.profile.book._id"
+                "id": "entry.profile.book._id",
+                "required": true
               }
             ]
           },
@@ -3967,12 +4285,14 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "entry.profile.report.name"
+                "id": "entry.profile.report.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "entry.profile.report._id"
+                "id": "entry.profile.report._id",
+                "required": true
               }
             ]
           },
@@ -3984,7 +4304,14 @@
           {
             "title": "operationType",
             "type": "string",
-            "id": "entry.profile.operationType"
+            "id": "entry.profile.operationType",
+            "required": true,
+            "enum": [
+              "entry",
+              "general-ledger",
+              "book-opening",
+              "end-of-period-entry"
+            ]
           },
           {
             "title": "operation",
@@ -4046,29 +4373,34 @@
           {
             "title": "user",
             "id": "entry.void.user",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "entry.void.user.name"
+                "id": "entry.void.user.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "entry.void.user._id"
+                "id": "entry.void.user._id",
+                "required": true
               }
             ]
           },
           {
             "title": "reason",
             "type": "string",
-            "id": "entry.void.reason"
+            "id": "entry.void.reason",
+            "required": true
           },
           {
             "title": "voided_at",
             "type": "date",
-            "id": "entry.void.voided_at"
+            "id": "entry.void.voided_at",
+            "default": "Date.now"
           },
           {
             "title": "additionalData",
@@ -4137,7 +4469,8 @@
                   {
                     "title": "_id",
                     "type": "string",
-                    "id": "entry.lines.$0.account._id"
+                    "id": "entry.lines.$0.account._id",
+                    "required": true
                   },
                   {
                     "title": "code",
@@ -4163,6 +4496,7 @@
                     "title": "codePath",
                     "type": "array",
                     "id": "entry.lines.$0.account.codePath",
+                    "required": true,
                     "children": [
                       {
                         "title": "{codeSegment}",
@@ -4175,6 +4509,7 @@
                     "title": "labelPath",
                     "type": "array",
                     "id": "entry.lines.$0.account.labelPath",
+                    "required": true,
                     "children": [
                       {
                         "title": "{codeSegment}",
@@ -4193,7 +4528,8 @@
                   {
                     "title": "value",
                     "type": "string",
-                    "id": "entry.lines.$0.debit.value"
+                    "id": "entry.lines.$0.debit.value",
+                    "required": true
                   },
                   {
                     "title": "currency",
@@ -4218,22 +4554,26 @@
                       {
                         "title": "value",
                         "type": "string",
-                        "id": "entry.lines.$0.debit.rate.value"
+                        "id": "entry.lines.$0.debit.rate.value",
+                        "required": true
                       },
                       {
                         "title": "currencyFrom",
                         "type": "string",
-                        "id": "entry.lines.$0.debit.rate.currencyFrom"
+                        "id": "entry.lines.$0.debit.rate.currencyFrom",
+                        "required": true
                       },
                       {
                         "title": "currencyTo",
                         "type": "string",
-                        "id": "entry.lines.$0.debit.rate.currencyTo"
+                        "id": "entry.lines.$0.debit.rate.currencyTo",
+                        "required": true
                       },
                       {
                         "title": "source",
                         "type": "string",
-                        "id": "entry.lines.$0.debit.rate.source"
+                        "id": "entry.lines.$0.debit.rate.source",
+                        "required": true
                       },
                       {
                         "title": "manual",
@@ -4257,7 +4597,8 @@
                   {
                     "title": "value",
                     "type": "string",
-                    "id": "entry.lines.$0.credit.value"
+                    "id": "entry.lines.$0.credit.value",
+                    "required": true
                   },
                   {
                     "title": "currency",
@@ -4282,22 +4623,26 @@
                       {
                         "title": "value",
                         "type": "string",
-                        "id": "entry.lines.$0.credit.rate.value"
+                        "id": "entry.lines.$0.credit.rate.value",
+                        "required": true
                       },
                       {
                         "title": "currencyFrom",
                         "type": "string",
-                        "id": "entry.lines.$0.credit.rate.currencyFrom"
+                        "id": "entry.lines.$0.credit.rate.currencyFrom",
+                        "required": true
                       },
                       {
                         "title": "currencyTo",
                         "type": "string",
-                        "id": "entry.lines.$0.credit.rate.currencyTo"
+                        "id": "entry.lines.$0.credit.rate.currencyTo",
+                        "required": true
                       },
                       {
                         "title": "source",
                         "type": "string",
-                        "id": "entry.lines.$0.credit.rate.source"
+                        "id": "entry.lines.$0.credit.rate.source",
+                        "required": true
                       },
                       {
                         "title": "manual",
@@ -4340,22 +4685,26 @@
               {
                 "title": "reason",
                 "type": "string",
-                "id": "entry.edits.$0.reason"
+                "id": "entry.edits.$0.reason",
+                "required": true
               },
               {
                 "title": "editor",
                 "id": "entry.edits.$0.editor",
+                "required": true,
                 "type": "object",
                 "children": [
                   {
                     "title": "name",
                     "type": "string",
-                    "id": "entry.edits.$0.editor.name"
+                    "id": "entry.edits.$0.editor.name",
+                    "required": true
                   },
                   {
                     "title": "_id",
                     "type": "string",
-                    "id": "entry.edits.$0.editor._id"
+                    "id": "entry.edits.$0.editor._id",
+                    "required": true
                   }
                 ]
               },
@@ -4386,6 +4735,7 @@
               {
                 "title": "after",
                 "id": "entry.edits.$0.after",
+                "required": true,
                 "type": "array",
                 "children": [
                   {
@@ -4410,7 +4760,8 @@
               {
                 "title": "edited_at",
                 "type": "date",
-                "id": "entry.edits.$0.edited_at"
+                "id": "entry.edits.$0.edited_at",
+                "default": "Date.now"
               }
             ]
           }
@@ -4420,6 +4771,123 @@
     "color": "#bd54bf"
   },
   {
+    "title": "LiveBookPeriodEndings",
+    "type": "object",
+    "id": "endings",
+    "color": "#bd54bf",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "endings._id",
+        "default": "autogen"
+      },
+      {
+        "title": "book_id",
+        "type": "string",
+        "id": "endings.book_id"
+      },
+      {
+        "title": "period",
+        "id": "endings.period",
+        "type": "object",
+        "children": [
+          {
+            "title": "date_from",
+            "type": "date",
+            "id": "endings.period.date_from",
+            "default": "Date.now"
+          },
+          {
+            "title": "date_to",
+            "type": "date",
+            "id": "endings.period.date_to",
+            "default": "Date.now"
+          }
+        ]
+      },
+      {
+        "title": "statuatory",
+        "id": "endings.statuatory",
+        "type": "object",
+        "children": [
+          {
+            "title": "date_from",
+            "type": "date",
+            "id": "endings.statuatory.date_from",
+            "default": "Date.now"
+          },
+          {
+            "title": "date_to",
+            "type": "date",
+            "id": "endings.statuatory.date_to",
+            "default": "Date.now"
+          },
+          {
+            "title": "report_id",
+            "id": "endings.statuatory.report_id",
+            "type": "string"
+          },
+          {
+            "title": "debit",
+            "id": "endings.statuatory.dr",
+            "type": "string",
+            "required": true
+          },
+          {
+            "title": "credit",
+            "id": "endings.statuatory.cr",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      {
+        "title": "byReport",
+        "type": "array",
+        "id": "endings.byReport",
+        "children": [
+          {
+            "title": "{reportEndings}",
+            "id": "endings.byReport.$0",
+            "type": "object",
+            "children": [
+              {
+                "title": "date_from",
+                "type": "date",
+                "id": "endings.byReport.$0.date_from",
+                "default": "Date.now"
+              },
+              {
+                "title": "date_to",
+                "type": "date",
+                "id": "endings.byReport.$0.date_to",
+                "default": "Date.now"
+              },
+              {
+                "title": "report_id",
+                "id": "endings.byReport.$0.report_id",
+                "type": "string"
+              },
+              {
+                "title": "debit",
+                "id": "endings.byReport.$0.dr",
+                "type": "string",
+                "required": true
+              },
+              {
+                "title": "credit",
+                "id": "endings.byReport.$0.cr",
+                "type": "string",
+                "required": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "type": "object",
     "title": "Report",
     "id": "rep",
@@ -4427,44 +4895,52 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "rep._id"
+        "id": "rep._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "rep.active"
+        "id": "rep.active",
+        "default": "true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "rep.created_at"
+        "id": "rep.created_at",
+        "default": "Date.now"
       },
       {
         "title": "creator",
         "id": "rep.creator",
+        "required": true,
         "type": "object",
         "children": [
           {
             "title": "name",
             "type": "string",
-            "id": "rep.creator.name"
+            "id": "rep.creator.name",
+            "required": true
           },
           {
             "title": "_id",
             "type": "string",
-            "id": "rep.creator._id"
+            "id": "rep.creator._id",
+            "required": true
           }
         ]
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "rep.isClosed"
+        "id": "rep.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "rep.profile",
+        "required": true,
         "children": [
           {
             "title": "name",
@@ -4503,51 +4979,60 @@
           {
             "title": "company",
             "id": "rep.profile.company",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "rep.profile.company.name"
+                "id": "rep.profile.company.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "rep.profile.company._id"
+                "id": "rep.profile.company._id",
+                "required": true
               }
             ]
           },
           {
             "title": "book",
             "id": "rep.profile.book",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "rep.profile.book.name"
+                "id": "rep.profile.book.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "rep.profile.book._id"
+                "id": "rep.profile.book._id",
+                "required": true
               }
             ]
           },
           {
             "title": "chart",
             "id": "rep.profile.chart",
+            "required": true,
             "type": "object",
             "children": [
               {
                 "title": "name",
                 "type": "string",
-                "id": "rep.profile.chart.name"
+                "id": "rep.profile.chart.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "rep.profile.chart._id"
+                "id": "rep.profile.chart._id",
+                "required": true
               }
             ]
           },
@@ -4579,12 +5064,14 @@
               {
                 "title": "date_from",
                 "type": "date",
-                "id": "rep.profile.bookPeriod.date_from"
+                "id": "rep.profile.bookPeriod.date_from",
+                "default": "Date.now"
               },
               {
                 "title": "date_to",
                 "type": "date",
-                "id": "rep.profile.bookPeriod.date_to"
+                "id": "rep.profile.bookPeriod.date_to",
+                "default": "Date.now"
               }
             ]
           },
@@ -4648,12 +5135,14 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "rep.profile.editor.name"
+                "id": "rep.profile.editor.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "rep.profile.editor._id"
+                "id": "rep.profile.editor._id",
+                "required": true
               }
             ]
           },
@@ -4683,6 +5172,7 @@
         "title": "settings",
         "type": "object",
         "id": "rep.settings",
+        "required": true,
         "children": [
           {
             "title": "timezone",
@@ -4766,6 +5256,7 @@
         "title": "owners",
         "type": "array",
         "id": "rep.owners",
+        "required": true,
         "children": [
           {
             "title": "{owner}",
@@ -4775,27 +5266,32 @@
               {
                 "title": "name",
                 "type": "string",
-                "id": "rep.owners.$0.name"
+                "id": "rep.owners.$0.name",
+                "required": true
               },
               {
                 "title": "_id",
                 "type": "string",
-                "id": "rep.owners.$0._id"
+                "id": "rep.owners.$0._id",
+                "required": true
               },
               {
                 "title": "date_from",
                 "type": "date",
-                "id": "rep.owners.$0.date_from"
+                "id": "rep.owners.$0.date_from",
+                "default": "Date.now"
               },
               {
                 "title": "date_to",
                 "type": "date",
-                "id": "rep.owners.$0.date_to"
+                "id": "rep.owners.$0.date_to",
+                "default": "Date.now"
               },
               {
                 "title": "current",
                 "type": "boolean",
-                "id": "rep.owners.$0.current"
+                "id": "rep.owners.$0.current",
+                "required": true
               }
             ]
           }
@@ -4824,7 +5320,8 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "rdata._id"
+        "id": "rdata._id",
+        "default": "autogen"
       },
       {
         "title": "report_id",
@@ -4834,7 +5331,8 @@
       {
         "title": "created_at",
         "type": "date",
-        "id": "rdata.created_at"
+        "id": "rdata.created_at",
+        "default": "Date.now"
       },
       {
         "title": "data",
@@ -5023,5 +5521,17 @@
   {
     "from": "rdata.report_id",
     "to": "rep._id"
+  },
+  {
+    "from": "endings.byReport.$0.report_id",
+    "to": "rep._id"
+  },
+  {
+    "from": "endings.statuatory.report_id",
+    "to": "rep._id"
+  },
+  {
+    "from": "endings.book_id",
+    "to": "bk._id"
   }
 ]

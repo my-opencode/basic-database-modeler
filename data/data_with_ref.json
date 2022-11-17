@@ -18,32 +18,38 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "cp._id"
+        "id": "cp._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "cp.active"
+        "id": "cp.active",
+        "default":"true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "cp.created_at"
+        "id": "cp.created_at",
+        "default":"Date.now"
       },
       {
         "title": "creator",
         "id": "cp.creator",
-        "$ref": "./definitions.json#/databaseReference"
+        "$ref": "./definitions.json#/databaseReference",
+        "required": true
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "cp.isClosed"
+        "id": "cp.isClosed",
+        "default": false
       },
       {
         "title": "owners",
         "type": "array",
         "id": "cp.owners",
+        "required": true,
         "children": [
           {
             "title": "{owner}",
@@ -56,11 +62,13 @@
         "title": "profile",
         "type": "object",
         "id": "cp.profile",
+        "required": true,
         "children": [
           {
             "title": "country",
             "type": "string",
-            "id": "cp.profile.country"
+            "id": "cp.profile.country",
+            "required": true
           },
           {
             "title": "legalEntity",
@@ -70,7 +78,8 @@
           {
             "title": "registrationId",
             "type": "string",
-            "id": "cp.profile.registrationId"
+            "id": "cp.profile.registrationId",
+            "required": true
           },
           {
             "title": "chart_id",
@@ -80,7 +89,8 @@
           {
             "title": "name",
             "type": "string",
-            "id": "cp.profile.name"
+            "id": "cp.profile.name",
+            "required": true
           },
           {
             "title": "nameTranslations",
@@ -91,6 +101,7 @@
             "title": "registrations",
             "type": "array",
             "id": "cp.profile.registrations",
+            "required": true,
             "children": [
               {
                 "title": "{companyRegistration}",
@@ -100,27 +111,32 @@
                   {
                     "title": "name",
                     "type": "string",
-                    "id": "cp.profile.registrations.$0.name"
+                    "id": "cp.profile.registrations.$0.name",
+                    "required": true
                   },
                   {
                     "title": "id",
                     "type": "string",
-                    "id": "cp.profile.registrations.$0.id"
+                    "id": "cp.profile.registrations.$0.id",
+                    "required": true
                   },
                   {
                     "title": "date_from",
                     "type": "date",
-                    "id": "cp.profile.registrations.$0.date_from"
+                    "id": "cp.profile.registrations.$0.date_from",
+                    "default": "Date.now"
                   },
                   {
                     "title": "date_to",
                     "type": "date",
-                    "id": "cp.profile.registrations.$0.date_to"
+                    "id": "cp.profile.registrations.$0.date_to",
+                    "default": "Date.now"
                   },
                   {
                     "title": "current",
                     "type": "boolean",
-                    "id": "cp.profile.registrations.$0.current"
+                    "id": "cp.profile.registrations.$0.current",
+                    "required": true
                   }
                 ]
               }
@@ -130,6 +146,7 @@
             "title": "charts",
             "type": "array",
             "id": "cp.profile.charts",
+            "required": true,
             "children": [
               {
                 "title": "{dateReference}",
@@ -142,6 +159,7 @@
             "title": "legalEntities",
             "type": "array",
             "id": "cp.profile.legalEntities",
+            "required": true,
             "children": [
               {
                 "title": "{datedParamReference}",
@@ -168,31 +186,38 @@
         "title": "settings",
         "type": "object",
         "id": "cp.settings",
+        "required": true,
         "children": [
           {
             "title": "allowSearchAndJoin",
             "type": "boolean",
-            "id": "cp.settings.allowSearchAndJoin"
+            "id": "cp.settings.allowSearchAndJoin",
+            "default":"true"
           },
           {
             "title": "timezone",
             "type": "string",
-            "id": "cp.settings.timezone"
+            "id": "cp.settings.timezone",
+            "default":"UTC"
           },
           {
             "title": "locale",
             "type": "string",
-            "id": "cp.settings.locale"
+            "id": "cp.settings.locale",
+            "default":"en-US"
           },
           {
             "title": "xrateSource",
             "type": "string",
-            "id": "cp.settings.xrateSource"
+            "id": "cp.settings.xrateSource",
+            "default":"ecb",
+            "enum":["ecb","pbc"]
           },
           {
             "title": "language",
             "type": "string",
-            "id": "cp.settings.language"
+            "id": "cp.settings.language",
+            "required": true
           },
           {
             "title": "languages",
@@ -224,17 +249,20 @@
                   {
                     "title": "date_from",
                     "type": "date",
-                    "id": "cp.settings.tax.$0.date_from"
+                    "id": "cp.settings.tax.$0.date_from",
+                    "default": "Date.now"
                   },
                   {
                     "title": "date_to",
                     "type": "date",
-                    "id": "cp.settings.tax.$0.date_to"
+                    "id": "cp.settings.tax.$0.date_to",
+                    "default": "Date.now"
                   },
                   {
                     "title": "current",
                     "type": "boolean",
-                    "id": "cp.settings.tax.$0.current"
+                    "id": "cp.settings.tax.$0.current",
+                    "required": true
                   },
                   {
                     "title": "values",
@@ -295,6 +323,7 @@
         "title": "users",
         "type": "array",
         "id": "cp.users",
+        "required": true,
         "children": [
           {
             "title": "{userSub}",
@@ -307,6 +336,7 @@
         "title": "depreciatingAssets",
         "type": "array",
         "id": "cp.depreciatingAssets",
+        "default":"[]",
         "children": [
           {
             "title": "{depreciatingAsset}",
@@ -420,32 +450,38 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "chart._id"
+        "id": "chart._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "chart.active"
+        "id": "chart.active",
+        "default":"true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "chart.created_at"
+        "id": "chart.created_at",
+        "default":"Date.now"
       },
       {
         "title": "creator",
         "id": "chart.creator",
-        "$ref": "./definitions.json#/databaseReference"
+        "$ref": "./definitions.json#/databaseReference",
+        "required": true
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "chart.isClosed"
+        "id": "chart.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "chart.profile",
+        "required": true,
         "children": [
           {
             "title": "country",
@@ -533,6 +569,7 @@
         "title": "settings",
         "type": "object",
         "id": "chart.settings",
+        "required": true,
         "children": [
           {
             "title": "formats",
@@ -574,12 +611,14 @@
                   {
                     "title": "operation",
                     "type": "string",
-                    "id": "chart.settings.importDefaultAccounts.$0.operation"
+                    "id": "chart.settings.importDefaultAccounts.$0.operation",
+                    "required": true
                   },
                   {
                     "title": "parentCode",
                     "type": "string",
-                    "id": "chart.settings.importDefaultAccounts.$0.parentCode"
+                    "id": "chart.settings.importDefaultAccounts.$0.parentCode",
+                    "required": true
                   }
                 ]
               }
@@ -995,37 +1034,44 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "acc._id"
+        "id": "acc._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "acc.active"
+        "id": "acc.active",
+        "default":"true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "acc.created_at"
+        "id": "acc.created_at",
+        "default":"Date.now"
       },
       {
         "title": "creator",
         "id": "acc.creator",
-        "$ref": "./definitions.json#/databaseReference"
+        "$ref": "./definitions.json#/databaseReference",
+        "required": true
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "acc.isClosed"
+        "id": "acc.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "acc.profile",
+        "required": true,
         "children": [
           {
             "title": "company",
             "id": "acc.profile.company",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "branchedFrom",
@@ -1035,7 +1081,8 @@
           {
             "title": "chart",
             "id": "acc.profile.chart",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "thirdparty",
@@ -1046,7 +1093,8 @@
             "title": "codePath",
             "id": "acc.profile.codePath",
             "stringTitle": "{codeSegment}",
-            "$ref": "./definitions.json#/stringArray"
+            "$ref": "./definitions.json#/stringArray",
+            "required": true
           },
           {
             "title": "labelPathTranslations",
@@ -1078,7 +1126,8 @@
             "title": "labelPath",
             "id": "acc.profile.labelPath",
             "stringTitle": "{labelSegment}",
-            "$ref": "./definitions.json#/stringArray"
+            "$ref": "./definitions.json#/stringArray",
+            "required": true
           },
           {
             "title": "code",
@@ -1128,32 +1177,38 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "bk._id"
+        "id": "bk._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "bk.active"
+        "id": "bk.active",
+        "default":"true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "bk.created_at"
+        "id": "bk.created_at",
+        "default":"Date.now"
       },
       {
         "title": "creator",
         "id": "bk.creator",
-        "$ref": "./definitions.json#/databaseReference"
+        "$ref": "./definitions.json#/databaseReference",
+        "required": true
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "bk.isClosed"
+        "id": "bk.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "bk.profile",
+        "required": true,
         "children": [
           {
             "title": "name",
@@ -1168,12 +1223,14 @@
           {
             "title": "company",
             "id": "bk.profile.company",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "chart",
             "id": "bk.profile.chart",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "currency",
@@ -1208,6 +1265,7 @@
         "title": "settings",
         "type": "object",
         "id": "bk.settings",
+        "required": true,
         "children": [
           {
             "title": "timezone",
@@ -1240,6 +1298,7 @@
         "title": "owners",
         "type": "array",
         "id": "bk.owners",
+        "required": true,
         "children": [
           {
             "title": "{owner}",
@@ -1271,32 +1330,38 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "entry._id"
+        "id": "entry._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "entry.active"
+        "id": "entry.active",
+        "default":"true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "entry.created_at"
+        "id": "entry.created_at",
+        "default":"Date.now"
       },
       {
         "title": "creator",
         "id": "entry.creator",
-        "$ref": "./definitions.json#/databaseReference"
+        "$ref": "./definitions.json#/databaseReference",
+        "required": true
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "entry.isClosed"
+        "id": "entry.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "entry.profile",
+        "required": true,
         "children": [
           {
             "title": "description",
@@ -1311,17 +1376,20 @@
           {
             "title": "company",
             "id": "entry.profile.company",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "chart",
             "id": "entry.profile.chart",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "book",
             "id": "entry.profile.book",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "report",
@@ -1336,7 +1404,14 @@
           {
             "title": "operationType",
             "type": "string",
-            "id": "entry.profile.operationType"
+            "id": "entry.profile.operationType",
+            "required": true,
+            "enum": [
+              "entry",
+              "general-ledger",
+              "book-opening",
+              "end-of-period-entry"
+            ]
           },
           {
             "title": "operation",
@@ -1398,17 +1473,20 @@
           {
             "title": "user",
             "id": "entry.void.user",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "reason",
             "type": "string",
-            "id": "entry.void.reason"
+            "id": "entry.void.reason",
+            "required": true
           },
           {
             "title": "voided_at",
             "type": "date",
-            "id": "entry.void.voided_at"
+            "id": "entry.void.voided_at",
+            "default":"Date.now"
           },
           {
             "title": "additionalData",
@@ -1504,12 +1582,14 @@
               {
                 "title": "reason",
                 "type": "string",
-                "id": "entry.edits.$0.reason"
+                "id": "entry.edits.$0.reason",
+                "required": true
               },
               {
                 "title": "editor",
                 "id": "entry.edits.$0.editor",
-                "$ref": "./definitions.json#/databaseReference"
+                "$ref": "./definitions.json#/databaseReference",
+                "required": true
               },
               {
                 "title": "before",
@@ -1519,12 +1599,14 @@
               {
                 "title": "after",
                 "id": "entry.edits.$0.after",
-                "$ref": "./definitions.json#/entryEditPathValues"
+                "$ref": "./definitions.json#/entryEditPathValues",
+                "required": true
               },
               {
                 "title": "edited_at",
                 "type": "date",
-                "id": "entry.edits.$0.edited_at"
+                "id": "entry.edits.$0.edited_at",
+                "default":"Date.now"
               }
             ]
           }
@@ -1534,6 +1616,47 @@
     "color":"#bd54bf"
   },
   {
+    "title":"LiveBookPeriodEndings",
+    "type": "object",
+    "id":"endings",
+    "color":"#bd54bf",
+    "children": [
+      {
+        "title": "_id",
+        "type": "ObjectId",
+        "id": "endings._id",
+        "default": "autogen"
+      },
+      {
+        "title": "book_id",
+        "type": "string",
+        "id": "endings.book_id"
+      },
+      {
+        "title": "period",
+        "id": "endings.period",
+        "$ref": "./definitions.json#/period"
+      },
+      {
+        "title": "statuatory",
+        "id": "endings.statuatory",
+        "$ref": "./definitions.json#/liveEndings"
+      },
+      {
+        "title": "byReport",
+        "type": "array",
+        "id": "endings.byReport",
+        "children": [
+          {
+            "title":"{reportEndings}",
+            "id":"endings.byReport.$0",
+            "$ref": "./definitions.json#/liveEndings"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "type": "object",
     "title": "Report",
     "id": "rep",
@@ -1541,32 +1664,38 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "rep._id"
+        "id": "rep._id",
+        "default": "autogen"
       },
       {
         "title": "active",
         "type": "boolean",
-        "id": "rep.active"
+        "id": "rep.active",
+        "default":"true"
       },
       {
         "title": "created_at",
         "type": "date",
-        "id": "rep.created_at"
+        "id": "rep.created_at",
+        "default":"Date.now"
       },
       {
         "title": "creator",
         "id": "rep.creator",
-        "$ref": "./definitions.json#/databaseReference"
+        "$ref": "./definitions.json#/databaseReference",
+        "required": true
       },
       {
         "title": "isClosed",
         "type": "boolean",
-        "id": "rep.isClosed"
+        "id": "rep.isClosed",
+        "default": false
       },
       {
         "title": "profile",
         "type": "object",
         "id": "rep.profile",
+        "required": true,
         "children": [
           {
             "title": "name",
@@ -1591,17 +1720,20 @@
           {
             "title": "company",
             "id": "rep.profile.company",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "book",
             "id": "rep.profile.book",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "chart",
             "id": "rep.profile.chart",
-            "$ref": "./definitions.json#/databaseReference"
+            "$ref": "./definitions.json#/databaseReference",
+            "required": true
           },
           {
             "title": "currency",
@@ -1704,6 +1836,7 @@
         "title": "settings",
         "type": "object",
         "id": "rep.settings",
+        "required": true,
         "children": [
           {
             "title": "timezone",
@@ -1787,6 +1920,7 @@
         "title": "owners",
         "type": "array",
         "id": "rep.owners",
+        "required": true,
         "children": [
           {
             "title": "{owner}",
@@ -1811,7 +1945,8 @@
       {
         "title": "_id",
         "type": "ObjectId",
-        "id": "rdata._id"
+        "id": "rdata._id",
+        "default": "autogen"
       },
       {
         "title": "report_id",
@@ -1821,7 +1956,8 @@
       {
         "title": "created_at",
         "type": "date",
-        "id": "rdata.created_at"
+        "id": "rdata.created_at",
+        "default":"Date.now"
       },
       {
         "title": "data",
@@ -2010,5 +2146,17 @@
   {
     "from": "rdata.report_id",
     "to": "rep._id"
+  },
+  {
+    "from": "endings.byReport.$0.report_id",
+    "to": "rep._id"
+  },
+  {
+    "from": "endings.statuatory.report_id",
+    "to": "rep._id"
+  },
+  {
+    "from": "endings.book_id",
+    "to": "bk._id"
   }
 ]

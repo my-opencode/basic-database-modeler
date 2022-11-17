@@ -7,12 +7,14 @@
       {
         "title": "name",
         "type": "string",
-        "id": "databaseReference.name"
+        "id": "databaseReference.name",
+        "required": true
       },
       {
         "title": "_id",
         "type": "string",
-        "id": "databaseReference._id"
+        "id": "databaseReference._id",
+        "required": true
       }
     ]
   },
@@ -24,27 +26,32 @@
       {
         "title": "name",
         "type": "string",
-        "id": "datedDatabaseReference.name"
+        "id": "datedDatabaseReference.name",
+        "required": true
       },
       {
         "title": "_id",
         "type": "string",
-        "id": "datedDatabaseReference._id"
+        "id": "datedDatabaseReference._id",
+        "required": true
       },
       {
         "title": "date_from",
         "type": "date",
-        "id": "datedDatabaseReference.date_from"
+        "id": "datedDatabaseReference.date_from",
+        "default": "Date.now"
       },
       {
         "title": "date_to",
         "type": "date",
-        "id": "datedDatabaseReference.date_to"
+        "id": "datedDatabaseReference.date_to",
+        "default": "Date.now"
       },
       {
         "title": "current",
         "type": "boolean",
-        "id": "datedDatabaseReference.current"
+        "id": "datedDatabaseReference.current",
+        "required": true
       }
     ]
   },
@@ -66,12 +73,14 @@
       {
         "title": "date_from",
         "type": "date",
-        "id": "datedParamReference.date_from"
+        "id": "datedParamReference.date_from",
+        "default": "Date.now"
       },
       {
         "title": "date_to",
         "type": "date",
-        "id": "datedParamReference.date_to"
+        "id": "datedParamReference.date_to",
+        "default": "Date.now"
       },
       {
         "title": "current",
@@ -88,12 +97,15 @@
       {
         "title": "unit",
         "type": "string",
-        "id": "fiscalYearUnitNumber.unit"
+        "id": "fiscalYearUnitNumber.unit",
+        "required":true,
+        "enum":["years", "months", "weeks", "days"]
       },
       {
         "title": "number",
         "type": "number",
-        "id": "fiscalYearUnitNumber.number"
+        "id": "fiscalYearUnitNumber.number",
+        "required":true
       }
     ]
   },
@@ -129,12 +141,14 @@
       {
         "title": "date_from",
         "type": "date",
-        "id": "period.date_from"
+        "id": "period.date_from",
+        "default": "Date.now"
       },
       {
         "title": "date_to",
         "type": "date",
-        "id": "period.date_to"
+        "id": "period.date_to",
+        "default": "Date.now"
       }
     ]
   },
@@ -232,12 +246,20 @@
           {
             "title": "operationType",
             "type": "string",
-            "id": "EOPConfig.$0.operationType"
+            "id": "EOPConfig.$0.operationType",
+            "required": true,
+            "enum": [
+              "entry",
+              "general-ledger",
+              "book-opening",
+              "end-of-period-entry"
+            ]
           },
           {
             "title": "operation",
             "type": "string",
-            "id": "EOPConfig.$0.operation"
+            "id": "EOPConfig.$0.operation",
+            "required": true
           },
           {
             "title": "method",
@@ -322,7 +344,8 @@
           {
             "title": "name",
             "type": "string",
-            "id": "chartConversionAdjustments.$0.name"
+            "id": "chartConversionAdjustments.$0.name",
+            "required": true
           },
           {
             "title": "task",
@@ -352,7 +375,8 @@
                   {
                     "title": "type",
                     "type": "string",
-                    "id": "chartConversionAdjustments.$0.taskDefinition.$0.type"
+                    "id": "chartConversionAdjustments.$0.taskDefinition.$0.type",
+                    "required": true
                   },
                   {
                     "title": "accountRanges",
@@ -379,11 +403,13 @@
                           {
                             "title": "realExpenseType",
                             "type": "string",
+                            "required": true,
                             "id": "chartConversionAdjustments.$0.taskDefinition.$0.table.$0.realExpenseType"
                           },
                           {
                             "title": "toCode",
                             "type": "string",
+                            "required": true,
                             "id": "chartConversionAdjustments.$0.taskDefinition.$0.table.$0.toCode"
                           }
                         ]
@@ -422,11 +448,13 @@
                           {
                             "title": "valueName",
                             "type": "string",
+                            "required": true,
                             "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.valueName"
                           },
                           {
                             "title": "type",
                             "type": "string",
+                            "required": true,
                             "id": "chartConversionAdjustments.$0.prompts.$0.fields.$0.type"
                           },
                           {
@@ -509,7 +537,8 @@
                   {
                     "title": "type",
                     "type": "string",
-                    "id": "chartConversionAdjustments.$0.prompts.$0.string"
+                    "id": "chartConversionAdjustments.$0.prompts.$0.string",
+                    "required": true
                   }
                 ]
               }
@@ -527,17 +556,20 @@
       {
         "title": "type",
         "type": "string",
-        "id": "reportDataText.type"
+        "id": "reportDataText.type",
+        "required": true
       },
       {
         "title": "text",
         "type": "string",
-        "id": "reportDataText.text"
+        "id": "reportDataText.text",
+        "required": true
       },
       {
         "title": "name",
         "type": "string",
-        "id": "reportDataText.name"
+        "id": "reportDataText.name",
+        "required": true
       }
     ]
   },
@@ -549,7 +581,8 @@
       {
         "title": "type",
         "type": "string",
-        "id": "reportDataTextTranslated.type"
+        "id": "reportDataTextTranslated.type",
+        "required": true
       },
       {
         "title": "translations",
@@ -566,7 +599,8 @@
       {
         "title": "name",
         "type": "string",
-        "id": "reportDataTextTranslated.name"
+        "id": "reportDataTextTranslated.name",
+        "required": true
       }
     ]
   },
@@ -578,7 +612,8 @@
       {
         "title": "type",
         "type": "string",
-        "id": "reportDataVariableLocal.type"
+        "id": "reportDataVariableLocal.type",
+        "required": true
       },
       {
         "title": "formula",
@@ -588,7 +623,8 @@
       {
         "title": "name",
         "type": "string",
-        "id": "reportDataVariableLocal.name"
+        "id": "reportDataVariableLocal.name",
+        "required": true
       }
     ]
   },
@@ -600,22 +636,26 @@
       {
         "title": "type",
         "type": "string",
-        "id": "reportDataVariableFromSource.type"
+        "id": "reportDataVariableFromSource.type",
+        "required": true
       },
       {
         "title": "source",
         "type": "string",
-        "id": "reportDataVariableFromSource.source"
+        "id": "reportDataVariableFromSource.source",
+        "required": true
       },
       {
         "title": "path",
         "type": "string",
-        "id": "reportDataVariableFromSource.path"
+        "id": "reportDataVariableFromSource.path",
+        "required": true
       },
       {
         "title": "name",
         "type": "string",
-        "id": "reportDataVariableFromSource.name"
+        "id": "reportDataVariableFromSource.name",
+        "required": true
       }
     ]
   },
@@ -627,27 +667,32 @@
       {
         "title": "type",
         "type": "string",
-        "id": "reportDataVariableFromSourceTranslated.type"
+        "id": "reportDataVariableFromSourceTranslated.type",
+        "required": true
       },
       {
         "title": "source",
         "type": "string",
-        "id": "reportDataVariableFromSourceTranslated.source"
+        "id": "reportDataVariableFromSourceTranslated.source",
+        "required": true
       },
       {
         "title": "path",
         "type": "string",
-        "id": "reportDataVariableFromSourceTranslated.path"
+        "id": "reportDataVariableFromSourceTranslated.path",
+        "required": true
       },
       {
         "title": "translationFailSafePath",
         "type": "string",
-        "id": "reportDataVariableFromSourceTranslated.translationFailSafePath"
+        "id": "reportDataVariableFromSourceTranslated.translationFailSafePath",
+        "required": true
       },
       {
         "title": "name",
         "type": "string",
-        "id": "reportDataVariableFromSourceTranslated.name"
+        "id": "reportDataVariableFromSourceTranslated.name",
+        "required": true
       }
     ]
   },
@@ -659,22 +704,27 @@
       {
         "title": "type",
         "type": "string",
-        "id": "reportDataVariableFromSourceFormula.type"
+        "id": "reportDataVariableFromSourceFormula.type",
+        "required": true
       },
       {
         "title": "source",
         "type": "string",
-        "id": "reportDataVariableFromSourceFormula.source"
+        "id": "reportDataVariableFromSourceFormula.source",
+        "required": true,
+        "enum":["general-ledger","trial-balance"]
       },
       {
         "title": "formula",
         "type": "string",
-        "id": "reportDataVariableFromSourceFormula.formula"
+        "id": "reportDataVariableFromSourceFormula.formula",
+        "required": true
       },
       {
         "title": "name",
         "type": "string",
-        "id": "reportDataVariableFromSourceTranslated.name"
+        "id": "reportDataVariableFromSourceTranslated.name",
+        "required": true
       }
     ]
   },
@@ -696,7 +746,8 @@
           {
             "title": "argb",
             "id": "reportDisplayBorderStyle.color.argb",
-            "type": "string"
+            "type": "string",
+            "required": true
           }
         ]
       }
@@ -757,7 +808,8 @@
                   {
                     "title": "argb",
                     "id": "reportDisplayCellStyle.border.top.color.argb",
-                    "type": "string"
+                    "type": "string",
+                    "required": true
                   }
                 ]
               }
@@ -781,7 +833,8 @@
                   {
                     "title": "argb",
                     "id": "reportDisplayCellStyle.border.left.color.argb",
-                    "type": "string"
+                    "type": "string",
+                    "required": true
                   }
                 ]
               }
@@ -805,7 +858,8 @@
                   {
                     "title": "argb",
                     "id": "reportDisplayCellStyle.border.bottom.color.argb",
-                    "type": "string"
+                    "type": "string",
+                    "required": true
                   }
                 ]
               }
@@ -829,7 +883,8 @@
                   {
                     "title": "argb",
                     "id": "reportDisplayCellStyle.border.right.color.argb",
-                    "type": "string"
+                    "type": "string",
+                    "required": true
                   }
                 ]
               }
@@ -860,7 +915,8 @@
               {
                 "title": "argb",
                 "id": "reportDisplayCellStyle.fill.fgColor.argb",
-                "type": "string"
+                "type": "string",
+                "required": true
               }
             ]
           },
@@ -912,7 +968,8 @@
                   {
                     "title": "argb",
                     "id": "reportDisplayCellStyle.font.color.argb",
-                    "type": "string"
+                    "type": "string",
+                    "required": true
                   }
                 ]
               }
@@ -996,12 +1053,15 @@
       {
         "title": "calendar",
         "type": "string",
-        "id": "fiscalYearConfig.$0.calendar"
+        "id": "fiscalYearConfig.$0.calendar",
+        "enum":["gregorian"]
       },
       {
         "title": "year_type",
         "type": "string",
-        "id": "fiscalYearConfig.$0.year_type"
+        "id": "fiscalYearConfig.$0.year_type",
+        "required": true,
+        "enum":["monthly_year", "4_4_5_year"]
       },
       {
         "title": "max_first_year_end_length",
@@ -1011,12 +1071,14 @@
       {
         "title": "allow_custom_year_lengths",
         "type": "boolean",
-        "id": "fiscalYearConfig.$0.allow_custom_year_lengths"
+        "id": "fiscalYearConfig.$0.allow_custom_year_lengths",
+        "default":"false"
       },
       {
         "title": "allow_custom_first_year_end",
         "type": "boolean",
-        "id": "fiscalYearConfig.$0.allow_custom_first_year_end"
+        "id": "fiscalYearConfig.$0.allow_custom_first_year_end",
+        "default":"false"
       },
       {
         "title": "periods_in_year",
@@ -1026,32 +1088,61 @@
       {
         "title": "year_start_type",
         "type": "string",
-        "id": "fiscalYearConfig.$0.year_start_type"
+        "id": "fiscalYearConfig.$0.year_start_type",
+        "required": true,
+        "enum":["calendar", "offset", "custom"]
       },
       {
         "title": "year_period",
         "id": "fiscalYearConfig.$0.year_period",
-        "$ref": "./definitions.json#/fiscalYearUnitNumber"
+        "type": "object",
+        "children": [
+          {
+            "title": "unit",
+            "type": "string",
+            "id": "fiscalYearConfig.$0.year_period.unit",
+            "required":true,
+            "enum":["years", "months", "weeks", "days"]
+          },
+          {
+            "title": "number",
+            "type": "number",
+            "id": "fiscalYearConfig.$0.year_period.number",
+            "required":true
+          }
+        ]
       },
       {
         "title": "year_reporting_period",
         "id": "fiscalYearConfig.$0.year_reporting_period",
-        "$ref": "./definitions.json#/fiscalYearUnitNumber"
-      },
-      {
-        "title": "code",
-        "type": "string",
-        "id": "fiscalYearConfig.$0.code"
+        "type": "object",
+        "children": [
+          {
+            "title": "unit",
+            "type": "string",
+            "id": "fiscalYearConfig.$0.year_reporting_period.unit",
+            "required":true,
+            "enum":["years", "months", "weeks", "days"]
+          },
+          {
+            "title": "number",
+            "type": "number",
+            "id": "fiscalYearConfig.$0.year_reporting_period.number",
+            "required":true
+          }
+        ]
       },
       {
         "title": "date_from",
         "type": "date",
-        "id": "fiscalYearConfig.$0.date_from"
+        "id": "fiscalYearConfig.$0.date_from",
+        "default": "Date.now"
       },
       {
         "title": "date_to",
         "type": "date",
-        "id": "fiscalYearConfig.$0.date_to"
+        "id": "fiscalYearConfig.$0.date_to",
+        "default": "Date.now"
       },
       {
         "title": "current",
@@ -1061,38 +1152,39 @@
     ]
   },
   "entryEditPathValues": {
-    "title":"entryEditPathValues",
-    "id":"entryEditPathValues",
-    "type":"array",
+    "title": "entryEditPathValues",
+    "id": "entryEditPathValues",
+    "type": "array",
     "children": [
       {
-        "title":"{editPathValue}",
-        "id":"entryEditPathValues.$0",
-        "type":"object",
+        "title": "{editPathValue}",
+        "id": "entryEditPathValues.$0",
+        "type": "object",
         "children": [
           {
-            "title":"path",
-            "id":"entryEditPathValues.$0.path",
-            "type":"string"
+            "title": "path",
+            "id": "entryEditPathValues.$0.path",
+            "type": "string"
           },
           {
-            "title":"value",
-            "id":"entryEditPathValues.$0.value",
-            "type":"string"
+            "title": "value",
+            "id": "entryEditPathValues.$0.value",
+            "type": "string"
           }
         ]
       }
     ]
   },
-  "databaseAccountReference":{
-    "title":"databaseAccountReference",
-    "id":"databaseAccountReference",
-    "type":"object",
-    "children":[
+  "databaseAccountReference": {
+    "title": "databaseAccountReference",
+    "id": "databaseAccountReference",
+    "type": "object",
+    "children": [
       {
         "title": "_id",
         "type": "string",
-        "id": "databaseAccountReference._id"
+        "id": "databaseAccountReference._id",
+        "required": true
       },
       {
         "title": "code",
@@ -1118,6 +1210,7 @@
         "title": "codePath",
         "type": "array",
         "id": "databaseAccountReference.codePath",
+        "required": true,
         "children": [
           {
             "title": "{codeSegment}",
@@ -1130,6 +1223,7 @@
         "title": "labelPath",
         "type": "array",
         "id": "databaseAccountReference.labelPath",
+        "required": true,
         "children": [
           {
             "title": "{codeSegment}",
@@ -1140,15 +1234,16 @@
       }
     ]
   },
-  "amount":{
-    "title":"amount",
-    "id":"amount",
-    "type":"object",
-    "children":[
+  "amount": {
+    "title": "amount",
+    "id": "amount",
+    "type": "object",
+    "children": [
       {
         "title": "value",
         "type": "string",
-        "id": "amount.value"
+        "id": "amount.value",
+        "required": true
       },
       {
         "title": "currency",
@@ -1169,26 +1264,30 @@
         "title": "rate",
         "type": "object",
         "id": "amount.rate",
-        "children":[
+        "children": [
           {
             "title": "value",
             "type": "string",
-            "id": "amount.rate.value"
+            "id": "amount.rate.value",
+            "required": true
           },
           {
             "title": "currencyFrom",
             "type": "string",
-            "id": "amount.rate.currencyFrom"
+            "id": "amount.rate.currencyFrom",
+            "required": true
           },
           {
             "title": "currencyTo",
             "type": "string",
-            "id": "amount.rate.currencyTo"
+            "id": "amount.rate.currencyTo",
+            "required": true
           },
           {
             "title": "source",
             "type": "string",
-            "id": "amount.rate.source"
+            "id": "amount.rate.source",
+            "required": true
           },
           {
             "title": "manual",
@@ -1201,6 +1300,42 @@
             "id": "amount.rate.date"
           }
         ]
+      }
+    ]
+  },
+  "liveEndings": {
+    "title": "liveEndings",
+    "id": "liveEndings",
+    "type": "object",
+    "children": [
+      {
+        "title": "date_from",
+        "type": "date",
+        "id": "liveEndings.date_from",
+        "default": "Date.now"
+      },
+      {
+        "title": "date_to",
+        "type": "date",
+        "id": "liveEndings.date_to",
+        "default": "Date.now"
+      },
+      {
+        "title": "report_id",
+        "id": "liveEndings.report_id",
+        "type": "string"
+      },
+      {
+        "title": "debit",
+        "id": "liveEndings.dr",
+        "type": "string",
+        "required": true
+      },
+      {
+        "title": "credit",
+        "id": "liveEndings.cr",
+        "type": "string",
+        "required": true
       }
     ]
   }
