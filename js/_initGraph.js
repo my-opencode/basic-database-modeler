@@ -22,7 +22,7 @@ export function initGraph(graphEl) {
     defaultAnchor: {
       name: 'center'
     },
-    sorting: joint.dia.Paper.sorting.APPROX,
+    sorting: joint.dia.Paper.sorting.EXACT,
     viewport: function (view) {
       var element = view.model;
       // Hide any element or link which is embedded inside a collapsed parent (or parent of the parent).

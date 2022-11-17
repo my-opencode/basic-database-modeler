@@ -1,63 +1,3 @@
-// const appendValuesToTemplate = function () {
-//   const customAttrs = this.model.get("customAttrs");
-//   let textValue = "";
-//   for (let a in customAttrs) {
-//     textValue = (customAttrs?.[a] !== undefined && customAttrs[a] !== null) ? customAttrs[a] : "";
-//     if (this?.$box !== undefined && this?.$box !== null) this.$box.find('div.' + a + '> span').text(textValue);
-//   }
-// };
-
-// var ModelBase = joint.shapes.html = {};
-// joint.shapes.ModelBase = ModelBase;
-// ModelBase.Element = joint.shapes.devs.Atomic.extend({
-//   defaults: joint.util.defaultsDeep({
-//     type: 'html.Element',
-//     attrs: {
-//       '.body': { stroke: '#ffffff' },
-//       entity_title: {
-//         text: 'Placeholder',
-//         fill: 'white'
-//       }
-//     }
-//   }, joint.shapes.devs.Atomic.prototype.defaults),
-//   rowLevel: 0
-// });
-// ModelBase.ElementView = joint.dia.ElementView.extend({
-//   htmlTemplate: `<div class="html-element">
-//     <div class="header">
-//         <div class="entity_title">
-//             <span></span>
-//         </div>
-//     </div>
-//     <div class="properties"></div>
-//   </div>`,
-//   appendValuesToTemplate: appendValuesToTemplate
-// });
-
-// export function redrawGraph(graph, elems) {
-//   graph.clear();
-//   let X = 0, Y = 0;
-//   const Xoff = 100, Yoff = 100;
-
-//   var model = new joint.shapes.ModelBase.Element({
-//     attrs: {
-//       entity_title: {
-//         text: 'Placeholder',
-//         fill: 'white'
-//       }
-//     },
-//     position: { x: 0, y: 0 }
-//   });
-//   model.resize(400, 30);
-
-//   for (const elem of elems) {
-//     X += Xoff; Y += Yoff;
-//     var _model = model.clone();
-//     _model.translate(X, Y);
-//     _model.attr('entity_title/text', elem.title);
-//     _model.addTo(graph);
-//   }
-// }
 export function redrawGraph(paper, graph, elems) {
   graph.clear();
   let X = 20, Y = 20;
@@ -70,9 +10,10 @@ export function redrawGraph(paper, graph, elems) {
     Link: joint.shapes.container.Link
   }
 
+  const linkColors = {}
   const links = [];
   for (const elem of elems) {
-    if(elem.from) {
+    if (elem.from) {
       links.push(elem);
       continue;
     }
@@ -80,7 +21,12 @@ export function redrawGraph(paper, graph, elems) {
       z: 1,
       attrs: { label: { text: elem.title } }
     };
-    if(elem.id) o.id = elem.id;
+    if (elem.id) o.id = elem.id;
+    if (elem.color) {
+      o.attrs.header = { fill: elem.color };
+      linkColors[elem.id] = elem.color;
+    }
+
     const container = new C.Container(o);
     elem.id = container.id;
     container.translate(X, Y);
@@ -90,23 +36,31 @@ export function redrawGraph(paper, graph, elems) {
 
 
     if (elem.children?.length) {
-      // ({ children, Y } = addChildren(C, graph, elem, container, X, Y));
       addChildren(C, graph, elem, container, X, Y);
     }
 
-    // graph.addCells(children);
-    // graph.addCells([container, ...children]);
-    // container.toggle(false);
     X += Xoff; Y += Yoff;
   }
-  for(const link of links) {
-    const _link = new C.Link({
-      source: {id: link.from},
-      target: {id: link.to},
+  for (const link of links) {
+    const o = {
+      source: { id: link.from },
+      target: { id: link.to },
       z: 99
-    });
-    graph.addCells([_link]);
-    _link.reparent();
+    };
+    const targetId = link.to.split(`.`)[0];
+    if (linkColors[targetId])
+      o.attrs = {
+        line: {
+          stroke: linkColors[targetId]
+        }
+      };
+    try {
+      const _link = new C.Link(o);
+      graph.addCells([_link]);
+      _link.reparent();
+    } catch (err) {
+      console.log(`Invalid link ${JSON.stringify(link)}`)
+    }
   }
 
   paper.on('element:button:pointerdown', function (elementView) {
@@ -148,7 +102,7 @@ function addChildren(C, graph, parentData, parentEl, X, Y, level = 1) {
           typeText: { text: c.type }
         }
       };
-      if(c.id) o.id = c.id;
+      if (c.id) o.id = c.id;
       child = new C.ObjectChild(o);
       graph.addCells([child]);
       parentEl.embed(child);
@@ -162,7 +116,7 @@ function addChildren(C, graph, parentData, parentEl, X, Y, level = 1) {
           typeText: { text: c.type }
         }
       };
-      if(c.id) o.id = c.id;
+      if (c.id) o.id = c.id;
       child = new C.Child(o);
       children.push(child);
     }
@@ -171,40 +125,28 @@ function addChildren(C, graph, parentData, parentEl, X, Y, level = 1) {
   level--;
   graph.addCells(children);
   parentEl.embed(children);
-  parentEl.toggle(false);
+  parentEl.toggle(false, true)
   return { children, Y };
 }
 
 
-// export function redrawGraph(graph, elems) {
-//   graph.clear();
-//   let X = 0, Y = 0;
-//   const Xoff = 100, Yoff = 100;
 
-//   var rect = new joint.shapes.standard.Rectangle();
-//   rect.position(0, 0);
-//   rect.resize(400, 30);
-//   rect.attr({
-//     body: {
-//       fill: '#0099ee',
-//       stroke: '#000000'
-//     },
-//     label: {
-//       text: 'Placeholder',
-//       fill: 'white'
+// function buildModelHtml(children, isRoot) {
+//   let html = ``;
+//   if (isRoot) html += `<ul class="treeview"></ul>`;
+
+//   for (const c of children) {
+//     html += `<li>`;
+//     if (c.children?.length) {
+//       html += `<span class="caret">${c.title}</span>`;
+//       html += `<ul class="nested">`;
+//       html += buildModelHtml(c.children);
+//       html += `</ul>`;
+//     } else {
+//       html += c.title;
 //     }
-//   });
-//   // rect.addTo(graph);
-
-//   for (const elem of elems) {
-//     X += Xoff; Y += Yoff;
-//     var _rect = rect.clone();
-//     _rect.translate(X, Y);
-//     _rect.attr('label/text', elem.title);
-//     _rect.addTo(graph);
+//     html += `</li>`
 //   }
+//   if (isRoot) html += `</ul>`
+//   return html;
 // }
-// var link = new joint.shapes.standard.Link();
-// link.source(rect);
-// link.target(rect2);
-// link.addTo(graph);

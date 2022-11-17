@@ -283,18 +283,45 @@ export function setShapes() {
       }]
     }],
 
-    toggle: function (shouldCollapse) {
+    applyAccordionEffect: function () {
+      // console.log(this.getBBox());
+      const parents = this.getAncestors();
+      for (const parent of parents) {
+        // console.log(`one parent ${parent.id}, before: ${JSON.stringify(parent.getBBox())}`);
+        // parent.fitEmbeds();
+        let { x, y } = parent.getBBox();
+        let height = 30;
+        const parentSChilren = parent.getEmbeddedCells()
+          // .filter(c => !c.attributes.collapsed)
+          .sort((a, b) => parseInt(a.cid.slice(1) - b.cid.slice(1)));
+        for (const cell of parentSChilren) {
+          cell.position(x, y + height, { deep: true });
+          height = height + cell.getBBox().height;
+          // console.log(`cell ${cell.attributes.attrs.label.text} ${JSON.stringify(cell.getBBox())}`);
+        }
+        parent.resize(400, height);
+        // console.log(`one parent ${parent.id}, after: ${JSON.stringify(parent.getBBox())}`);
+      }
+    },
+
+    toggle: function (shouldCollapse, skipAccordion) {
       var buttonD;
       var collapsed = (shouldCollapse === undefined) ? !this.get('collapsed') : shouldCollapse;
+      const subLinks = this.graph.getCells()
+        .filter(c => c.id.slice(0, this.id.length) === this.id)
+        .reduce((arr, c) => { arr.push(...this.graph.getConnectedLinks(c)); return arr; }, []);
       if (collapsed) {
         buttonD = 'M 2 7 12 7 M 7 2 7 12';
         this.resize(400, 30);
+        subLinks.forEach(l => l.attr('./visibility', 'hidden'));
       } else {
         buttonD = 'M 2 7 12 7';
         this.fitChildren();
+        subLinks.forEach(l => l.attr('./visibility', 'visible'));
       }
       this.attr(['buttonIcon', 'd'], buttonD);
       this.set('collapsed', collapsed);
+      if (!skipAccordion) this.applyAccordionEffect();
     },
 
     isCollapsed: function () {
